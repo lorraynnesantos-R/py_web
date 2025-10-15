@@ -114,7 +114,7 @@ class UpdateThread(QThread):
 
     def run(self):
         init()
-        if os.environ.get('PYTESTEENV') != 'dev':
+        if os.environ.get('PYWEBENV') != 'dev':
             update_providers()
             #if version != 1: # voltar - get_last_version()
             #    NewVersion()
@@ -232,7 +232,7 @@ class MangaDownloaderApp:
 
         self.init_log = False
 
-        if not conf.log and os.environ.get('PYTESTEENV') != 'dev':
+        if not conf.log and os.environ.get('PYWEBENV') != 'dev':
             self.window.logs.hide()
         else:
             self.init_log = True
@@ -779,7 +779,7 @@ class MangaDownloaderApp:
 if __name__ == "__main__":
     try:
 
-        if os.environ.get('PYTESTEENV') == 'dev':
+        if os.environ.get('PYWEBENV') == 'dev':
             from jurigged import watch
             watch(str(base_path()))
 

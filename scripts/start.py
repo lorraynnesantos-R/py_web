@@ -10,7 +10,7 @@ def run():
 
     app = Path(__file__).resolve().parent.parent / 'src' / 'GUI_qt' / '__init__.py'
 
-    os.environ['PYTESTEENV'] = 'dev'
+    os.environ['PYWEBENV'] = 'dev'
 
     if(is_posix):
         os.environ['PYTHONPATH'] = str(src_path)
