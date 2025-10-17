@@ -1,0 +1,99 @@
+{
+  "scan_info": {
+    "name": "arthurscan_xyz",
+    "base_url": "https://arthurscan.xyz",
+    "last_check": null,
+    "active": true,
+    "scape_time": 30,
+    "description": "Migrado de obras_mapeadas.json em 2025-10-15"
+  },
+  "obras": [
+    {
+      "id": 1763,
+      "titulo": "Super Wechat",
+      "url_relativa": "https://arthurscan.xyz/manga/super-wechat/",
+      "status": "ativo",
+      "ultimo_upload": null,
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 84.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 85.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.118968+00:00",
+      "updated_at": "2025-10-15T21:54:23.118970+00:00",
+      "id_obra_original": 1763,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 354,
+      "titulo": "Eu Ganho uma Nova Profissão Aleatoriamente Toda Semana",
+      "url_relativa": "https://arthurscan.xyz/manga/i-randomly-have-a-new-career-every-week-1/",
+      "status": "ativo",
+      "ultimo_upload": null,
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 249.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 250.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.118998+00:00",
+      "updated_at": "2025-10-15T21:54:23.118999+00:00",
+      "id_obra_original": 354,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 355,
+      "titulo": "A Ascensão do Ser Supremo",
+      "url_relativa": "https://arthurscan.xyz/manga/lit-the-supreme-being/",
+      "status": "ativo",
+      "ultimo_upload": null,
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 189.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 190.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.119060+00:00",
+      "updated_at": "2025-10-15T21:54:23.119062+00:00",
+      "id_obra_original": 355,
+      "numero_pulos_config": 0
+    }
+  ],
+  "metadata": {
+    "version": "2.0",
+    "created_at": "2025-10-15T21:54:23.118956+00:00",
+    "updated_at": "2025-10-15T21:54:23.119110+00:00",
+    "total_obras": 3
+  }
+}

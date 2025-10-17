@@ -1,0 +1,17 @@
+{
+  "state": "stopped",
+  "timer_remaining": 0,
+  "last_process_end": null,
+  "current_job": null,
+  "completed_jobs": [],
+  "failed_jobs": [],
+  "config": {
+    "timer_interval": 1800,
+    "max_retries": 3,
+    "retry_delay": 300,
+    "enable_quarantine_check": true,
+    "enable_health_check": true,
+    "health_check_timeout": 10,
+    "save_state_interval": 60
+  }
+}

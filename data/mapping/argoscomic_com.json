@@ -1,0 +1,126 @@
+{
+  "scan_info": {
+    "name": "argoscomic_com",
+    "base_url": "https://argoscomic.com",
+    "last_check": null,
+    "active": true,
+    "scape_time": 30,
+    "description": "Migrado de obras_mapeadas.json em 2025-10-15"
+  },
+  "obras": [
+    {
+      "id": 433,
+      "titulo": "Um Discípulo Vilão Não Pode Ser Um Santo",
+      "url_relativa": "https://argoscomic.com/6333017f-ca96-429a-bb22-4cd401a0ecbd/um-discipulo-vilao-nao-pode-ser-um-santo",
+      "status": "ativo",
+      "ultimo_upload": null,
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 150.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 151.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.116897+00:00",
+      "updated_at": "2025-10-15T21:54:23.116898+00:00",
+      "id_obra_original": 433,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 361,
+      "titulo": "Pico Marcial",
+      "url_relativa": "https://argoscomic.com/d7ca82fb-f6d2-4678-b527-0d86400640c3/pico-marcial",
+      "status": "ativo",
+      "ultimo_upload": null,
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 3849.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 3850.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.116941+00:00",
+      "updated_at": "2025-10-15T21:54:23.116943+00:00",
+      "id_obra_original": 361,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 567,
+      "titulo": "Batalha Através Dos Céus",
+      "url_relativa": "https://argoscomic.com/bf4b156c-797c-4216-a65e-d2aabafa20da/batalha-atraves-dos-ceus",
+      "status": "ativo",
+      "ultimo_upload": "2025-10-11T02:38:10.089442",
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 453.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 454.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.117788+00:00",
+      "updated_at": "2025-10-15T21:54:23.117791+00:00",
+      "id_obra_original": 567,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 371,
+      "titulo": "Eu, o Lorde Demônio, Estou Sendo Alvo Das Minhas Discípulas!",
+      "url_relativa": "https://argoscomic.com/2000d69b-0bbb-464a-9eee-298fa854a27f/lorde-demonio-almejado-pelas-discipulas",
+      "status": "ativo",
+      "ultimo_upload": "2025-10-11T02:39:12.010885",
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 71.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 72.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.117898+00:00",
+      "updated_at": "2025-10-15T21:54:23.117900+00:00",
+      "id_obra_original": 371,
+      "numero_pulos_config": 0
+    }
+  ],
+  "metadata": {
+    "version": "2.0",
+    "created_at": "2025-10-15T21:54:23.116886+00:00",
+    "updated_at": "2025-10-15T21:54:23.117927+00:00",
+    "total_obras": 4
+  }
+}

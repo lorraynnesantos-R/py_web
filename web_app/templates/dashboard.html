@@ -1,0 +1,132 @@
+{% extends "base.html" %} {% block title %}Dashboard - MediocreToons Auto
+Uploader v2{% endblock %} {% block content %}
+<!-- Header Principal -->
+<div class="app-header fade-in">
+  <h1><i class="fas fa-tachometer-alt"></i> Dashboard</h1>
+  <p class="subtitle">Sistema de Auto-Upload com Quarentena Ativa</p>
+</div>
+
+<!-- Estatísticas Gerais -->
+<div class="dashboard-grid fade-in">
+  <div class="dashboard-card">
+    <div class="dashboard-card-title">
+      <i class="fas fa-globe"></i>
+      Scans Ativos
+    </div>
+    <div class="dashboard-card-value">{{ global_stats.total_scans }}</div>
+    <div class="dashboard-card-description">Sites de origem configurados</div>
+  </div>
+
+  <div class="dashboard-card success-item">
+    <div class="dashboard-card-title">
+      <i class="fas fa-book"></i>
+      Total de Obras
+    </div>
+    <div class="dashboard-card-value text-success">
+      {{ global_stats.total_obras }}
+    </div>
+    <div class="dashboard-card-description">Obras cadastradas no sistema</div>
+  </div>
+
+  <div class="dashboard-card">
+    <div class="dashboard-card-title">
+      <i class="fas fa-check-circle"></i>
+      Obras Ativas
+    </div>
+    <div class="dashboard-card-value text-info">
+      {{ global_stats.total_ativas }}
+    </div>
+    <div class="dashboard-card-description">Prontas para auto-upload</div>
+  </div>
+
+  <div class="dashboard-card quarantine-item">
+    <div class="dashboard-card-title">
+      <i class="fas fa-ban"></i>
+      Em Quarentena
+    </div>
+    <div class="dashboard-card-value text-danger" data-stat="total_quarantined">
+      {{ quarantine_stats.total_quarantined }}
+    </div>
+    <div class="dashboard-card-description">
+      Obras com problemas automáticos
+    </div>
+  </div>
+</div>
+
+<!-- Alertas de Obras com Muitos Erros -->
+{% if high_error_obras %}
+<div class="slide-up">
+  <div class="alert alert-warning" role="alert">
+    <h5 class="alert-heading">
+      <i class="fas fa-exclamation-triangle"></i> Atenção: Obras com Muitos
+      Erros
+    </h5>
+    <p>
+      As seguintes obras estão próximas da quarentena (7+ erros consecutivos):
+    </p>
+
+    <div class="dashboard-grid">
+      {% for obra in high_error_obras %}
+      <div class="warning-item p-3 rounded">
+        <div class="d-flex justify-content-between align-items-center">
+          <div>
+            <strong
+              >{{ obra.titulo[:40] }}{% if obra.titulo|length > 40 %}...{% endif
+              %}</strong
+            >
+            <small class="text-muted d-block">{{ obra.scan_name }}</small>
+          </div>
+          <span class="badge badge-danger"
+            >{{ obra.erros_consecutivos }} erros</span
+          >
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+    <div class="text-center mt-4">
+      <a href="{{ url_for('quarantine_list') }}" class="btn btn-warning">
+        <i class="fas fa-ban"></i> Ver Sistema de Quarentena
+      </a>
+    </div>
+  </div>
+</div>
+{% endif %}
+
+<!-- Ações Rápidas -->
+<div class="dashboard-grid fade-in">
+  <div class="card">
+    <div class="card-body text-center">
+      <i class="fas fa-book text-primary" style="font-size: 3em"></i>
+      <h5 class="card-title mt-3">Gerenciar Obras</h5>
+      <p class="text-muted">Visualizar e editar todas as obras mapeadas</p>
+      <a href="{{ url_for('obras_list') }}" class="btn btn-primary">
+        <i class="fas fa-arrow-right"></i> Ver Obras
+      </a>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-body text-center">
+      <i class="fas fa-ban text-warning" style="font-size: 3em"></i>
+      <h5 class="card-title mt-3">Sistema de Quarentena</h5>
+      <p class="text-muted">Gerenciar obras com problemas automático</p>
+      <a href="{{ url_for('quarantine_list') }}" class="btn btn-warning">
+        <i class="fas fa-arrow-right"></i> Ver Quarentena
+      </a>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-body text-center">
+      <i class="fas fa-globe text-success" style="font-size: 3em"></i>
+      <h5 class="card-title mt-3">Scans</h5>
+      <p class="text-muted">Configurar e monitorar sites de origem</p>
+      <a href="{{ url_for('scans_list') }}" class="btn btn-success">
+        <i class="fas fa-arrow-right"></i> Ver Scans
+      </a>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

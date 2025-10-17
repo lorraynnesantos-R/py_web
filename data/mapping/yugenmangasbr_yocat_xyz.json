@@ -1,0 +1,234 @@
+{
+  "scan_info": {
+    "name": "yugenmangasbr_yocat_xyz",
+    "base_url": "https://yugenmangasbr.yocat.xyz",
+    "last_check": null,
+    "active": true,
+    "scape_time": 30,
+    "description": "Migrado de obras_mapeadas.json em 2025-10-15"
+  },
+  "obras": [
+    {
+      "id": 615,
+      "titulo": "Eu Me Tornei a Esposa de Um Príncipe Herdeiro Monstruoso",
+      "url_relativa": "https://yugenmangasbr.yocat.xyz/series/655204979810",
+      "status": "ativo",
+      "ultimo_upload": null,
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 120.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 121.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.113886+00:00",
+      "updated_at": "2025-10-15T21:54:23.113888+00:00",
+      "id_obra_original": 615,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 602,
+      "titulo": "Eu Sou Uma Santa Falsa Mas os Deuses Estão Obcecados por Mim",
+      "url_relativa": "https://yugenmangasbr.yocat.xyz/series/449155735618",
+      "status": "ativo",
+      "ultimo_upload": null,
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 106.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 107.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.113943+00:00",
+      "updated_at": "2025-10-15T21:54:23.113946+00:00",
+      "id_obra_original": 602,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 799,
+      "titulo": "Como Não Sei Nada Sobre Isso, Deveríamos Terminar, Majestade",
+      "url_relativa": "https://yugenmangasbr.yocat.xyz/series/619443596822",
+      "status": "ativo",
+      "ultimo_upload": null,
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 35.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 36.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.113990+00:00",
+      "updated_at": "2025-10-15T21:54:23.113992+00:00",
+      "id_obra_original": 799,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 596,
+      "titulo": "A Jovem Chef Real",
+      "url_relativa": "https://yugenmangasbr.yocat.xyz/series/888384305044",
+      "status": "ativo",
+      "ultimo_upload": null,
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 171.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 172.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.114010+00:00",
+      "updated_at": "2025-10-15T21:54:23.114012+00:00",
+      "id_obra_original": 596,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 644,
+      "titulo": "Mais Uma Vez Até a Luz",
+      "url_relativa": "https://yugenmangasbr.yocat.xyz/series/377478929259",
+      "status": "ativo",
+      "ultimo_upload": null,
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 113.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 114.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.114080+00:00",
+      "updated_at": "2025-10-15T21:54:23.114084+00:00",
+      "id_obra_original": 644,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 777,
+      "titulo": "Babados da Alessa",
+      "url_relativa": "https://yugenmangasbr.yocat.xyz/series/161565855766",
+      "status": "ativo",
+      "ultimo_upload": null,
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 25.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 25.1,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.114120+00:00",
+      "updated_at": "2025-10-15T21:54:23.114121+00:00",
+      "id_obra_original": 777,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 651,
+      "titulo": "Diário de demissão de uma funcionária pública de classe S",
+      "url_relativa": "https://yugenmangasbr.yocat.xyz/series/147774130702",
+      "status": "ativo",
+      "ultimo_upload": null,
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 29.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 30.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.114131+00:00",
+      "updated_at": "2025-10-15T21:54:23.114132+00:00",
+      "id_obra_original": 651,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 1792,
+      "titulo": "A Aliança Secreta",
+      "url_relativa": "https://yugenmangasbr.yocat.xyz/series/500628014378",
+      "status": "pausado",
+      "ultimo_upload": null,
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 75.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 76.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.114144+00:00",
+      "updated_at": "2025-10-15T21:54:23.114145+00:00",
+      "id_obra_original": 1792,
+      "numero_pulos_config": 0
+    }
+  ],
+  "metadata": {
+    "version": "2.0",
+    "created_at": "2025-10-15T21:54:23.113870+00:00",
+    "updated_at": "2025-10-15T21:54:23.114168+00:00",
+    "total_obras": 8
+  }
+}

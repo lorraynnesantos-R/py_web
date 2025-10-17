@@ -1,0 +1,801 @@
+{
+  "scan_info": {
+    "name": "bato_to",
+    "base_url": "https://bato.to",
+    "last_check": null,
+    "active": true,
+    "scape_time": 30,
+    "description": "Migrado de obras_mapeadas.json em 2025-10-15"
+  },
+  "obras": [
+    {
+      "id": 749,
+      "titulo": "Você quer que eu lhe empreste um isqueiro?",
+      "url_relativa": "https://bato.to/series/190800/voce-quer-que-eu-lhe-empreste-um-isqueiro",
+      "status": "ativo",
+      "ultimo_upload": "2025-10-09T15:20:47.675454",
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 45.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 46.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.101149+00:00",
+      "updated_at": "2025-10-15T21:54:23.101151+00:00",
+      "id_obra_original": 749,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 1744,
+      "titulo": "Para o seu imoral.",
+      "url_relativa": "https://bato.to/series/205804/para-o-seu-imoral",
+      "status": "ativo",
+      "ultimo_upload": null,
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 27.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 28.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.101170+00:00",
+      "updated_at": "2025-10-15T21:54:23.101172+00:00",
+      "id_obra_original": 1744,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 863,
+      "titulo": "Ao Invés Do Filho, Eu Ficarei Com O Pai",
+      "url_relativa": "https://bato.to/series/186093/ao-inves-do-filho-eu-ficarei-com-o-pai-midnight-dreams-scan",
+      "status": "ativo",
+      "ultimo_upload": null,
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 38.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 39.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.101183+00:00",
+      "updated_at": "2025-10-15T21:54:23.101184+00:00",
+      "id_obra_original": 863,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 2520,
+      "titulo": "Como assim esse Duque Gato é só um Personagem Secundário",
+      "url_relativa": "https://bato.to/series/208942/como-assim-esse-duque-gato-e-so-um-personagem-secundario",
+      "status": "ativo",
+      "ultimo_upload": null,
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 1.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 2.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.101196+00:00",
+      "updated_at": "2025-10-15T21:54:23.101197+00:00",
+      "id_obra_original": 2520,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 2327,
+      "titulo": "Túmulo do Cisne (Leiam)",
+      "url_relativa": "https://bato.to/series/207322/tumulo-do-cisne",
+      "status": "ativo",
+      "ultimo_upload": null,
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 9.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 10.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.101203+00:00",
+      "updated_at": "2025-10-15T21:54:23.101205+00:00",
+      "id_obra_original": 2327,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 571,
+      "titulo": "A história de um amor sob a neve do norte",
+      "url_relativa": "https://bato.to/series/168156/uma-historia-de-amor-sob-a-neve-do-norte-midnight-dreams-scan",
+      "status": "ativo",
+      "ultimo_upload": null,
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 51.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 52.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.101211+00:00",
+      "updated_at": "2025-10-15T21:54:23.101213+00:00",
+      "id_obra_original": 571,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 889,
+      "titulo": "Que tal um Horror Cósmico?! ",
+      "url_relativa": "https://bato.to/series/200909/que-tal-horror-cosmico",
+      "status": "ativo",
+      "ultimo_upload": null,
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 18.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 19.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.101227+00:00",
+      "updated_at": "2025-10-15T21:54:23.101229+00:00",
+      "id_obra_original": 889,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 700,
+      "titulo": "O Duque Imoral Precisa Ser Educado em Casa maginot",
+      "url_relativa": "https://bato.to/series/192554/o-duque-imoral-precisa-ser-educado-em-casa",
+      "status": "ativo",
+      "ultimo_upload": null,
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 21.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 22.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.101236+00:00",
+      "updated_at": "2025-10-15T21:54:23.101238+00:00",
+      "id_obra_original": 700,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 516,
+      "titulo": "A Filha do Duque Não Quer Ser Mimada",
+      "url_relativa": "https://bato.to/series/190346/a-filha-do-duque-nao-quer-ser-mimada",
+      "status": "ativo",
+      "ultimo_upload": null,
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 41.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 42.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.101249+00:00",
+      "updated_at": "2025-10-15T21:54:23.101252+00:00",
+      "id_obra_original": 516,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 2450,
+      "titulo": "A bebê rei demônio está incomodada com os pais guerreiros",
+      "url_relativa": "https://bato.to/series/208697/a-bebe-rei-demonio-esta-incomodada-com-os-pais-guerreiros",
+      "status": "ativo",
+      "ultimo_upload": null,
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 3.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 4.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.101273+00:00",
+      "updated_at": "2025-10-15T21:54:23.101276+00:00",
+      "id_obra_original": 2450,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 1775,
+      "titulo": "Senhorita Não Tão Secundária",
+      "url_relativa": "https://bato.to/series/180523/senhorita-nao-tao-secundaria",
+      "status": "ativo",
+      "ultimo_upload": null,
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 161.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 163.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.101288+00:00",
+      "updated_at": "2025-10-15T21:54:23.101291+00:00",
+      "id_obra_original": 1775,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 972,
+      "titulo": "O Convite Lascivo da Duquesa",
+      "url_relativa": "https://bato.to/series/197887/o-convite-lascivo-da-duquesa",
+      "status": "ativo",
+      "ultimo_upload": null,
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 10.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 11.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.101349+00:00",
+      "updated_at": "2025-10-15T21:54:23.101354+00:00",
+      "id_obra_original": 972,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 2449,
+      "titulo": "O Cavalo Pálido",
+      "url_relativa": "https://bato.to/series/202904/the-pale-horse",
+      "status": "ativo",
+      "ultimo_upload": null,
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 11.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 12.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.101376+00:00",
+      "updated_at": "2025-10-15T21:54:23.101380+00:00",
+      "id_obra_original": 2449,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 2461,
+      "titulo": "Além do Nada",
+      "url_relativa": "https://bato.to/series/208848/alem-do-nada",
+      "status": "ativo",
+      "ultimo_upload": null,
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 2.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 3.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.101391+00:00",
+      "updated_at": "2025-10-15T21:54:23.101394+00:00",
+      "id_obra_original": 2461,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 696,
+      "titulo": "Uma vida de vilã estranha, mas eficaz",
+      "url_relativa": "https://bato.to/series/188464/uma-vida-de-vila-estranha-mas-eficaz",
+      "status": "ativo",
+      "ultimo_upload": null,
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 29.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 30.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.101401+00:00",
+      "updated_at": "2025-10-15T21:54:23.101403+00:00",
+      "id_obra_original": 696,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 1663,
+      "titulo": "Meu mestre não morde pessoas.",
+      "url_relativa": "https://bato.to/series/194486/meu-mestre-nao-morde-pessoas",
+      "status": "ativo",
+      "ultimo_upload": null,
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 22.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 23.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.101420+00:00",
+      "updated_at": "2025-10-15T21:54:23.101422+00:00",
+      "id_obra_original": 1663,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 1774,
+      "titulo": "A Regra de Ser Amiga de um Cara",
+      "url_relativa": "https://bato.to/series/207483/a-regra-de-ser-amiga-de-um-cara",
+      "status": "ativo",
+      "ultimo_upload": null,
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 48.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 49.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.101437+00:00",
+      "updated_at": "2025-10-15T21:54:23.101439+00:00",
+      "id_obra_original": 1774,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 136,
+      "titulo": "Estações de Florescimento",
+      "url_relativa": "https://bato.to/series/207450/temporada-de-flores",
+      "status": "ativo",
+      "ultimo_upload": null,
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 122.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 123.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.101460+00:00",
+      "updated_at": "2025-10-15T21:54:23.101463+00:00",
+      "id_obra_original": 136,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 2208,
+      "titulo": "Sem Mais Arrependimentos",
+      "url_relativa": "https://bato.to/series/203416/no-more-regrets",
+      "status": "ativo",
+      "ultimo_upload": null,
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 6.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 7.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.101510+00:00",
+      "updated_at": "2025-10-15T21:54:23.101513+00:00",
+      "id_obra_original": 2208,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 928,
+      "titulo": "Favorismo Fatal",
+      "url_relativa": "https://bato.to/series/197635/fatal-favoritism",
+      "status": "ativo",
+      "ultimo_upload": null,
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 10.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 11.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.101522+00:00",
+      "updated_at": "2025-10-15T21:54:23.101524+00:00",
+      "id_obra_original": 928,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 1768,
+      "titulo": "Pai Solteiro em Outro Mundo",
+      "url_relativa": "https://bato.to/series/198853/pai-solteiro-em-outro-mundo",
+      "status": "ativo",
+      "ultimo_upload": null,
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 16.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 17.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.101535+00:00",
+      "updated_at": "2025-10-15T21:54:23.101537+00:00",
+      "id_obra_original": 1768,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 1388,
+      "titulo": "Uma Colheirada Do Seu Amor",
+      "url_relativa": "https://bato.to/series/168849/a-spoonful-of-your-love",
+      "status": "ativo",
+      "ultimo_upload": null,
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 28.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 29.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.101545+00:00",
+      "updated_at": "2025-10-15T21:54:23.101547+00:00",
+      "id_obra_original": 1388,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 713,
+      "titulo": "Eu me tornei a filha do duque fantasma",
+      "url_relativa": "https://bato.to/series/186551/eu-me-tornei-a-filha-do-duque-fantasma",
+      "status": "ativo",
+      "ultimo_upload": null,
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 21.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 22.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.101556+00:00",
+      "updated_at": "2025-10-15T21:54:23.101558+00:00",
+      "id_obra_original": 713,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 2228,
+      "titulo": "Aulas de Reforço para Maçãs Verdes",
+      "url_relativa": "https://bato.to/series/206803/aulas-de-reforco-para-macas-verdes",
+      "status": "ativo",
+      "ultimo_upload": null,
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 126.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 127.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.101565+00:00",
+      "updated_at": "2025-10-15T21:54:23.101567+00:00",
+      "id_obra_original": 2228,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 2207,
+      "titulo": "Mesmo que a Desilusão Te Devore",
+      "url_relativa": "https://bato.to/series/207312/mesmo-que-a-desilusao-te-devore",
+      "status": "ativo",
+      "ultimo_upload": null,
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 49.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 50.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.101597+00:00",
+      "updated_at": "2025-10-15T21:54:23.101598+00:00",
+      "id_obra_original": 2207,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 1713,
+      "titulo": "Voltei como um gênio marcial",
+      "url_relativa": "https://bato.to/series/201514/voltei-como-um-genio-marcial",
+      "status": "ativo",
+      "ultimo_upload": null,
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 15.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 16.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.101612+00:00",
+      "updated_at": "2025-10-15T21:54:23.101614+00:00",
+      "id_obra_original": 1713,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 2329,
+      "titulo": "Eu Me Tornei a Esposa Malvada do Jovem Vilão",
+      "url_relativa": "https://bato.to/series/207806/eu-me-tornei-a-esposa-malvada-do-jovem-vilao",
+      "status": "ativo",
+      "ultimo_upload": null,
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 4.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 5.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.101621+00:00",
+      "updated_at": "2025-10-15T21:54:23.101622+00:00",
+      "id_obra_original": 2329,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 2206,
+      "titulo": "A Salvadora do Vilão",
+      "url_relativa": "https://bato.to/series/198735/a-salvadora-do-vilao",
+      "status": "ativo",
+      "ultimo_upload": null,
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 86.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 87.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.101628+00:00",
+      "updated_at": "2025-10-15T21:54:23.101629+00:00",
+      "id_obra_original": 2206,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 877,
+      "titulo": "Indo para a cama com meu hater!",
+      "url_relativa": "https://bato.to/series/198347/indo-para-a-cama-com-meu-hater",
+      "status": "ativo",
+      "ultimo_upload": null,
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 27.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 28.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.101653+00:00",
+      "updated_at": "2025-10-15T21:54:23.101655+00:00",
+      "id_obra_original": 877,
+      "numero_pulos_config": 0
+    }
+  ],
+  "metadata": {
+    "version": "2.0",
+    "created_at": "2025-10-15T21:54:23.101131+00:00",
+    "updated_at": "2025-10-15T21:54:23.101672+00:00",
+    "total_obras": 29
+  }
+}

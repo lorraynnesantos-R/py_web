@@ -1,0 +1,466 @@
+{% extends "base.html" %}
+
+{% block title %}Importar Nova Obra{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+    <!-- Breadcrumb -->
+    <nav aria-label="breadcrumb" class="mb-3">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="{{ url_for('mapping.index') }}">
+                    <i class="fas fa-book-open"></i> Mapeamento
+                </a>
+            </li>
+            <li class="breadcrumb-item active">Importar Nova Obra</li>
+        </ol>
+    </nav>
+
+    <!-- Header -->
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <div>
+            <h2 class="mb-1">
+                <i class="fas fa-plus text-primary"></i>
+                Importar Nova Obra
+            </h2>
+            <p class="text-muted mb-0">Adicione uma nova obra ao sistema de mapeamento</p>
+        </div>
+        <div>
+            <a href="{{ url_for('mapping.index') }}" class="btn btn-outline-secondary">
+                <i class="fas fa-arrow-left"></i> Voltar ao Mapeamento
+            </a>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-8">
+            <!-- Formulário de importação -->
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="mb-0">
+                        <i class="fas fa-form"></i>
+                        Informações da Nova Obra
+                    </h5>
+                </div>
+                <div class="card-body">
+                    <form method="POST" id="importForm" novalidate>
+                        <div class="mb-3">
+                            <label for="scan_name" class="form-label">
+                                <i class="fas fa-globe"></i>
+                                Scan <span class="text-danger">*</span>
+                            </label>
+                            <select class="form-select" id="scan_name" name="scan_name" required onchange="updateBaseUrl()">
+                                <option value="">Selecione um scan...</option>
+                                {% for scan_key, scan_info in scans.items() %}
+                                <option value="{{ scan_key }}" data-base-url="{{ scan_info.base_url or '' }}" 
+                                        {% if request.args.get('scan') == scan_key %}selected{% endif %}>
+                                    {{ scan_info.name or scan_key }}
+                                </option>
+                                {% endfor %}
+                            </select>
+                            <div class="invalid-feedback">
+                                Por favor, selecione um scan.
+                            </div>
+                            <div class="form-text">
+                                Escolha o scan onde a obra está disponível.
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="url_obra" class="form-label">
+                                <i class="fas fa-link"></i>
+                                URL da Obra <span class="text-danger">*</span>
+                            </label>
+                            <div class="input-group">
+                                <span class="input-group-text" id="baseUrlSpan">-</span>
+                                <input type="text" class="form-control" id="url_obra" name="url_obra" 
+                                       placeholder="/manga/nome-da-obra" required>
+                                <button type="button" class="btn btn-outline-primary" onclick="detectTitle()" id="detectBtn" disabled>
+                                    <i class="fas fa-search"></i> Detectar Título
+                                </button>
+                            </div>
+                            <div class="invalid-feedback">
+                                Por favor, informe a URL da obra.
+                            </div>
+                            <div class="form-text">
+                                URL relativa da obra no site do scan (ex: /manga/one-piece).
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="titulo" class="form-label">
+                                <i class="fas fa-book"></i>
+                                Título da Obra
+                            </label>
+                            <input type="text" class="form-control" id="titulo" name="titulo" 
+                                   placeholder="Deixe vazio para detecção automática" maxlength="200">
+                            <div class="form-text">
+                                Se deixado vazio, o sistema tentará detectar automaticamente.
+                            </div>
+                        </div>
+
+                        <!-- Preview da URL completa -->
+                        <div class="mb-3" id="previewSection" style="display: none;">
+                            <label class="form-label">URL Completa (Preview)</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="url_preview" readonly>
+                                <button type="button" class="btn btn-outline-secondary" onclick="testUrl()">
+                                    <i class="fas fa-external-link-alt"></i> Testar
+                                </button>
+                            </div>
+                            <div class="form-text">
+                                Verifique se a URL está correta antes de importar.
+                            </div>
+                        </div>
+
+                        <hr class="my-4">
+
+                        <!-- Configurações iniciais -->
+                        <h6 class="mb-3">
+                            <i class="fas fa-cog"></i>
+                            Configurações Iniciais
+                        </h6>
+
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label for="status_inicial" class="form-label">Status Inicial</label>
+                                <select class="form-select" id="status_inicial" name="status_inicial">
+                                    <option value="ativo" selected>Ativo (incluir no auto-update)</option>
+                                    <option value="quarentena">Quarentena (não incluir no auto-update)</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="prioridade" class="form-label">Processar Imediatamente</label>
+                                <div class="form-check form-switch mt-2">
+                                    <input class="form-check-input" type="checkbox" id="upload_imediato" name="upload_imediato">
+                                    <label class="form-check-label" for="upload_imediato">
+                                        Adicionar à fila de upload após importar
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Botões de ação -->
+                        <div class="d-flex justify-content-between">
+                            <div>
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="fas fa-plus"></i> Importar Obra
+                                </button>
+                                <button type="button" class="btn btn-outline-secondary" onclick="resetForm()">
+                                    <i class="fas fa-undo"></i> Limpar
+                                </button>
+                            </div>
+                            <div>
+                                <a href="{{ url_for('mapping.index') }}" class="btn btn-outline-danger">
+                                    <i class="fas fa-times"></i> Cancelar
+                                </a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <!-- Scans disponíveis -->
+            <div class="card mb-3">
+                <div class="card-header">
+                    <h6 class="mb-0">
+                        <i class="fas fa-globe"></i>
+                        Scans Disponíveis
+                    </h6>
+                </div>
+                <div class="card-body">
+                    {% if scans %}
+                        <div class="list-group list-group-flush">
+                            {% for scan_key, scan_info in scans.items() %}
+                            <div class="list-group-item px-0">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <strong>{{ scan_info.name or scan_key }}</strong>
+                                        {% if scan_info.base_url %}
+                                        <br><small class="text-muted">{{ scan_info.base_url }}</small>
+                                        {% endif %}
+                                    </div>
+                                    <button type="button" class="btn btn-outline-primary btn-sm" 
+                                            onclick="selectScan('{{ scan_key }}')">
+                                        <i class="fas fa-check"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        <div class="text-center text-muted">
+                            <i class="fas fa-search"></i>
+                            <p class="mb-0 small">Nenhum scan disponível</p>
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+
+            <!-- Dicas de importação -->
+            <div class="card mb-3">
+                <div class="card-header">
+                    <h6 class="mb-0">
+                        <i class="fas fa-lightbulb text-warning"></i>
+                        Dicas de Importação
+                    </h6>
+                </div>
+                <div class="card-body">
+                    <ul class="list-unstyled small mb-0">
+                        <li class="mb-2">
+                            <i class="fas fa-check text-success"></i>
+                            Teste a URL antes de importar
+                        </li>
+                        <li class="mb-2">
+                            <i class="fas fa-check text-success"></i>
+                            URLs devem começar com "/"
+                        </li>
+                        <li class="mb-2">
+                            <i class="fas fa-check text-success"></i>
+                            Use detecção automática de título
+                        </li>
+                        <li class="mb-2">
+                            <i class="fas fa-info-circle text-info"></i>
+                            Obras ativas entram no auto-update
+                        </li>
+                        <li class="mb-0">
+                            <i class="fas fa-info-circle text-info"></i>
+                            Upload imediato adiciona à fila
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Status de detecção -->
+            <div class="card" id="detectionStatus" style="display: none;">
+                <div class="card-header">
+                    <h6 class="mb-0">
+                        <i class="fas fa-search"></i>
+                        Status da Detecção
+                    </h6>
+                </div>
+                <div class="card-body">
+                    <div id="detectionContent">
+                        <!-- Conteúdo dinâmico -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal de progresso -->
+<div class="modal fade" id="progressModal" tabindex="-1" data-bs-backdrop="static">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">
+                    <i class="fas fa-spinner fa-spin"></i>
+                    Detectando Título
+                </h5>
+            </div>
+            <div class="modal-body">
+                <div class="text-center">
+                    <div class="spinner-border text-primary mb-3" role="status">
+                        <span class="visually-hidden">Carregando...</span>
+                    </div>
+                    <p>Acessando a página da obra para detectar o título...</p>
+                    <small class="text-muted">Isso pode levar alguns segundos.</small>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="{{ url_for('static', filename='js/app.js') }}"></script>
+<script>
+// Atualizar URL base quando scan muda
+function updateBaseUrl() {
+    const scanSelect = document.getElementById('scan_name');
+    const baseUrlSpan = document.getElementById('baseUrlSpan');
+    const urlObra = document.getElementById('url_obra');
+    const detectBtn = document.getElementById('detectBtn');
+    const previewSection = document.getElementById('previewSection');
+    
+    const selectedOption = scanSelect.options[scanSelect.selectedIndex];
+    const baseUrl = selectedOption.getAttribute('data-base-url') || '';
+    
+    if (baseUrl) {
+        baseUrlSpan.textContent = baseUrl;
+        detectBtn.disabled = false;
+        previewSection.style.display = 'block';
+        updateUrlPreview();
+    } else {
+        baseUrlSpan.textContent = '-';
+        detectBtn.disabled = true;
+        previewSection.style.display = 'none';
+    }
+}
+
+// Atualizar preview da URL
+function updateUrlPreview() {
+    const scanSelect = document.getElementById('scan_name');
+    const urlObra = document.getElementById('url_obra');
+    const preview = document.getElementById('url_preview');
+    
+    const selectedOption = scanSelect.options[scanSelect.selectedIndex];
+    const baseUrl = selectedOption.getAttribute('data-base-url') || '';
+    
+    if (baseUrl && urlObra.value) {
+        preview.value = baseUrl + urlObra.value;
+    } else {
+        preview.value = '';
+    }
+}
+
+// Selecionar scan da lista
+function selectScan(scanKey) {
+    document.getElementById('scan_name').value = scanKey;
+    updateBaseUrl();
+}
+
+// Testar URL
+function testUrl() {
+    const preview = document.getElementById('url_preview');
+    if (preview && preview.value) {
+        window.open(preview.value, '_blank');
+    }
+}
+
+// Detectar título automaticamente
+function detectTitle() {
+    const scanSelect = document.getElementById('scan_name');
+    const urlObra = document.getElementById('url_obra');
+    const tituloInput = document.getElementById('titulo');
+    
+    if (!scanSelect.value || !urlObra.value) {
+        showToast('Por favor, selecione um scan e informe a URL da obra.', 'warning');
+        return;
+    }
+    
+    const modal = new bootstrap.Modal(document.getElementById('progressModal'));
+    modal.show();
+    
+    // Simular detecção (TODO: implementar AJAX real)
+    setTimeout(() => {
+        modal.hide();
+        
+        // Mock de título detectado
+        const mockTitle = urlObra.value.split('/').pop().replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+        tituloInput.value = mockTitle;
+        
+        showDetectionStatus('success', `Título detectado: ${mockTitle}`);
+        showToast('Título detectado com sucesso!', 'success');
+    }, 2000);
+}
+
+// Mostrar status de detecção
+function showDetectionStatus(type, message) {
+    const statusCard = document.getElementById('detectionStatus');
+    const content = document.getElementById('detectionContent');
+    
+    let icon = 'fas fa-check-circle text-success';
+    let bgClass = 'alert-success';
+    
+    if (type === 'error') {
+        icon = 'fas fa-times-circle text-danger';
+        bgClass = 'alert-danger';
+    } else if (type === 'warning') {
+        icon = 'fas fa-exclamation-triangle text-warning';
+        bgClass = 'alert-warning';
+    }
+    
+    content.innerHTML = `
+        <div class="alert ${bgClass} alert-dismissible fade show">
+            <i class="${icon}"></i>
+            ${message}
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
+    `;
+    
+    statusCard.style.display = 'block';
+}
+
+// Reset form
+function resetForm() {
+    document.getElementById('importForm').reset();
+    document.getElementById('baseUrlSpan').textContent = '-';
+    document.getElementById('detectBtn').disabled = true;
+    document.getElementById('previewSection').style.display = 'none';
+    document.getElementById('detectionStatus').style.display = 'none';
+    
+    // Remover classes de validação
+    document.querySelectorAll('.is-invalid').forEach(el => {
+        el.classList.remove('is-invalid');
+    });
+}
+
+// Validação do formulário
+function validateForm() {
+    const form = document.getElementById('importForm');
+    const scanName = document.getElementById('scan_name');
+    const urlObra = document.getElementById('url_obra');
+    
+    let isValid = true;
+    
+    // Limpar validações anteriores
+    [scanName, urlObra].forEach(field => {
+        field.classList.remove('is-invalid');
+    });
+    
+    // Validar scan
+    if (!scanName.value) {
+        scanName.classList.add('is-invalid');
+        isValid = false;
+    }
+    
+    // Validar URL
+    if (!urlObra.value.trim()) {
+        urlObra.classList.add('is-invalid');
+        isValid = false;
+    } else if (!urlObra.value.startsWith('/')) {
+        urlObra.classList.add('is-invalid');
+        urlObra.nextElementSibling.nextElementSibling.textContent = 'URL deve começar com "/"';
+        isValid = false;
+    }
+    
+    return isValid;
+}
+
+// Event listeners
+document.addEventListener('DOMContentLoaded', function() {
+    const scanSelect = document.getElementById('scan_name');
+    const urlObra = document.getElementById('url_obra');
+    const form = document.getElementById('importForm');
+    
+    // Atualizar preview quando URL mudar
+    urlObra.addEventListener('input', updateUrlPreview);
+    
+    // Validação no submit
+    form.addEventListener('submit', function(e) {
+        if (!validateForm()) {
+            e.preventDefault();
+            e.stopPropagation();
+        }
+        
+        form.classList.add('was-validated');
+    });
+    
+    // Remover validação ao alterar valores
+    [scanSelect, urlObra].forEach(field => {
+        field.addEventListener('change', function() {
+            if (field.classList.contains('is-invalid')) {
+                field.classList.remove('is-invalid');
+            }
+        });
+    });
+    
+    // Inicializar se scan já selecionado (via URL param)
+    if (scanSelect.value) {
+        updateBaseUrl();
+    }
+});
+</script>
+{% endblock %}

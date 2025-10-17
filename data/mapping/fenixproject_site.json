@@ -1,0 +1,531 @@
+{
+  "scan_info": {
+    "name": "fenixproject_site",
+    "base_url": "https://fenixproject.site",
+    "last_check": null,
+    "active": true,
+    "scape_time": 30,
+    "description": "Migrado de obras_mapeadas.json em 2025-10-15"
+  },
+  "obras": [
+    {
+      "id": 768,
+      "titulo": "Meu Demônio Favorito",
+      "url_relativa": "https://fenixproject.site/manga/meu-demonio-favorito/",
+      "status": "ativo",
+      "ultimo_upload": null,
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 39.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 40.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.108186+00:00",
+      "updated_at": "2025-10-15T21:54:23.108188+00:00",
+      "id_obra_original": 768,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 2203,
+      "titulo": " As Noites da Imperatriz",
+      "url_relativa": "https://fenixproject.site/manga/as-noites-da-imperatriz/",
+      "status": "ativo",
+      "ultimo_upload": "2025-10-11T01:52:00.916923",
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 20.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 21.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.108205+00:00",
+      "updated_at": "2025-10-15T21:54:23.108207+00:00",
+      "id_obra_original": 2203,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 547,
+      "titulo": "Namorando um Ranker",
+      "url_relativa": "https://fenixproject.site/manga/namorando-um-ranker/",
+      "status": "ativo",
+      "ultimo_upload": null,
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 28.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 29.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.108216+00:00",
+      "updated_at": "2025-10-15T21:54:23.108217+00:00",
+      "id_obra_original": 547,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 719,
+      "titulo": "Você Não Vai Fugir de Mim",
+      "url_relativa": "https://fenixproject.site/manga/deus-do-sol/",
+      "status": "ativo",
+      "ultimo_upload": null,
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 47.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 48.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.108227+00:00",
+      "updated_at": "2025-10-15T21:54:23.108228+00:00",
+      "id_obra_original": 719,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 734,
+      "titulo": "Eu Vou Te Dar o Mais Podre",
+      "url_relativa": "https://fenixproject.site/manga/eu-vou-te-dar-o-mais-podre/",
+      "status": "ativo",
+      "ultimo_upload": null,
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 52.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 53.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.108243+00:00",
+      "updated_at": "2025-10-15T21:54:23.108244+00:00",
+      "id_obra_original": 734,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 929,
+      "titulo": "É Possível Pescar Sereias com uma Vara de Pescar?",
+      "url_relativa": "https://fenixproject.site/manga/da-pra-fisgar-uma-sereia-com-uma-vara-de-pesca/",
+      "status": "ativo",
+      "ultimo_upload": null,
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 18.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 19.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.108258+00:00",
+      "updated_at": "2025-10-15T21:54:23.108260+00:00",
+      "id_obra_original": 929,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 722,
+      "titulo": "Um Vira-Lata Está Vivendo no Jardim do Palácio",
+      "url_relativa": "https://fenixproject.site/manga/doguinho/",
+      "status": "ativo",
+      "ultimo_upload": null,
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 71.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 72.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.108268+00:00",
+      "updated_at": "2025-10-15T21:54:23.108269+00:00",
+      "id_obra_original": 722,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 2205,
+      "titulo": "Pegadas na Neve",
+      "url_relativa": "https://fenixproject.site/manga/14208/",
+      "status": "ativo",
+      "ultimo_upload": null,
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 6.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 7.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.108289+00:00",
+      "updated_at": "2025-10-15T21:54:23.108290+00:00",
+      "id_obra_original": 2205,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 686,
+      "titulo": "A Redenção do Conde Nottingham",
+      "url_relativa": "https://fenixproject.site/manga/a-redencao-do-conde-nottingham/",
+      "status": "ativo",
+      "ultimo_upload": null,
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 67.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 68.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.108295+00:00",
+      "updated_at": "2025-10-15T21:54:23.108296+00:00",
+      "id_obra_original": 686,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 701,
+      "titulo": "aí vem a colher de prata!!",
+      "url_relativa": "https://fenixproject.site/manga/ai-vem-a-colher-de-prata/",
+      "status": "ativo",
+      "ultimo_upload": null,
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 58.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 59.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.108314+00:00",
+      "updated_at": "2025-10-15T21:54:23.108316+00:00",
+      "id_obra_original": 701,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 1642,
+      "titulo": "Eu tentei ser sua espada leal.",
+      "url_relativa": "https://fenixproject.site/manga/eu-tentei-ser-sua-espada-leal/",
+      "status": "ativo",
+      "ultimo_upload": null,
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 76.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 77.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.108331+00:00",
+      "updated_at": "2025-10-15T21:54:23.108332+00:00",
+      "id_obra_original": 1642,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 1535,
+      "titulo": "Pensei que meu tempo tinha acabado!",
+      "url_relativa": "https://fenixproject.site/manga/pensei-que-meu-tempo-tinha-acabado/",
+      "status": "ativo",
+      "ultimo_upload": "2025-10-11T02:10:22.501352",
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 99.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 100.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.108352+00:00",
+      "updated_at": "2025-10-15T21:54:23.108353+00:00",
+      "id_obra_original": 1535,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 876,
+      "titulo": "Ela não é minha filha",
+      "url_relativa": "https://fenixproject.site/manga/ela-nao-e-minha-filha/",
+      "status": "ativo",
+      "ultimo_upload": null,
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 21.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 22.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.108377+00:00",
+      "updated_at": "2025-10-15T21:54:23.108379+00:00",
+      "id_obra_original": 876,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 687,
+      "titulo": "Meu Amado Opressor",
+      "url_relativa": "https://fenixproject.site/manga/meu-amado-opressor/",
+      "status": "ativo",
+      "ultimo_upload": null,
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 82.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 83.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.108387+00:00",
+      "updated_at": "2025-10-15T21:54:23.108388+00:00",
+      "id_obra_original": 687,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 698,
+      "titulo": "O Preço é Tudo para Você",
+      "url_relativa": "https://fenixproject.site/manga/o-preco-e-tudo-pra-voce/",
+      "status": "ativo",
+      "ultimo_upload": null,
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 43.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 44.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.108409+00:00",
+      "updated_at": "2025-10-15T21:54:23.108410+00:00",
+      "id_obra_original": 698,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 746,
+      "titulo": "Uma Gata, Adotada por uma Família de Lobos?",
+      "url_relativa": "https://fenixproject.site/manga/gatinha-adotada/",
+      "status": "ativo",
+      "ultimo_upload": null,
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 47.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 48.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.108422+00:00",
+      "updated_at": "2025-10-15T21:54:23.108423+00:00",
+      "id_obra_original": 746,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 772,
+      "titulo": "Complexo de Aparência",
+      "url_relativa": "https://fenixproject.site/manga/complexo-de-aparencia/",
+      "status": "ativo",
+      "ultimo_upload": null,
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 34.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 35.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.108438+00:00",
+      "updated_at": "2025-10-15T21:54:23.108439+00:00",
+      "id_obra_original": 772,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 947,
+      "titulo": "Para a Amante do Meu Marido",
+      "url_relativa": "https://fenixproject.site/manga/para-a-amante-do-meu-marido/",
+      "status": "ativo",
+      "ultimo_upload": null,
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 64.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 65.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.108450+00:00",
+      "updated_at": "2025-10-15T21:54:23.108451+00:00",
+      "id_obra_original": 947,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 783,
+      "titulo": "Floricultura S",
+      "url_relativa": "https://fenixproject.site/manga/florzinha-sad0/",
+      "status": "ativo",
+      "ultimo_upload": null,
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 46.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 47.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.108467+00:00",
+      "updated_at": "2025-10-15T21:54:23.108469+00:00",
+      "id_obra_original": 783,
+      "numero_pulos_config": 0
+    }
+  ],
+  "metadata": {
+    "version": "2.0",
+    "created_at": "2025-10-15T21:54:23.108176+00:00",
+    "updated_at": "2025-10-15T21:54:23.108485+00:00",
+    "total_obras": 19
+  }
+}

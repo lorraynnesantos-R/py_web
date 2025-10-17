@@ -1,0 +1,72 @@
+{
+  "scan_info": {
+    "name": "astratoons",
+    "base_url": "https://astratoons.com",
+    "last_check": null,
+    "active": true,
+    "scape_time": 30,
+    "description": "Migrado de obras_mapeadas.json em 2025-10-15"
+  },
+  "obras": [
+    {
+      "id": 2418,
+      "titulo": "O Rei Demônio que Perdeu o Emprego",
+      "url_relativa": "https://astratoons.com/o-rei-dem%C3%B4nio-que-perdeu-o-emprego/",
+      "status": "pausado",
+      "ultimo_upload": null,
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 149.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 150.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.098094+00:00",
+      "updated_at": "2025-10-15T21:54:23.098096+00:00",
+      "id_obra_original": 2418,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 369,
+      "titulo": "Graveto Reforçado de Nível + 99",
+      "url_relativa": "https://astratoons.com/graveto-refor%C3%A7ado-de-n%C3%ADvel-99/",
+      "status": "pausado",
+      "ultimo_upload": null,
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 60.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 61.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.098171+00:00",
+      "updated_at": "2025-10-15T21:54:23.098174+00:00",
+      "id_obra_original": 369,
+      "numero_pulos_config": 0
+    }
+  ],
+  "metadata": {
+    "version": "2.0",
+    "created_at": "2025-10-15T21:54:23.098073+00:00",
+    "updated_at": "2025-10-15T21:54:23.098205+00:00",
+    "total_obras": 2
+  }
+}

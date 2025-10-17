@@ -1,0 +1,13 @@
+{
+  "https://httpbin.org/status/200": {
+    "total_checks": 3,
+    "successful_checks": 3,
+    "failed_checks": 0,
+    "last_online": "2025-10-16T01:07:07.643436+00:00",
+    "last_offline": null,
+    "avg_response_time_ms": 784.3134999275208,
+    "uptime_percentage": 100.0,
+    "consecutive_failures": 0,
+    "consecutive_successes": 3
+  }
+}

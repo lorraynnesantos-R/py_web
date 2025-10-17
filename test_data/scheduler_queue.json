@@ -1,0 +1,43 @@
+{
+  "jobs": [
+    {
+      "id": "manual_1760626765_obra_manual_1",
+      "obra_id": "obra_manual_1",
+      "scan_name": "mangayabu",
+      "priority": 1,
+      "status": "pending",
+      "created_at": "2025-10-16T11:59:25.247632",
+      "started_at": null,
+      "completed_at": null,
+      "error_message": null,
+      "retry_count": 0,
+      "max_retries": 3
+    },
+    {
+      "id": "auto_1760626765_obra_auto_1",
+      "obra_id": "obra_auto_1",
+      "scan_name": "scan1",
+      "priority": 2,
+      "status": "pending",
+      "created_at": "2025-10-16T11:59:25.248652",
+      "started_at": null,
+      "completed_at": null,
+      "error_message": null,
+      "retry_count": 0,
+      "max_retries": 3
+    },
+    {
+      "id": "auto_1760626765_obra_auto_2",
+      "obra_id": "obra_auto_2",
+      "scan_name": "scan2",
+      "priority": 2,
+      "status": "pending",
+      "created_at": "2025-10-16T11:59:25.249163",
+      "started_at": null,
+      "completed_at": null,
+      "error_message": null,
+      "retry_count": 0,
+      "max_retries": 3
+    }
+  ]
+}

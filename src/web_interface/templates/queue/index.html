@@ -1,0 +1,631 @@
+{% extends "base.html" %} {% block title %}Fila de Processamento - MediocreToons
+Auto Uploader v2{% endblock %} {% block page_title %}
+<i class="fas fa-layer-group"></i>
+Fila de Processamento {% endblock %} {% block content %}
+<div class="row">
+  <!-- Estatísticas Rápidas -->
+  <div class="col-md-12 mb-4">
+    <div class="row">
+      <div class="col-md-3">
+        <div class="card bg-primary text-white">
+          <div class="card-body text-center">
+            <i class="fas fa-clock fa-2x mb-2"></i>
+            <h4>{{ queue_status.total_queue_size or 0 }}</h4>
+            <small>Pendentes</small>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card bg-success text-white">
+          <div class="card-body text-center">
+            <i class="fas fa-cog fa-spin fa-2x mb-2"></i>
+            <h4>{{ queue_status.active_jobs or 0 }}</h4>
+            <small>Processando</small>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card bg-info text-white">
+          <div class="card-body text-center">
+            <i class="fas fa-check-circle fa-2x mb-2"></i>
+            <h4>{{ completed_jobs|length }}</h4>
+            <small>Completados</small>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card bg-danger text-white">
+          <div class="card-body text-center">
+            <i class="fas fa-exclamation-triangle fa-2x mb-2"></i>
+            <h4>{{ failed_jobs|length }}</h4>
+            <small>Falharam</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <!-- Status da Fila -->
+  <div class="col-md-4">
+    <div class="card h-100">
+      <div class="card-header">
+        <h6 class="mb-0">
+          <i class="fas fa-info-circle"></i>
+          Status da Fila
+        </h6>
+      </div>
+      <div class="card-body">
+        <div class="mb-3">
+          <div class="d-flex justify-content-between align-items-center mb-1">
+            <small class="text-muted">Status</small>
+            <span
+              class="badge bg-{{ 'success' if queue_status.is_processing else 'secondary' }}"
+            >
+              {{ 'Ativa' if queue_status.is_processing else 'Parada' }}
+            </span>
+          </div>
+        </div>
+
+        {% if queue_status.priority_counts %}
+        <div class="mb-3">
+          <small class="text-muted fw-bold">Por Prioridade:</small>
+          {% for priority, count in queue_status.priority_counts.items() %}
+          <div class="d-flex justify-content-between align-items-center">
+            <small>
+              <span
+                class="badge bg-{{ 'danger' if priority == 'URGENT' 
+                                                   else 'warning' if priority == 'HIGH' 
+                                                   else 'secondary' }}"
+              >
+                {{ priority }}
+              </span>
+            </small>
+            <small><strong>{{ count }}</strong></small>
+          </div>
+          {% endfor %}
+        </div>
+        {% endif %} {% if queue_status.scan_counts %}
+        <div class="mb-3">
+          <small class="text-muted fw-bold">Por Scan:</small>
+          {% for scan, count in queue_status.scan_counts.items() %}
+          <div class="d-flex justify-content-between align-items-center">
+            <small><code>{{ scan }}</code></small>
+            <small><strong>{{ count }}</strong></small>
+          </div>
+          {% endfor %}
+        </div>
+        {% endif %} {% if queue_stats %}
+        <div class="mt-3 pt-3 border-top">
+          <small class="text-muted">Taxa de Sucesso:</small><br />
+          <div class="progress mb-2" style="height: 20px">
+            <div
+              class="progress-bar bg-success"
+              style="width: {{ queue_stats.success_rate or 0 }}%"
+            >
+              {{ "%.1f"|format(queue_stats.success_rate or 0) }}%
+            </div>
+          </div>
+          <small class="text-muted">
+            {{ queue_stats.total_jobs_processed or 0 }} jobs processados
+          </small>
+        </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+
+  <!-- Jobs em Andamento -->
+  <div class="col-md-8">
+    <div class="card h-100">
+      <div
+        class="card-header d-flex justify-content-between align-items-center"
+      >
+        <h6 class="mb-0">
+          <i class="fas fa-tasks"></i>
+          Jobs Ativos
+        </h6>
+        <div>
+          <button class="btn btn-sm btn-outline-primary" id="refreshQueue">
+            <i class="fas fa-sync-alt"></i>
+            Atualizar
+          </button>
+        </div>
+      </div>
+      <div class="card-body p-0">
+        {% if processing_jobs %}
+        <div class="table-responsive">
+          <table class="table table-hover mb-0">
+            <thead class="table-light">
+              <tr>
+                <th>Job ID</th>
+                <th>Tipo</th>
+                <th>Obra</th>
+                <th>Status</th>
+                <th>Progresso</th>
+                <th>Ações</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for job in processing_jobs %}
+              <tr>
+                <td>
+                  <code class="small">{{ job.job_id[:8] }}...</code>
+                </td>
+                <td>
+                  <span
+                    class="badge bg-{{ 'primary' if job.job_type == 'AUTO' else 'secondary' }}"
+                  >
+                    {{ job.job_type }}
+                  </span>
+                </td>
+                <td>
+                  <strong>{{ job.obra_name or 'N/A' }}</strong><br />
+                  <small class="text-muted">{{ job.scan_name }}</small>
+                </td>
+                <td>
+                  <span class="badge bg-success"> {{ job.status }} </span>
+                </td>
+                <td>
+                  <div class="progress" style="height: 15px">
+                    <div
+                      class="progress-bar progress-bar-animated"
+                      style="width: 75%"
+                    >
+                      75%
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <button
+                    class="btn btn-sm btn-outline-info"
+                    onclick="viewJobDetails('{{ job.job_id }}')"
+                  >
+                    <i class="fas fa-eye"></i>
+                  </button>
+                  <button
+                    class="btn btn-sm btn-outline-danger"
+                    onclick="cancelJob('{{ job.job_id }}')"
+                  >
+                    <i class="fas fa-times"></i>
+                  </button>
+                </td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+        {% else %}
+        <div class="text-center py-4">
+          <i class="fas fa-cog fa-3x text-muted mb-3"></i>
+          <h5 class="text-muted">Nenhum job em processamento</h5>
+          <p class="text-muted">A fila está vazia ou parada.</p>
+        </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row mt-4">
+  <!-- Fila de Espera -->
+  <div class="col-md-6">
+    <div class="card">
+      <div class="card-header">
+        <h6 class="mb-0">
+          <i class="fas fa-clock"></i>
+          Fila de Espera ({{ pending_jobs|length }})
+        </h6>
+      </div>
+      <div class="card-body p-0" style="max-height: 400px; overflow-y: auto">
+        {% if pending_jobs %}
+        <div class="table-responsive">
+          <table class="table table-sm mb-0">
+            <thead class="table-light sticky-top">
+              <tr>
+                <th>Prioridade</th>
+                <th>Obra</th>
+                <th>Tipo</th>
+                <th>Criado</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for job in pending_jobs %}
+              <tr>
+                <td>
+                  <span
+                    class="badge bg-{{ 'danger' if job.priority == 'URGENT' 
+                                                           else 'warning' if job.priority == 'HIGH' 
+                                                           else 'secondary' }}"
+                  >
+                    {{ job.priority }}
+                  </span>
+                </td>
+                <td>
+                  <small><strong>{{ job.obra_name or 'N/A' }}</strong></small
+                  ><br />
+                  <small class="text-muted">{{ job.scan_name }}</small>
+                </td>
+                <td>
+                  <span
+                    class="badge bg-{{ 'primary' if job.job_type == 'AUTO' else 'secondary' }}"
+                  >
+                    {{ job.job_type }}
+                  </span>
+                </td>
+                <td>
+                  <small>{{ job.created_at }}</small>
+                </td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+        {% else %}
+        <div class="text-center py-3">
+          <i class="fas fa-inbox fa-2x text-muted mb-2"></i>
+          <p class="text-muted mb-0">Fila vazia</p>
+        </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+
+  <!-- Jobs Completados Recentemente -->
+  <div class="col-md-6">
+    <div class="card">
+      <div class="card-header">
+        <h6 class="mb-0">
+          <i class="fas fa-check-circle"></i>
+          Completados Recentemente
+        </h6>
+      </div>
+      <div class="card-body p-0" style="max-height: 400px; overflow-y: auto">
+        {% if completed_jobs %}
+        <div class="table-responsive">
+          <table class="table table-sm mb-0">
+            <thead class="table-light sticky-top">
+              <tr>
+                <th>Obra</th>
+                <th>Tipo</th>
+                <th>Duração</th>
+                <th>Concluído</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for job in completed_jobs %}
+              <tr>
+                <td>
+                  <small><strong>{{ job.obra_name or 'N/A' }}</strong></small
+                  ><br />
+                  <small class="text-muted">{{ job.scan_name }}</small>
+                </td>
+                <td>
+                  <span
+                    class="badge bg-{{ 'primary' if job.job_type == 'AUTO' else 'secondary' }}"
+                  >
+                    {{ job.job_type }}
+                  </span>
+                </td>
+                <td>
+                  <small>{{ job.processing_time_seconds or 0 }}s</small>
+                </td>
+                <td>
+                  <small>{{ job.updated_at }}</small>
+                </td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+        {% else %}
+        <div class="text-center py-3">
+          <i class="fas fa-history fa-2x text-muted mb-2"></i>
+          <p class="text-muted mb-0">Nenhum job completado</p>
+        </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Jobs com Falha -->
+{% if failed_jobs %}
+<div class="row mt-4">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-header bg-danger text-white">
+        <h6 class="mb-0">
+          <i class="fas fa-exclamation-triangle"></i>
+          Jobs com Falha ({{ failed_jobs|length }})
+        </h6>
+      </div>
+      <div class="card-body p-0">
+        <div class="table-responsive">
+          <table class="table table-hover mb-0">
+            <thead class="table-light">
+              <tr>
+                <th>Job ID</th>
+                <th>Obra</th>
+                <th>Erro</th>
+                <th>Tentativas</th>
+                <th>Falhou em</th>
+                <th>Ações</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for job in failed_jobs %}
+              <tr>
+                <td>
+                  <code class="small">{{ job.job_id[:8] }}...</code>
+                </td>
+                <td>
+                  <strong>{{ job.obra_name or 'N/A' }}</strong><br />
+                  <small class="text-muted">{{ job.scan_name }}</small>
+                </td>
+                <td>
+                  <small class="text-danger"
+                    >{{ job.error_message or 'Erro desconhecido' }}</small
+                  >
+                </td>
+                <td>
+                  <span class="badge bg-warning"
+                    >{{ job.retry_count or 0 }}/3</span
+                  >
+                </td>
+                <td>
+                  <small>{{ job.updated_at }}</small>
+                </td>
+                <td>
+                  <button
+                    class="btn btn-sm btn-outline-primary"
+                    onclick="retryJob('{{ job.job_id }}')"
+                  >
+                    <i class="fas fa-redo"></i>
+                    Tentar Novamente
+                  </button>
+                  <button
+                    class="btn btn-sm btn-outline-info"
+                    onclick="viewJobDetails('{{ job.job_id }}')"
+                  >
+                    <i class="fas fa-eye"></i>
+                  </button>
+                </td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endif %}
+
+<!-- Modal de Detalhes do Job -->
+<div class="modal fade" id="jobDetailModal" tabindex="-1">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Detalhes do Job</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <div id="jobDetailContent">
+          <div class="text-center">
+            <div class="spinner-border" role="status">
+              <span class="visually-hidden">Carregando...</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          Fechar
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %} {% block extra_css %}
+<style>
+  .sticky-top {
+    position: sticky;
+    top: 0;
+    z-index: 1020;
+  }
+
+  .card-body::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .card-body::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 3px;
+  }
+
+  .card-body::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 3px;
+  }
+
+  .card-body::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+
+  .progress-bar-animated {
+    animation: progress-bar-stripes 1s linear infinite;
+  }
+
+  @keyframes progress-bar-stripes {
+    0% {
+      background-position: 1rem 0;
+    }
+    100% {
+      background-position: 0 0;
+    }
+  }
+</style>
+{% endblock %} {% block extra_js %}
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    // Refresh queue
+    document
+      .getElementById("refreshQueue")
+      .addEventListener("click", function () {
+        location.reload();
+      });
+
+    // Auto refresh every 30 seconds
+    setInterval(function () {
+      location.reload();
+    }, 30000);
+  });
+
+  function viewJobDetails(jobId) {
+    const modal = new bootstrap.Modal(
+      document.getElementById("jobDetailModal")
+    );
+    const content = document.getElementById("jobDetailContent");
+
+    // Show loading
+    content.innerHTML = `
+        <div class="text-center">
+            <div class="spinner-border" role="status">
+                <span class="visually-hidden">Carregando...</span>
+            </div>
+        </div>
+    `;
+
+    modal.show();
+
+    // Load job details
+    fetch(`/api/queue/job/${jobId}`)
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.success) {
+          const job = data.data;
+          content.innerHTML = `
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h6>Informações Básicas</h6>
+                            <table class="table table-sm">
+                                <tr><td><strong>Job ID:</strong></td><td><code>${
+                                  job.job_id
+                                }</code></td></tr>
+                                <tr><td><strong>Tipo:</strong></td><td><span class="badge bg-${
+                                  job.job_type === "AUTO"
+                                    ? "primary"
+                                    : "secondary"
+                                }">${job.job_type}</span></td></tr>
+                                <tr><td><strong>Status:</strong></td><td><span class="badge bg-info">${
+                                  job.status
+                                }</span></td></tr>
+                                <tr><td><strong>Prioridade:</strong></td><td><span class="badge bg-warning">${
+                                  job.priority
+                                }</span></td></tr>
+                            </table>
+                        </div>
+                        <div class="col-md-6">
+                            <h6>Obra</h6>
+                            <table class="table table-sm">
+                                <tr><td><strong>Nome:</strong></td><td>${
+                                  job.obra_name || "N/A"
+                                }</td></tr>
+                                <tr><td><strong>Scan:</strong></td><td><code>${
+                                  job.scan_name
+                                }</code></td></tr>
+                                <tr><td><strong>URL:</strong></td><td><small>${
+                                  job.obra_url || "N/A"
+                                }</small></td></tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h6>Timestamps</h6>
+                            <table class="table table-sm">
+                                <tr><td><strong>Criado:</strong></td><td>${
+                                  job.created_at
+                                }</td></tr>
+                                <tr><td><strong>Iniciado:</strong></td><td>${
+                                  job.started_at || "N/A"
+                                }</td></tr>
+                                <tr><td><strong>Atualizado:</strong></td><td>${
+                                  job.updated_at
+                                }</td></tr>
+                            </table>
+                        </div>
+                    </div>
+                    ${
+                      job.error_message
+                        ? `
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h6 class="text-danger">Erro</h6>
+                            <div class="alert alert-danger">
+                                <code>${job.error_message}</code>
+                            </div>
+                        </div>
+                    </div>
+                    `
+                        : ""
+                    }
+                `;
+        } else {
+          content.innerHTML = `
+                    <div class="alert alert-danger">
+                        Erro ao carregar detalhes do job: ${data.message}
+                    </div>
+                `;
+        }
+      })
+      .catch((error) => {
+        content.innerHTML = `
+                <div class="alert alert-danger">
+                    Erro ao carregar detalhes: ${error.message}
+                </div>
+            `;
+      });
+  }
+
+  function cancelJob(jobId) {
+    if (confirm("Tem certeza que deseja cancelar este job?")) {
+      fetch(`/api/queue/job/${jobId}/cancel`, { method: "POST" })
+        .then((response) => response.json())
+        .then((data) => {
+          if (data.success) {
+            location.reload();
+          } else {
+            alert("Erro ao cancelar job: " + data.message);
+          }
+        })
+        .catch((error) => {
+          alert("Erro ao cancelar job: " + error.message);
+        });
+    }
+  }
+
+  function retryJob(jobId) {
+    if (confirm("Tentar processar este job novamente?")) {
+      fetch(`/api/queue/job/${jobId}/retry`, { method: "POST" })
+        .then((response) => response.json())
+        .then((data) => {
+          if (data.success) {
+            location.reload();
+          } else {
+            alert("Erro ao reprocessar job: " + data.message);
+          }
+        })
+        .catch((error) => {
+          alert("Erro ao reprocessar job: " + error.message);
+        });
+    }
+  }
+</script>
+{% endblock %}

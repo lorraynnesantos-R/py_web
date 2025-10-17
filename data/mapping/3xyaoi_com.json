@@ -1,0 +1,99 @@
+{
+  "scan_info": {
+    "name": "3xyaoi_com",
+    "base_url": "https://3xyaoi.com",
+    "last_check": null,
+    "active": true,
+    "scape_time": 30,
+    "description": "Migrado de obras_mapeadas.json em 2025-10-15"
+  },
+  "obras": [
+    {
+      "id": 2517,
+      "titulo": "Herói vs Vilão",
+      "url_relativa": "https://3xyaoi.com/bl/hero-vs-villain/",
+      "status": "ativo",
+      "ultimo_upload": "2025-10-10T23:33:34.963084",
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 70.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 71.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.107421+00:00",
+      "updated_at": "2025-10-15T21:54:23.107422+00:00",
+      "id_obra_original": 2517,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 1442,
+      "titulo": "Noite dos Não Marcados",
+      "url_relativa": "https://3xyaoi.com/bl/night-of-muheun/",
+      "status": "ativo",
+      "ultimo_upload": "2025-10-09T21:29:38.748338",
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 56.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 57.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.107445+00:00",
+      "updated_at": "2025-10-15T21:54:23.107446+00:00",
+      "id_obra_original": 1442,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 1101,
+      "titulo": "Tubarão de cartas",
+      "url_relativa": "https://3xyaoi.com/bl/card-shark/",
+      "status": "ativo",
+      "ultimo_upload": "2025-10-09T21:31:17.229747",
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 33.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 34.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.107462+00:00",
+      "updated_at": "2025-10-15T21:54:23.107463+00:00",
+      "id_obra_original": 1101,
+      "numero_pulos_config": 0
+    }
+  ],
+  "metadata": {
+    "version": "2.0",
+    "created_at": "2025-10-15T21:54:23.107408+00:00",
+    "updated_at": "2025-10-15T21:54:23.107484+00:00",
+    "total_obras": 3
+  }
+}

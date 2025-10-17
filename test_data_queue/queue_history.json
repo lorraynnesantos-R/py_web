@@ -1,0 +1,41 @@
+{
+  "jobs": [
+    {
+      "id": "manual_1760627156_90233480",
+      "obra_id": "obra_urgent",
+      "scan_name": "mangayabu",
+      "priority": "QueuePriority.URGENT",
+      "state": "JobState.COMPLETED",
+      "created_at": "2025-10-16 12:05:56.696946",
+      "scheduled_for": null,
+      "started_at": "2025-10-16 12:05:56.704637",
+      "completed_at": "2025-10-16 12:05:57.705569",
+      "error_message": null,
+      "retry_count": 0,
+      "max_retries": 3,
+      "timeout_seconds": 300,
+      "metadata": {
+        "test_result": "success"
+      }
+    },
+    {
+      "id": "manual_1760627156_f715af8e",
+      "obra_id": "obra_manual",
+      "scan_name": "scan1",
+      "priority": "QueuePriority.HIGH",
+      "state": "JobState.COMPLETED",
+      "created_at": "2025-10-16 12:05:56.698991",
+      "scheduled_for": null,
+      "started_at": "2025-10-16 12:05:57.708153",
+      "completed_at": "2025-10-16 12:05:58.709250",
+      "error_message": null,
+      "retry_count": 0,
+      "max_retries": 3,
+      "timeout_seconds": 300,
+      "metadata": {
+        "test_result": "success"
+      }
+    }
+  ],
+  "timestamp": "2025-10-16T12:05:59.714680"
+}

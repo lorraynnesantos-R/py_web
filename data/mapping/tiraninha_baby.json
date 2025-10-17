@@ -1,0 +1,126 @@
+{
+  "scan_info": {
+    "name": "tiraninha_baby",
+    "base_url": "https://tiraninha.baby",
+    "last_check": null,
+    "active": true,
+    "scape_time": 30,
+    "description": "Migrado de obras_mapeadas.json em 2025-10-15"
+  },
+  "obras": [
+    {
+      "id": 2519,
+      "titulo": "Pai, Eu nunca… te perdoarei!",
+      "url_relativa": "https://tiraninha.baby/manga/pai-eu-nunca-te-perdoarei/",
+      "status": "ativo",
+      "ultimo_upload": null,
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 36.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 37.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.124804+00:00",
+      "updated_at": "2025-10-15T21:54:23.124807+00:00",
+      "id_obra_original": 2519,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 715,
+      "titulo": "Bebê Tirana",
+      "url_relativa": "https://tiraninha.baby/manga/bebe-tirano/",
+      "status": "ativo",
+      "ultimo_upload": null,
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 95.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 96.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.124841+00:00",
+      "updated_at": "2025-10-15T21:54:23.124844+00:00",
+      "id_obra_original": 715,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 1631,
+      "titulo": "Eu Me Tornei o Primeiro Amor do Meu Filho",
+      "url_relativa": "https://tiraninha.baby/manga/eu-me-tornei-o-primeiro-amor-do-meu-filho/",
+      "status": "ativo",
+      "ultimo_upload": null,
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 26.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 27.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.124894+00:00",
+      "updated_at": "2025-10-15T21:54:23.124897+00:00",
+      "id_obra_original": 1631,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 569,
+      "titulo": "A Flor que Empunha a Espada",
+      "url_relativa": "https://tiraninha.baby/manga/a-flor-que-empunhava-uma-espada/",
+      "status": "ativo",
+      "ultimo_upload": null,
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 37.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 39.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.124913+00:00",
+      "updated_at": "2025-10-15T21:54:23.124916+00:00",
+      "id_obra_original": 569,
+      "numero_pulos_config": 0
+    }
+  ],
+  "metadata": {
+    "version": "2.0",
+    "created_at": "2025-10-15T21:54:23.124775+00:00",
+    "updated_at": "2025-10-15T21:54:23.124941+00:00",
+    "total_obras": 4
+  }
+}

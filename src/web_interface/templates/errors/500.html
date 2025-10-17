@@ -1,0 +1,37 @@
+{% extends "base.html" %} {% block title %}Erro interno - {{ super() }}{%
+endblock %} {% block content %}
+<div class="row justify-content-center">
+  <div class="col-lg-6">
+    <div class="card border-danger">
+      <div class="card-body text-center py-5">
+        <div class="mb-4">
+          <i class="bi bi-x-circle text-danger" style="font-size: 4rem"></i>
+        </div>
+
+        <h1 class="display-4 fw-bold text-danger">500</h1>
+        <h4 class="mb-3">Erro interno do servidor</h4>
+
+        <p class="text-muted mb-4">
+          Ocorreu um erro interno no servidor. Nossa equipe foi notificada.
+        </p>
+
+        {% if error and config.DEBUG %}
+        <div class="alert alert-danger text-start mb-4">
+          <h6>Detalhes do erro (modo debug):</h6>
+          <code>{{ error }}</code>
+        </div>
+        {% endif %}
+
+        <div class="d-grid gap-2 d-md-block">
+          <a href="{{ url_for('dashboard.index') }}" class="btn btn-primary">
+            <i class="bi bi-house me-2"></i>Voltar ao Dashboard
+          </a>
+          <button onclick="location.reload()" class="btn btn-outline-secondary">
+            <i class="bi bi-arrow-clockwise me-2"></i>Tentar Novamente
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

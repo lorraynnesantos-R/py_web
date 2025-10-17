@@ -1,0 +1,444 @@
+{% extends "base.html" %} {% block title %}Editar: {{ obra.titulo }}{% endblock
+%} {% block content %}
+<div class="container-fluid">
+  <!-- Breadcrumb -->
+  <nav aria-label="breadcrumb" class="mb-3">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item">
+        <a href="{{ url_for('mapping.index') }}">
+          <i class="fas fa-book-open"></i> Mapeamento
+        </a>
+      </li>
+      <li class="breadcrumb-item">
+        <a href="{{ url_for('mapping.scan_detail', scan_name=scan_name) }}">
+          {{ scan_info.name or scan_name }}
+        </a>
+      </li>
+      <li class="breadcrumb-item">
+        <a
+          href="{{ url_for('mapping.obra_detail', scan_name=scan_name, obra_id=obra.id) }}"
+        >
+          {{ obra.titulo }}
+        </a>
+      </li>
+      <li class="breadcrumb-item active">Editar</li>
+    </ol>
+  </nav>
+
+  <!-- Header -->
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <div>
+      <h2 class="mb-1">
+        <i class="fas fa-edit text-primary"></i>
+        Editar Obra
+      </h2>
+      <p class="text-muted mb-0">
+        Modifique as informações da obra {{ obra.titulo }}
+      </p>
+    </div>
+    <div>
+      <a
+        href="{{ url_for('mapping.obra_detail', scan_name=scan_name, obra_id=obra.id) }}"
+        class="btn btn-outline-secondary"
+      >
+        <i class="fas fa-arrow-left"></i> Voltar
+      </a>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-8">
+      <!-- Formulário de edição -->
+      <div class="card">
+        <div class="card-header">
+          <h5 class="mb-0">
+            <i class="fas fa-form"></i>
+            Informações da Obra
+          </h5>
+        </div>
+        <div class="card-body">
+          <form method="POST" id="editForm" novalidate>
+            <div class="mb-3">
+              <label for="titulo" class="form-label">
+                <i class="fas fa-book"></i>
+                Título da Obra <span class="text-danger">*</span>
+              </label>
+              <input
+                type="text"
+                class="form-control"
+                id="titulo"
+                name="titulo"
+                value="{{ obra.titulo }}"
+                required
+                maxlength="200"
+              />
+              <div class="invalid-feedback">
+                Por favor, informe o título da obra.
+              </div>
+              <div class="form-text">
+                Nome da obra como aparece no site do scan.
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="url_relativa" class="form-label">
+                <i class="fas fa-link"></i>
+                URL Relativa <span class="text-danger">*</span>
+              </label>
+              <div class="input-group">
+                {% if scan_info.base_url %}
+                <span class="input-group-text">{{ scan_info.base_url }}</span>
+                {% endif %}
+                <input
+                  type="text"
+                  class="form-control"
+                  id="url_relativa"
+                  name="url_relativa"
+                  value="{{ obra.url_relativa }}"
+                  required
+                />
+                <div class="invalid-feedback">
+                  Por favor, informe a URL relativa da obra.
+                </div>
+              </div>
+              <div class="form-text">
+                Caminho relativo da obra no site (ex: /manga/nome-da-obra).
+              </div>
+            </div>
+
+            <!-- Preview da URL completa -->
+            {% if scan_info.base_url %}
+            <div class="mb-3">
+              <label class="form-label">URL Completa (Preview)</label>
+              <div class="input-group">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="url_preview"
+                  readonly
+                />
+                <button
+                  type="button"
+                  class="btn btn-outline-primary"
+                  onclick="testUrl()"
+                  id="testUrlBtn"
+                >
+                  <i class="fas fa-external-link-alt"></i> Testar
+                </button>
+              </div>
+              <div class="form-text">
+                Preview da URL completa que será acessada pelo sistema.
+              </div>
+            </div>
+            {% endif %}
+
+            <hr class="my-4" />
+
+            <!-- Informações somente leitura -->
+            <div class="row mb-3">
+              <div class="col-md-6">
+                <label class="form-label">Status Atual</label>
+                <div class="form-control-plaintext">
+                  {% if obra.status == 'ativo' %}
+                  <span class="badge bg-success">
+                    <i class="fas fa-check"></i> Ativo
+                  </span>
+                  {% elif obra.status == 'quarentena' %}
+                  <span class="badge bg-warning">
+                    <i class="fas fa-pause"></i> Quarentena
+                  </span>
+                  {% endif %}
+                </div>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label">Erros Consecutivos</label>
+                <div class="form-control-plaintext">
+                  {% if obra.erros_consecutivos > 0 %}
+                  <span class="badge bg-danger"
+                    >{{ obra.erros_consecutivos }}</span
+                  >
+                  {% else %}
+                  <span class="badge bg-success">0</span>
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+
+            <div class="row mb-4">
+              <div class="col-md-6">
+                <label class="form-label">Último Upload</label>
+                <div class="form-control-plaintext">
+                  {% if obra.ultimo_upload %} {{ obra.ultimo_upload |
+                  format_datetime }} {% else %}
+                  <span class="text-muted">Nunca</span>
+                  {% endif %}
+                </div>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label">ID da Obra</label>
+                <div class="form-control-plaintext">
+                  <code>{{ obra.id }}</code>
+                </div>
+              </div>
+            </div>
+
+            <!-- Botões de ação -->
+            <div class="d-flex justify-content-between">
+              <div>
+                <button type="submit" class="btn btn-primary">
+                  <i class="fas fa-save"></i> Salvar Alterações
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-outline-secondary"
+                  onclick="resetForm()"
+                >
+                  <i class="fas fa-undo"></i> Resetar
+                </button>
+              </div>
+              <div>
+                <a
+                  href="{{ url_for('mapping.obra_detail', scan_name=scan_name, obra_id=obra.id) }}"
+                  class="btn btn-outline-danger"
+                >
+                  <i class="fas fa-times"></i> Cancelar
+                </a>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <!-- Informações adicionais -->
+      <div class="card mb-3">
+        <div class="card-header">
+          <h6 class="mb-0">
+            <i class="fas fa-info-circle"></i>
+            Informações do Scan
+          </h6>
+        </div>
+        <div class="card-body">
+          <table class="table table-borderless table-sm">
+            <tr>
+              <th>Nome:</th>
+              <td>{{ scan_info.name or scan_name }}</td>
+            </tr>
+            {% if scan_info.base_url %}
+            <tr>
+              <th>URL Base:</th>
+              <td>
+                <small><code>{{ scan_info.base_url }}</code></small>
+              </td>
+            </tr>
+            {% endif %}
+          </table>
+        </div>
+      </div>
+
+      <!-- Dicas -->
+      <div class="card mb-3">
+        <div class="card-header">
+          <h6 class="mb-0">
+            <i class="fas fa-lightbulb text-warning"></i>
+            Dicas
+          </h6>
+        </div>
+        <div class="card-body">
+          <ul class="list-unstyled small mb-0">
+            <li class="mb-2">
+              <i class="fas fa-check text-success"></i>
+              Use títulos descritivos e completos
+            </li>
+            <li class="mb-2">
+              <i class="fas fa-check text-success"></i>
+              URLs devem começar com "/"
+            </li>
+            <li class="mb-2">
+              <i class="fas fa-check text-success"></i>
+              Teste a URL antes de salvar
+            </li>
+            <li class="mb-0">
+              <i class="fas fa-exclamation-triangle text-warning"></i>
+              Alterações podem afetar o auto-update
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Ações rápidas -->
+      <div class="card">
+        <div class="card-header">
+          <h6 class="mb-0">
+            <i class="fas fa-bolt"></i>
+            Ações Rápidas
+          </h6>
+        </div>
+        <div class="card-body">
+          <div class="d-grid gap-2">
+            <button
+              type="button"
+              class="btn btn-outline-success btn-sm"
+              onclick="addToQueue()"
+            >
+              <i class="fas fa-upload"></i> Upload Manual
+            </button>
+            <button
+              type="button"
+              class="btn btn-outline-warning btn-sm"
+              onclick="toggleQuarantine()"
+            >
+              <i class="fas fa-pause"></i>
+              {% if obra.status == 'ativo' %}Quarentena{% else %}Reativar{%
+              endif %}
+            </button>
+            {% if scan_info.base_url and obra.url_relativa %}
+            <a
+              href="{{ scan_info.base_url }}{{ obra.url_relativa }}"
+              target="_blank"
+              class="btn btn-outline-primary btn-sm"
+            >
+              <i class="fas fa-external-link-alt"></i> Ver no Site
+            </a>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="{{ url_for('static', filename='js/app.js') }}"></script>
+<script>
+  // Valores originais para reset
+  const originalValues = {
+    titulo: "{{ obra.titulo }}",
+    url_relativa: "{{ obra.url_relativa }}",
+  };
+
+  // Atualizar preview da URL
+  function updateUrlPreview() {
+    const baseUrl = '{{ scan_info.base_url or "" }}';
+    const urlRelativa = document.getElementById("url_relativa").value;
+    const preview = document.getElementById("url_preview");
+
+    if (preview && baseUrl) {
+      preview.value = baseUrl + urlRelativa;
+    }
+  }
+
+  // Testar URL
+  function testUrl() {
+    const preview = document.getElementById("url_preview");
+    if (preview && preview.value) {
+      window.open(preview.value, "_blank");
+    }
+  }
+
+  // Reset form
+  function resetForm() {
+    document.getElementById("titulo").value = originalValues.titulo;
+    document.getElementById("url_relativa").value = originalValues.url_relativa;
+    updateUrlPreview();
+
+    // Remover classes de validação
+    document.querySelectorAll(".is-invalid").forEach((el) => {
+      el.classList.remove("is-invalid");
+    });
+  }
+
+  // Validação do formulário
+  function validateForm() {
+    const form = document.getElementById("editForm");
+    const titulo = document.getElementById("titulo");
+    const urlRelativa = document.getElementById("url_relativa");
+
+    let isValid = true;
+
+    // Limpar validações anteriores
+    [titulo, urlRelativa].forEach((field) => {
+      field.classList.remove("is-invalid");
+    });
+
+    // Validar título
+    if (!titulo.value.trim()) {
+      titulo.classList.add("is-invalid");
+      isValid = false;
+    }
+
+    // Validar URL relativa
+    if (!urlRelativa.value.trim()) {
+      urlRelativa.classList.add("is-invalid");
+      isValid = false;
+    } else if (!urlRelativa.value.startsWith("/")) {
+      urlRelativa.classList.add("is-invalid");
+      urlRelativa.nextElementSibling.textContent = 'URL deve começar com "/"';
+      isValid = false;
+    }
+
+    return isValid;
+  }
+
+  // Ações rápidas
+  function addToQueue() {
+    if (confirm("Deseja adicionar esta obra à fila de upload manual?")) {
+      const form = document.createElement("form");
+      form.method = "POST";
+      form.action =
+        '{{ url_for("mapping.manual_upload", scan_name=scan_name, obra_id=obra.id) }}';
+
+      document.body.appendChild(form);
+      form.submit();
+    }
+  }
+
+  function toggleQuarantine() {
+    const action =
+      '{{ "colocar em quarentena" if obra.status == "ativo" else "reativar" }}';
+    if (confirm(`Deseja ${action} esta obra?`)) {
+      const form = document.createElement("form");
+      form.method = "POST";
+      form.action =
+        '{{ url_for("mapping.toggle_quarantine", scan_name=scan_name, obra_id=obra.id) }}';
+
+      document.body.appendChild(form);
+      form.submit();
+    }
+  }
+
+  // Event listeners
+  document.addEventListener("DOMContentLoaded", function () {
+    const urlRelativa = document.getElementById("url_relativa");
+    const form = document.getElementById("editForm");
+
+    // Atualizar preview quando URL mudar
+    if (urlRelativa) {
+      urlRelativa.addEventListener("input", updateUrlPreview);
+      updateUrlPreview(); // Inicial
+    }
+
+    // Validação no submit
+    form.addEventListener("submit", function (e) {
+      if (!validateForm()) {
+        e.preventDefault();
+        e.stopPropagation();
+      }
+
+      form.classList.add("was-validated");
+    });
+
+    // Remover validação ao digitar
+    [
+      document.getElementById("titulo"),
+      document.getElementById("url_relativa"),
+    ].forEach((field) => {
+      field.addEventListener("input", function () {
+        if (field.classList.contains("is-invalid")) {
+          field.classList.remove("is-invalid");
+        }
+      });
+    });
+  });
+</script>
+{% endblock %}

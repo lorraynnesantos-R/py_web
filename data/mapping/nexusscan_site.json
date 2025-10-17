@@ -1,0 +1,126 @@
+{
+  "scan_info": {
+    "name": "nexusscan_site",
+    "base_url": "https://nexusscan.site",
+    "last_check": null,
+    "active": true,
+    "scape_time": 30,
+    "description": "Migrado de obras_mapeadas.json em 2025-10-15"
+  },
+  "obras": [
+    {
+      "id": 1524,
+      "titulo": "A Lenda do General Estelar",
+      "url_relativa": "https://nexusscan.site/manga/a-lenda-do-general-estelar/",
+      "status": "ativo",
+      "ultimo_upload": null,
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 311.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 312.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.120748+00:00",
+      "updated_at": "2025-10-15T21:54:23.120750+00:00",
+      "id_obra_original": 1524,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 1686,
+      "titulo": "Lendário Filho Mais Novo da Casa do Marquês",
+      "url_relativa": "https://nexusscan.site/manga/lendario-filho-mais-novo-da-casa-do-marques/",
+      "status": "ativo",
+      "ultimo_upload": null,
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 142.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 143.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.120832+00:00",
+      "updated_at": "2025-10-15T21:54:23.120834+00:00",
+      "id_obra_original": 1686,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 2264,
+      "titulo": "Pacto de Aço",
+      "url_relativa": "https://nexusscan.site/manga/pacto-de-aco/",
+      "status": "ativo",
+      "ultimo_upload": null,
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 39.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 40.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.120869+00:00",
+      "updated_at": "2025-10-15T21:54:23.120871+00:00",
+      "id_obra_original": 2264,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 2263,
+      "titulo": "O Médico Divino Urbano",
+      "url_relativa": "https://nexusscan.site/manga/o-medico-divino-urbano/",
+      "status": "ativo",
+      "ultimo_upload": null,
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 179.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 180.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.120883+00:00",
+      "updated_at": "2025-10-15T21:54:23.120884+00:00",
+      "id_obra_original": 2263,
+      "numero_pulos_config": 0
+    }
+  ],
+  "metadata": {
+    "version": "2.0",
+    "created_at": "2025-10-15T21:54:23.120737+00:00",
+    "updated_at": "2025-10-15T21:54:23.120928+00:00",
+    "total_obras": 4
+  }
+}

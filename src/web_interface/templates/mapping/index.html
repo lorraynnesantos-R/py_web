@@ -1,0 +1,224 @@
+{% extends "base.html" %} {% block title %}Gerenciamento de Obras{% endblock %}
+{% block content %}
+<div class="container-fluid">
+  <!-- Header da página -->
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <div>
+      <h2 class="mb-0">
+        <i class="fas fa-book-open text-primary"></i>
+        Gerenciamento de Obras
+      </h2>
+      <p class="text-muted mb-0">
+        Visualize e gerencie o mapeamento de obras por scan
+      </p>
+    </div>
+    <div>
+      <a href="{{ url_for('mapping.import_obra') }}" class="btn btn-primary">
+        <i class="fas fa-plus"></i> Importar Nova Obra
+      </a>
+    </div>
+  </div>
+
+  <!-- Estatísticas globais -->
+  {% if global_stats %}
+  <div class="row mb-4">
+    <div class="col-md-3">
+      <div class="card bg-primary-subtle border-primary">
+        <div class="card-body text-center">
+          <h3 class="text-primary mb-1">{{ global_stats.total_obras or 0 }}</h3>
+          <p class="mb-0 small">Total de Obras</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="card bg-success-subtle border-success">
+        <div class="card-body text-center">
+          <h3 class="text-success mb-1">
+            {{ global_stats.obras_ativas or 0 }}
+          </h3>
+          <p class="mb-0 small">Obras Ativas</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="card bg-warning-subtle border-warning">
+        <div class="card-body text-center">
+          <h3 class="text-warning mb-1">
+            {{ global_stats.obras_quarentena or 0 }}
+          </h3>
+          <p class="mb-0 small">Em Quarentena</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="card bg-info-subtle border-info">
+        <div class="card-body text-center">
+          <h3 class="text-info mb-1">{{ scans|length or 0 }}</h3>
+          <p class="mb-0 small">Scans Ativos</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endif %}
+
+  <!-- Lista de Scans -->
+  <div class="card">
+    <div class="card-header">
+      <h5 class="mb-0">
+        <i class="fas fa-globe"></i>
+        Scans Disponíveis
+      </h5>
+    </div>
+    <div class="card-body">
+      {% if scans %}
+      <div class="row">
+        {% for scan in scans %}
+        <div class="col-md-6 col-lg-4 mb-4">
+          <div class="card h-100 border-primary-subtle">
+            <div class="card-header bg-primary-subtle">
+              <div class="d-flex justify-content-between align-items-center">
+                <h6 class="mb-0 text-primary">
+                  <i class="fas fa-globe"></i>
+                  {{ scan.info.name or scan.name }}
+                </h6>
+                {% if scan.info.base_url %}
+                <a
+                  href="{{ scan.info.base_url }}"
+                  target="_blank"
+                  class="btn btn-sm btn-outline-primary"
+                >
+                  <i class="fas fa-external-link-alt"></i>
+                </a>
+                {% endif %}
+              </div>
+            </div>
+            <div class="card-body">
+              <!-- Estatísticas do scan -->
+              <div class="row text-center mb-3">
+                <div class="col-4">
+                  <div class="text-primary fw-bold">
+                    {{ scan.stats.total or 0 }}
+                  </div>
+                  <small class="text-muted">Total</small>
+                </div>
+                <div class="col-4">
+                  <div class="text-success fw-bold">
+                    {{ scan.stats.ativas or 0 }}
+                  </div>
+                  <small class="text-muted">Ativas</small>
+                </div>
+                <div class="col-4">
+                  <div class="text-warning fw-bold">
+                    {{ scan.stats.quarentena or 0 }}
+                  </div>
+                  <small class="text-muted">Quarentena</small>
+                </div>
+              </div>
+
+              <!-- Progresso visual -->
+              {% if scan.stats.total > 0 %}
+              <div class="progress mb-3" style="height: 8px">
+                {% set pct_ativas = (scan.stats.ativas / scan.stats.total * 100)
+                | round(1) %} {% set pct_quarentena = (scan.stats.quarentena /
+                scan.stats.total * 100) | round(1) %}
+                <div
+                  class="progress-bar bg-success"
+                  style="width: {{ pct_ativas }}%"
+                ></div>
+                <div
+                  class="progress-bar bg-warning"
+                  style="width: {{ pct_quarentena }}%"
+                ></div>
+              </div>
+              <div class="small text-muted text-center">
+                {{ pct_ativas }}% ativas • {{ pct_quarentena }}% quarentena
+              </div>
+              {% else %}
+              <div class="text-center text-muted">Nenhuma obra mapeada</div>
+              {% endif %}
+            </div>
+            <div class="card-footer">
+              <div class="d-flex justify-content-between">
+                <a
+                  href="{{ url_for('mapping.scan_detail', scan_name=scan.name) }}"
+                  class="btn btn-primary btn-sm"
+                >
+                  <i class="fas fa-eye"></i> Ver Obras
+                </a>
+                <small class="text-muted align-self-center">
+                  {% if scan.stats.ultimo_update %} {{ scan.stats.ultimo_update
+                  | format_datetime }} {% else %} Nunca atualizado {% endif %}
+                </small>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+      {% else %}
+      <div class="text-center py-5">
+        <i class="fas fa-search fa-3x text-muted mb-3"></i>
+        <h5 class="text-muted">Nenhum scan encontrado</h5>
+        <p class="text-muted">Configure um scan para começar a mapear obras.</p>
+      </div>
+      {% endif %}
+    </div>
+  </div>
+
+  <!-- Ações rápidas -->
+  <div class="row mt-4">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-body">
+          <h6 class="card-title">
+            <i class="fas fa-upload text-primary"></i>
+            Ações Rápidas
+          </h6>
+          <div class="d-grid gap-2">
+            <a
+              href="{{ url_for('mapping.import_obra') }}"
+              class="btn btn-outline-primary btn-sm"
+            >
+              <i class="fas fa-plus"></i> Importar Nova Obra
+            </a>
+            <button
+              type="button"
+              class="btn btn-outline-secondary btn-sm"
+              onclick="refreshScans()"
+            >
+              <i class="fas fa-sync"></i> Atualizar Lista
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-body">
+          <h6 class="card-title">
+            <i class="fas fa-info-circle text-info"></i>
+            Informações
+          </h6>
+          <ul class="list-unstyled small mb-0">
+            <li class="mb-1">
+              <strong>Obras Ativas:</strong> Incluídas no auto-update
+            </li>
+            <li class="mb-1">
+              <strong>Quarentena:</strong> Excluídas após 10+ erros
+            </li>
+            <li class="mb-1">
+              <strong>Upload Manual:</strong> Adiciona à fila imediata
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  function refreshScans() {
+    location.reload();
+  }
+</script>
+{% endblock %}

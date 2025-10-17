@@ -1,0 +1,423 @@
+{
+  "scan_info": {
+    "name": "empreguetes_xyz",
+    "base_url": "https://empreguetes.xyz",
+    "last_check": null,
+    "active": true,
+    "scape_time": 30,
+    "description": "Migrado de obras_mapeadas.json em 2025-10-15"
+  },
+  "obras": [
+    {
+      "id": 682,
+      "titulo": "Afundarei Com o Imperador",
+      "url_relativa": "https://empreguetes.xyz/obra/10452/afundarei-com-o-imperador",
+      "status": "ativo",
+      "ultimo_upload": null,
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 156.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 157.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.111017+00:00",
+      "updated_at": "2025-10-15T21:54:23.111021+00:00",
+      "id_obra_original": 682,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 717,
+      "titulo": " Uma Princesa que Lê a Sorte",
+      "url_relativa": "https://empreguetes.xyz/obra/10714/uma-princesa-que-le-a-sorte",
+      "status": "ativo",
+      "ultimo_upload": null,
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 119.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 120.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.111098+00:00",
+      "updated_at": "2025-10-15T21:54:23.111102+00:00",
+      "id_obra_original": 717,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 894,
+      "titulo": " Senhorita Pendleton",
+      "url_relativa": "https://empreguetes.xyz/obra/11493/senhorita-pendleton",
+      "status": "ativo",
+      "ultimo_upload": null,
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 16.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 17.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.111156+00:00",
+      "updated_at": "2025-10-15T21:54:23.111159+00:00",
+      "id_obra_original": 894,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 177,
+      "titulo": "Amor Acidental",
+      "url_relativa": "https://empreguetes.xyz/obra/10688/amor-acidental",
+      "status": "ativo",
+      "ultimo_upload": null,
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 61.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 62.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.111173+00:00",
+      "updated_at": "2025-10-15T21:54:23.111176+00:00",
+      "id_obra_original": 177,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 859,
+      "titulo": " Acho Que Transmigrei Para Algum Lugar",
+      "url_relativa": "https://empreguetes.xyz/obra/13383/acho-que-transmigrei-para-algum-lugar",
+      "status": "ativo",
+      "ultimo_upload": null,
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 65.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 66.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.111209+00:00",
+      "updated_at": "2025-10-15T21:54:23.111212+00:00",
+      "id_obra_original": 859,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 735,
+      "titulo": " O Avanço da Juventude",
+      "url_relativa": "https://empreguetes.xyz/obra/12933/o-avanco-da-juventude",
+      "status": "ativo",
+      "ultimo_upload": "2025-10-11T02:12:24.973413",
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 85.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 86.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.111239+00:00",
+      "updated_at": "2025-10-15T21:54:23.111241+00:00",
+      "id_obra_original": 735,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 2455,
+      "titulo": "Eu Fiz Um Acordo Com O Diabo",
+      "url_relativa": "https://empreguetes.xyz/obra/10495/eu-fiz-um-acordo-com-o-diabo",
+      "status": "ativo",
+      "ultimo_upload": null,
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 1.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 2.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.111271+00:00",
+      "updated_at": "2025-10-15T21:54:23.111274+00:00",
+      "id_obra_original": 2455,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 1491,
+      "titulo": "É a Primeira Vez Que Me Amam",
+      "url_relativa": "https://empreguetes.xyz/obra/10449/e-a-primeira-vez-que-me-amam",
+      "status": "ativo",
+      "ultimo_upload": "2025-10-11T02:13:53.151255",
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 54.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 55.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.111281+00:00",
+      "updated_at": "2025-10-15T21:54:23.111283+00:00",
+      "id_obra_original": 1491,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 1492,
+      "titulo": " A Princesa que Esconde seu Fã-Clube",
+      "url_relativa": "https://empreguetes.xyz/obra/10722/a-princesa-que-esconde-seu-faclube",
+      "status": "ativo",
+      "ultimo_upload": "2025-10-11T02:16:24.071496",
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 75.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 76.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.111307+00:00",
+      "updated_at": "2025-10-15T21:54:23.111310+00:00",
+      "id_obra_original": 1492,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 866,
+      "titulo": "O Vilão Descobriu A Minha Identidade",
+      "url_relativa": "https://empreguetes.xyz/obra/10343/o-vilao-descobriu-a-minha-identidade",
+      "status": "ativo",
+      "ultimo_upload": "2025-10-11T02:19:40.179872",
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 110.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 111.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.111344+00:00",
+      "updated_at": "2025-10-15T21:54:23.111347+00:00",
+      "id_obra_original": 866,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 736,
+      "titulo": " O Divórcio é Fácil, mas o Amor é Difícil",
+      "url_relativa": "https://empreguetes.xyz/obra/10943/o-divorcio-e-facil-mas-o-amor-e-dificil",
+      "status": "ativo",
+      "ultimo_upload": "2025-10-11T02:25:42.668406",
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 65.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 68.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.111395+00:00",
+      "updated_at": "2025-10-15T21:54:23.111398+00:00",
+      "id_obra_original": 736,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 629,
+      "titulo": "Estou Sendo Criada por Vilões",
+      "url_relativa": "https://empreguetes.xyz/obra/10448/estou-sendo-criada-por-viloes",
+      "status": "ativo",
+      "ultimo_upload": null,
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 108.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 109.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.111429+00:00",
+      "updated_at": "2025-10-15T21:54:23.111432+00:00",
+      "id_obra_original": 629,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 292,
+      "titulo": "Lágrimas sobre Flores Murchas",
+      "url_relativa": "https://empreguetes.xyz/obra/5113/lagrimas-sobre-flores-murchas",
+      "status": "ativo",
+      "ultimo_upload": null,
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 71.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 72.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.111479+00:00",
+      "updated_at": "2025-10-15T21:54:23.111482+00:00",
+      "id_obra_original": 292,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 1758,
+      "titulo": "Marido Perverso",
+      "url_relativa": "https://empreguetes.xyz/obra/13749/marido-perverso",
+      "status": "ativo",
+      "ultimo_upload": null,
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 11.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 12.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.111515+00:00",
+      "updated_at": "2025-10-15T21:54:23.111518+00:00",
+      "id_obra_original": 1758,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 919,
+      "titulo": "O Vampiro Encontrou A Caçadora",
+      "url_relativa": "https://empreguetes.xyz/obra/13701/o-vampiro-encontrou-a-cacadora",
+      "status": "ativo",
+      "ultimo_upload": null,
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 16.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 17.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.111529+00:00",
+      "updated_at": "2025-10-15T21:54:23.111531+00:00",
+      "id_obra_original": 919,
+      "numero_pulos_config": 0
+    }
+  ],
+  "metadata": {
+    "version": "2.0",
+    "created_at": "2025-10-15T21:54:23.111000+00:00",
+    "updated_at": "2025-10-15T21:54:23.111552+00:00",
+    "total_obras": 15
+  }
+}

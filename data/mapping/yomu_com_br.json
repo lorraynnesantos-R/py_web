@@ -1,0 +1,261 @@
+{
+  "scan_info": {
+    "name": "yomu_com_br",
+    "base_url": "https://yomu.com.br",
+    "last_check": null,
+    "active": true,
+    "scape_time": 30,
+    "description": "Migrado de obras_mapeadas.json em 2025-10-15"
+  },
+  "obras": [
+    {
+      "id": 1742,
+      "titulo": "Meu Encontro de Sorte do Jogo se Transformou em Realidade",
+      "url_relativa": "https://yomu.com.br/obra/meu-encontro-de-sorte-do-jogo-se-transformou-em-realidade",
+      "status": "pausado",
+      "ultimo_upload": "2025-10-05T15:39:58.862714",
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 76.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 77.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.099748+00:00",
+      "updated_at": "2025-10-15T21:54:23.099750+00:00",
+      "id_obra_original": 1742,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 1659,
+      "titulo": "Roteiro Quebrado",
+      "url_relativa": "https://yomu.com.br/obra/breakers",
+      "status": "ativo",
+      "ultimo_upload": null,
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 20.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 21.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.099776+00:00",
+      "updated_at": "2025-10-15T21:54:23.099778+00:00",
+      "id_obra_original": 1659,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 2231,
+      "titulo": "O Herói É Obcecado Por Mim?! - Obcecado pela heroína",
+      "url_relativa": "https://yomu.com.br/obra/obcecado-pela-heroina",
+      "status": "ativo",
+      "ultimo_upload": null,
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 12.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 13.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.099788+00:00",
+      "updated_at": "2025-10-15T21:54:23.099789+00:00",
+      "id_obra_original": 2231,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 1606,
+      "titulo": "O Irmão Mais Novo é o Destaque Da Academia",
+      "url_relativa": "https://yomu.com.br/obra/o-irmao-mais-novo-e-o-destaque-da-academia",
+      "status": "ativo",
+      "ultimo_upload": null,
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 118.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 119.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.099798+00:00",
+      "updated_at": "2025-10-15T21:54:23.099799+00:00",
+      "id_obra_original": 1606,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 332,
+      "titulo": "Streaming do Arqueiro Genial",
+      "url_relativa": "https://yomu.com.br/obra/streaming-do-arqueiro-genial",
+      "status": "ativo",
+      "ultimo_upload": null,
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 81.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 82.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.099837+00:00",
+      "updated_at": "2025-10-15T21:54:23.099838+00:00",
+      "id_obra_original": 332,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 491,
+      "titulo": "Corporação Negra: Joseon",
+      "url_relativa": "https://yomu.com.br/obra/corporacao-negra-joseon",
+      "status": "ativo",
+      "ultimo_upload": null,
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 98.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 99.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.099859+00:00",
+      "updated_at": "2025-10-15T21:54:23.099860+00:00",
+      "id_obra_original": 491,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 329,
+      "titulo": "A Ascensão da Cobra Imortal",
+      "url_relativa": "https://yomu.com.br/obra/a-ascensao-da-cobra-imortal",
+      "status": "ativo",
+      "ultimo_upload": null,
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 57.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 58.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.099883+00:00",
+      "updated_at": "2025-10-15T21:54:23.099885+00:00",
+      "id_obra_original": 329,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 945,
+      "titulo": "Sério que Cultivar é Difícil?",
+      "url_relativa": "https://yomu.com.br/obra/e-serio-que-cultivar-e-tao-dificil-assim",
+      "status": "ativo",
+      "ultimo_upload": null,
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 23.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 24.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.099900+00:00",
+      "updated_at": "2025-10-15T21:54:23.099901+00:00",
+      "id_obra_original": 945,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 2230,
+      "titulo": "Entre Nós",
+      "url_relativa": "https://yomu.com.br/obra/entre-nos",
+      "status": "ativo",
+      "ultimo_upload": null,
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 19.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 20.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.099910+00:00",
+      "updated_at": "2025-10-15T21:54:23.099911+00:00",
+      "id_obra_original": 2230,
+      "numero_pulos_config": 0
+    }
+  ],
+  "metadata": {
+    "version": "2.0",
+    "created_at": "2025-10-15T21:54:23.099735+00:00",
+    "updated_at": "2025-10-15T21:54:23.099925+00:00",
+    "total_obras": 9
+  }
+}

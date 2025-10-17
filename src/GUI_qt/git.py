@@ -3,16 +3,16 @@ from dulwich import porcelain
 from packaging import version
 from platformdirs import user_data_path
 
-data_path = user_data_path('pyweb')
+data_path = user_data_path('py_web')
 
 def update_providers():
-    if not os.path.isdir(data_path / 'pyweb'):
-        porcelain.clone('https://github.com/RochaSWallace/pyweb', data_path / 'pyweb')
+    if not os.path.isdir(data_path / 'py_web'):
+        porcelain.clone('https://github.com/RochaSWallace/py_web', data_path / 'py_web')
     else:
-        porcelain.pull(data_path / 'pyweb')
+        porcelain.pull(data_path / 'py_web')
 
 def get_last_version():
-    tags = porcelain.tag_list(data_path / 'pyweb')
+    tags = porcelain.tag_list(data_path / 'py_web')
     versions_str = [v.decode('utf-8')[1:] for v in tags]
     ordered_versions = sorted(versions_str, key=version.parse)
     return ordered_versions[-1]

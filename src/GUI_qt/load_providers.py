@@ -6,11 +6,11 @@ from GUI_qt.config import get_config
 from platformdirs import user_data_path
 from core.providers.domain.provider_repository import ProviderRepository
 
-data_path = user_data_path('pyweb')
+data_path = user_data_path('py_web')
 
 def base_path():
     if os.environ.get('PYWEBENV') != 'dev':
-        return data_path / 'pyweb' / 'src'
+        return data_path / 'py_web' / 'src'
 
     return Path('.') / 'src'
 

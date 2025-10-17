@@ -1,0 +1,24 @@
+{
+  "total_jobs": 4,
+  "pending_jobs": 1,
+  "processing_jobs": 1,
+  "completed_jobs": 2,
+  "failed_jobs": 0,
+  "cancelled_jobs": 0,
+  "expired_jobs": 0,
+  "average_processing_time": 1.0010145,
+  "success_rate": 1.0,
+  "jobs_per_hour": 2.0,
+  "retry_rate": 0.0,
+  "priority_distribution": {
+    "URGENT": 1,
+    "HIGH": 1,
+    "NORMAL": 2
+  },
+  "scan_distribution": {
+    "mangayabu": 1,
+    "scan1": 1,
+    "scan2": 1,
+    "scan3": 1
+  }
+}

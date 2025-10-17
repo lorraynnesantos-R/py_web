@@ -1,0 +1,585 @@
+{
+  "scan_info": {
+    "name": "fbsquadx_com",
+    "base_url": "https://fbsquadx.com",
+    "last_check": null,
+    "active": true,
+    "scape_time": 30,
+    "description": "Migrado de obras_mapeadas.json em 2025-10-15"
+  },
+  "obras": [
+    {
+      "id": 1268,
+      "titulo": "Defina o relacionamento",
+      "url_relativa": "https://fbsquadx.com/manga/define-the-relationship/",
+      "status": "pausado",
+      "ultimo_upload": "2025-10-08T18:03:23.967746",
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 108.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 109.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.104475+00:00",
+      "updated_at": "2025-10-15T21:54:23.104477+00:00",
+      "id_obra_original": 1268,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 1261,
+      "titulo": "Codinome Anastasia",
+      "url_relativa": "https://fbsquadx.com/manga/codename-anastasia/",
+      "status": "ativo",
+      "ultimo_upload": "2025-10-07T09:21:33.642574",
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 51.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 52.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.104510+00:00",
+      "updated_at": "2025-10-15T21:54:23.104511+00:00",
+      "id_obra_original": 1261,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 1346,
+      "titulo": "Ossos e Pétalas",
+      "url_relativa": "https://fbsquadx.com/manga/pale-bones-and-blossoms/",
+      "status": "ativo",
+      "ultimo_upload": "2025-10-10T08:50:22.142507",
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 22.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 23.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.104527+00:00",
+      "updated_at": "2025-10-15T21:54:23.104528+00:00",
+      "id_obra_original": 1346,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 1039,
+      "titulo": "1995 Youth Report",
+      "url_relativa": "https://fbsquadx.com/manga/1995-youth-report/",
+      "status": "ativo",
+      "ultimo_upload": "2025-10-07T09:25:57.114749",
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 31.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 32.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.104537+00:00",
+      "updated_at": "2025-10-15T21:54:23.104538+00:00",
+      "id_obra_original": 1039,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 931,
+      "titulo": "Behind the Scenes",
+      "url_relativa": "https://fbsquadx.com/manga/behind-the-scenes/",
+      "status": "ativo",
+      "ultimo_upload": null,
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 95.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 96.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.104548+00:00",
+      "updated_at": "2025-10-15T21:54:23.104549+00:00",
+      "id_obra_original": 931,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 1356,
+      "titulo": "A Borda da Ambiguidade",
+      "url_relativa": "https://fbsquadx.com/manga/the-edge-of-ambiguity/",
+      "status": "ativo",
+      "ultimo_upload": "2025-10-08T15:37:59.496785",
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 85.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 86.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.104573+00:00",
+      "updated_at": "2025-10-15T21:54:23.104575+00:00",
+      "id_obra_original": 1356,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 1337,
+      "titulo": "Faíscas de verão",
+      "url_relativa": "https://fbsquadx.com/manga/summer-sparks-2/",
+      "status": "ativo",
+      "ultimo_upload": null,
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 52.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 53.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.104596+00:00",
+      "updated_at": "2025-10-15T21:54:23.104598+00:00",
+      "id_obra_original": 1337,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 1420,
+      "titulo": "Combustão incompleta",
+      "url_relativa": "https://fbsquadx.com/manga/incomplete-combustion/",
+      "status": "ativo",
+      "ultimo_upload": "2025-10-07T09:29:53.231994",
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 20.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 21.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.104612+00:00",
+      "updated_at": "2025-10-15T21:54:23.104613+00:00",
+      "id_obra_original": 1420,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 1001,
+      "titulo": "Condições de um Guia",
+      "url_relativa": "https://fbsquadx.com/manga/conditions-of-a-guide/",
+      "status": "ativo",
+      "ultimo_upload": "2025-10-07T09:31:43.350265",
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 56.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 57.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.104621+00:00",
+      "updated_at": "2025-10-15T21:54:23.104622+00:00",
+      "id_obra_original": 1001,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 1753,
+      "titulo": "Amor de Urso",
+      "url_relativa": "https://fbsquadx.com/manga/honey-bear/",
+      "status": "ativo",
+      "ultimo_upload": "2025-10-09T21:22:44.338330",
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 70.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 71.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.104637+00:00",
+      "updated_at": "2025-10-15T21:54:23.104638+00:00",
+      "id_obra_original": 1753,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 1441,
+      "titulo": "Projeto Nerd",
+      "url_relativa": "https://fbsquadx.com/manga/nerd-project/",
+      "status": "ativo",
+      "ultimo_upload": "2025-10-07T09:35:02.016607",
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 51.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 52.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.104655+00:00",
+      "updated_at": "2025-10-15T21:54:23.104657+00:00",
+      "id_obra_original": 1441,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 974,
+      "titulo": "2020",
+      "url_relativa": "https://fbsquadx.com/manga/2020/",
+      "status": "ativo",
+      "ultimo_upload": "2025-10-10T08:52:13.734302",
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 51.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 52.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.104671+00:00",
+      "updated_at": "2025-10-15T21:54:23.104672+00:00",
+      "id_obra_original": 974,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 1373,
+      "titulo": "Dentro da minha sombra",
+      "url_relativa": "https://fbsquadx.com/manga/within-my-shadow/",
+      "status": "ativo",
+      "ultimo_upload": "2025-10-07T09:39:13.627561",
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 56.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 57.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.104686+00:00",
+      "updated_at": "2025-10-15T21:54:23.104687+00:00",
+      "id_obra_original": 1373,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 1188,
+      "titulo": "Mangas manchadas de sangue",
+      "url_relativa": "https://fbsquadx.com/manga/sleeves-stained-in-blood/",
+      "status": "ativo",
+      "ultimo_upload": "2025-10-07T09:40:53.454059",
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 8.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 9.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.104702+00:00",
+      "updated_at": "2025-10-15T21:54:23.104703+00:00",
+      "id_obra_original": 1188,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 1216,
+      "titulo": "Os Cães de Sísifo",
+      "url_relativa": "https://fbsquadx.com/manga/the-hounds-of-sisyphus/",
+      "status": "ativo",
+      "ultimo_upload": "2025-10-09T21:23:53.505738",
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 24.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 25.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.104709+00:00",
+      "updated_at": "2025-10-15T21:54:23.104710+00:00",
+      "id_obra_original": 1216,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 1127,
+      "titulo": "Síndrome de Minmoción",
+      "url_relativa": "https://fbsquadx.com/manga/minmotion-syndrome/",
+      "status": "ativo",
+      "ultimo_upload": null,
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 98.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 99.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.104719+00:00",
+      "updated_at": "2025-10-15T21:54:23.104720+00:00",
+      "id_obra_original": 1127,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 1384,
+      "titulo": "Luz de fundo",
+      "url_relativa": "https://fbsquadx.com/manga/backlight/",
+      "status": "ativo",
+      "ultimo_upload": "2025-10-09T21:25:00.803396",
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 52.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 53.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.104745+00:00",
+      "updated_at": "2025-10-15T21:54:23.104746+00:00",
+      "id_obra_original": 1384,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 1081,
+      "titulo": "Maré baixa em Twiligh",
+      "url_relativa": "https://fbsquadx.com/manga/low-tide-in-twilight/",
+      "status": "pausado",
+      "ultimo_upload": "2025-10-08T18:08:40.397602",
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 110.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 111.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.104760+00:00",
+      "updated_at": "2025-10-15T21:54:23.104762+00:00",
+      "id_obra_original": 1081,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 1382,
+      "titulo": "Ponto de fusão",
+      "url_relativa": "https://fbsquadx.com/manga/melting-point/",
+      "status": "ativo",
+      "ultimo_upload": "2025-10-07T09:47:55.280869",
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 23.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 24.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.104788+00:00",
+      "updated_at": "2025-10-15T21:54:23.104789+00:00",
+      "id_obra_original": 1382,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 1361,
+      "titulo": "O entregador de pizza e o palácio dourado",
+      "url_relativa": "https://fbsquadx.com/manga/the-pizza-delivery-man-and-the-gold-palace/",
+      "status": "ativo",
+      "ultimo_upload": "2025-10-09T21:26:39.316599",
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 87.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 88.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.104798+00:00",
+      "updated_at": "2025-10-15T21:54:23.104799+00:00",
+      "id_obra_original": 1361,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 1242,
+      "titulo": "Além das memórias",
+      "url_relativa": "https://fbsquadx.com/manga/beyond-the-memories/",
+      "status": "ativo",
+      "ultimo_upload": "2025-10-07T09:51:54.093313",
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 94.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 95.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.104821+00:00",
+      "updated_at": "2025-10-15T21:54:23.104822+00:00",
+      "id_obra_original": 1242,
+      "numero_pulos_config": 0
+    }
+  ],
+  "metadata": {
+    "version": "2.0",
+    "created_at": "2025-10-15T21:54:23.104462+00:00",
+    "updated_at": "2025-10-15T21:54:23.104849+00:00",
+    "total_obras": 21
+  }
+}

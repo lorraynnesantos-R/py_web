@@ -1,0 +1,283 @@
+{
+  "scan_info": {
+    "name": "galinhasamurai_com",
+    "base_url": "https://galinhasamurai.com",
+    "last_check": null,
+    "active": true,
+    "scape_time": 30,
+    "description": "Migrado de obras_mapeadas.json em 2025-10-15"
+  },
+  "obras": [
+    {
+      "id": 2332,
+      "titulo": "Depois da reencarnação, meu inimigo me tornou invencível com dinheiro!",
+      "url_relativa": "https://galinhasamurai.com/manga/depois-da-reencarnacao-meu-inimigo-me-tornou-invencivel-com-dinheiro/",
+      "status": "ativo",
+      "ultimo_upload": null,
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 1.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.112824+00:00",
+      "updated_at": "2025-10-15T21:54:23.112826+00:00",
+      "id_obra_original": 2332,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 404,
+      "titulo": "Me tornei bilionário após sofrer uma decepção amorosa",
+      "url_relativa": "https://galinhasamurai.com/manga/me-tornei-bilionario-apos-sofrer-uma-decepcao-amorosa/",
+      "status": "ativo",
+      "ultimo_upload": null,
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 100.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 101.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.112836+00:00",
+      "updated_at": "2025-10-15T21:54:23.112838+00:00",
+      "id_obra_original": 404,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 2319,
+      "titulo": "Eu roubei varios talentos e me tornei um deus!",
+      "url_relativa": "https://galinhasamurai.com/manga/eu-roubei-varios-talentos-e-me-tornei-um-deus/",
+      "status": "ativo",
+      "ultimo_upload": null,
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 3.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 4.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.112865+00:00",
+      "updated_at": "2025-10-15T21:54:23.112866+00:00",
+      "id_obra_original": 2319,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 1699,
+      "titulo": "Lendário sistema de uber",
+      "url_relativa": "https://galinhasamurai.com/manga/lendario-sistema-de-uber/",
+      "status": "ativo",
+      "ultimo_upload": null,
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 61.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 62.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.112871+00:00",
+      "updated_at": "2025-10-15T21:54:23.112873+00:00",
+      "id_obra_original": 1699,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 1772,
+      "titulo": " Eu Carrego Ouro de um Mundo Pós-Apocalíptico",
+      "url_relativa": "https://galinhasamurai.com/manga/eu-carrego-ouro-de-um-mundo-pos-apocaliptico/",
+      "status": "ativo",
+      "ultimo_upload": "2025-10-11T02:30:56.969260",
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 110.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 111.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.112889+00:00",
+      "updated_at": "2025-10-15T21:54:23.112890+00:00",
+      "id_obra_original": 1772,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 2321,
+      "titulo": "Arquivilão",
+      "url_relativa": "https://galinhasamurai.com/manga/arquivilao/",
+      "status": "ativo",
+      "ultimo_upload": null,
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 31.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 32.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.112917+00:00",
+      "updated_at": "2025-10-15T21:54:23.112919+00:00",
+      "id_obra_original": 2321,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 1718,
+      "titulo": "Despertando o Trovão Roxo no Início",
+      "url_relativa": "https://galinhasamurai.com/manga/despertando-o-trovao-roxo-no-inicio/",
+      "status": "ativo",
+      "ultimo_upload": null,
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 13.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 14.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.112929+00:00",
+      "updated_at": "2025-10-15T21:54:23.112930+00:00",
+      "id_obra_original": 1718,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 2320,
+      "titulo": "Eu posso trocar minha Vida com outras pessoas!",
+      "url_relativa": "https://galinhasamurai.com/manga/eu-posso-trocar-minha-vida-com-outras-pessoas/",
+      "status": "ativo",
+      "ultimo_upload": null,
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 9.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 10.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.112937+00:00",
+      "updated_at": "2025-10-15T21:54:23.112938+00:00",
+      "id_obra_original": 2320,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 170,
+      "titulo": "Oeste Selvagem: Murim",
+      "url_relativa": "https://galinhasamurai.com/manga/oeste-selvagem-murim/",
+      "status": "ativo",
+      "ultimo_upload": null,
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 24.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 25.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.112944+00:00",
+      "updated_at": "2025-10-15T21:54:23.112945+00:00",
+      "id_obra_original": 170,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 2318,
+      "titulo": "Caminhando com a morte",
+      "url_relativa": "https://galinhasamurai.com/manga/caminhando-com-a-morte/",
+      "status": "ativo",
+      "ultimo_upload": null,
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 23.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 24.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.112954+00:00",
+      "updated_at": "2025-10-15T21:54:23.112955+00:00",
+      "id_obra_original": 2318,
+      "numero_pulos_config": 0
+    }
+  ],
+  "metadata": {
+    "version": "2.0",
+    "created_at": "2025-10-15T21:54:23.112810+00:00",
+    "updated_at": "2025-10-15T21:54:23.112967+00:00",
+    "total_obras": 10
+  }
+}

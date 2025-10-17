@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %}MediocreToons Auto Uploader v2{% endblock %}</title>
+
+    <!-- Font Awesome -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Sistema de Design Customizado -->
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+
+    {% block extra_css %}{% endblock %}
+  </head>
+  <body class="main-container">
+    <!-- Navbar com novo design -->
+    <nav class="navbar">
+      <div class="container">
+        <a class="navbar-brand" href="{{ url_for('index') }}">
+          <i class="fas fa-robot"></i> MediocreToons Auto Uploader v2
+        </a>
+
+        <div class="d-flex gap-4">
+          <a class="nav-link" href="{{ url_for('index') }}">
+            <i class="fas fa-tachometer-alt"></i> Dashboard
+          </a>
+          <a class="nav-link" href="{{ url_for('obras_list') }}">
+            <i class="fas fa-book"></i> Obras
+          </a>
+          <a class="nav-link" href="{{ url_for('quarantine_list') }}">
+            <i class="fas fa-ban"></i> Quarentena
+          </a>
+          <a class="nav-link" href="{{ url_for('scans_list') }}">
+            <i class="fas fa-globe"></i> Scans
+          </a>
+          <a class="nav-link" href="{{ url_for('logs') }}">
+            <i class="fas fa-file-alt"></i> Logs
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Flash Messages -->
+    <div class="content-wrapper">
+      {% with messages = get_flashed_messages(with_categories=true) %} {% if
+      messages %} {% for category, message in messages %}
+      <div
+        class="alert alert-{{ 'danger' if category == 'error' else ('warning' if category == 'warning' else ('info' if category == 'info' else 'primary')) }} fade-in"
+        role="alert"
+      >
+        {{ message }}
+      </div>
+      {% endfor %} {% endif %} {% endwith %} {% block content %}{% endblock %}
+    </div>
+
+    <!-- Footer -->
+    <footer class="text-center p-4">
+      <small class="text-muted">
+        MediocreToons Auto Uploader v2 - Sistema de Quarentena Ativo
+        <br />
+        Desenvolvido com <span class="text-primary">❤️</span> para automação de
+        mangás
+      </small>
+    </footer>
+
+    <!-- Sistema de Design JavaScript -->
+    <script src="{{ url_for('static', filename='js/design-system.js') }}"></script>
+
+    {% block scripts %}{% endblock %}
+  </body>
+</html>

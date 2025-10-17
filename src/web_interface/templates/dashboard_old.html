@@ -1,0 +1,654 @@
+{% extends "base.html" %}
+{% block title %}Dashboard - {{ super() }}{% endblock %}
+
+{% block extra_head %}
+<!-- Chart.js CDN -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<style>
+  .metric-card {
+    transition: all 0.3s ease;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%);
+  }
+  .metric-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px rgba(255, 107, 53, 0.15);
+  }
+  
+  .timer-container {
+    background: linear-gradient(135deg, var(--orange-primary) 0%, var(--orange-secondary) 100%);
+    border-radius: 16px;
+    color: white;
+  }
+  
+  .progress-ring {
+    width: 120px;
+    height: 120px;
+  }
+  
+  .progress-ring circle {
+    stroke-width: 8;
+    fill: transparent;
+    stroke-linecap: round;
+  }
+  
+  .progress-ring .progress-background {
+    stroke: rgba(255, 255, 255, 0.2);
+  }
+  
+  .progress-ring .progress-bar {
+    stroke: white;
+    transition: stroke-dashoffset 0.5s ease;
+  }
+  
+  .timer-controls .btn {
+    border-radius: 12px;
+    padding: 12px 24px;
+    font-weight: 600;
+    border: none;
+    transition: all 0.3s ease;
+  }
+  
+  .btn-timer-primary {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    backdrop-filter: blur(10px);
+  }
+  
+  .btn-timer-primary:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+  }
+  
+  .status-badge {
+    font-size: 0.75rem;
+    padding: 4px 8px;
+    border-radius: 20px;
+    font-weight: 600;
+  }
+  
+  .chart-container {
+    position: relative;
+    height: 300px;
+    background: white;
+    border-radius: 12px;
+    padding: 15px;
+  }
+  
+  .logs-container {
+    max-height: 400px;
+    overflow-y: auto;
+    background: #f8f9fa;
+    border-radius: 12px;
+    padding: 15px;
+  }
+  
+  .log-entry {
+    padding: 8px 12px;
+    margin-bottom: 8px;
+    border-radius: 8px;
+    background: white;
+    border-left: 4px solid #dee2e6;
+    font-size: 0.9rem;
+  }
+  
+  .log-entry.log-error {
+    border-left-color: #dc3545;
+    background: #fff5f5;
+  }
+  
+  .log-entry.log-warning {
+    border-left-color: #ffc107;
+    background: #fffbf0;
+  }
+  
+  .log-entry.log-success {
+    border-left-color: #28a745;
+    background: #f0fff4;
+  }
+  
+  .log-entry.log-info {
+    border-left-color: var(--orange-primary);
+    background: #fff8f5;
+  }
+  
+  .health-indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 8px;
+  }
+  
+  .health-good { background: #28a745; }
+  .health-warning { background: #ffc107; }
+  .health-error { background: #dc3545; }
+  
+  .system-info {
+    background: #f8f9fa;
+    border-radius: 12px;
+    padding: 15px;
+  }
+  
+  @keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
+  }
+  
+  .status-active {
+    animation: pulse 2s infinite;
+  }
+</style>
+{% endblock %}
+
+{% block content %}
+<!-- Dashboard Header -->
+<div class="row mb-4">
+  <div class="col-lg-8">
+    <h1 class="h2 mb-2">
+      <i class="bi bi-speedometer2 me-2 text-primary"></i>Dashboard Principal
+    </h1>
+    <p class="text-muted">Controle e monitoramento do sistema de auto-upload</p>
+  </div>
+  <div class="col-lg-4 text-lg-end">
+    <div class="d-flex align-items-center justify-content-lg-end">
+      <span class="health-indicator health-good"></span>
+      <small class="text-muted">Sistema Online</small>
+      <button class="btn btn-outline-primary btn-sm ms-3" onclick="dashboard.refreshAll()">
+        <i class="bi bi-arrow-clockwise"></i> Atualizar
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Timer e Controles -->
+<div class="row mb-4">
+  <div class="col-lg-6">
+    <div class="card timer-container h-100">
+      <div class="card-body text-center">
+        <h5 class="card-title mb-4">
+          <i class="bi bi-clock-history me-2"></i>Timer Auto-Upload
+        </h5>
+        
+        <div class="d-flex justify-content-center align-items-center mb-4">
+          <svg class="progress-ring" viewBox="0 0 120 120">
+            <circle class="progress-background" cx="60" cy="60" r="52"></circle>
+            <circle class="progress-bar" cx="60" cy="60" r="52" 
+                    stroke-dasharray="327" stroke-dashoffset="327" 
+                    id="timer-progress"></circle>
+          </svg>
+          <div class="position-absolute">
+            <div class="h3 mb-0" id="timer-display">--:--</div>
+            <small id="timer-status">Parado</small>
+          </div>
+        </div>
+        
+        <div class="timer-controls">
+          <button class="btn btn-timer-primary me-2" onclick="dashboard.timer.start()" id="btn-start">
+            <i class="bi bi-play-fill"></i> Iniciar
+          </button>
+          <button class="btn btn-timer-primary me-2" onclick="dashboard.timer.pause()" id="btn-pause">
+            <i class="bi bi-pause-fill"></i> Pausar
+          </button>
+          <button class="btn btn-timer-primary me-2" onclick="dashboard.timer.stop()" id="btn-stop">
+            <i class="bi bi-stop-fill"></i> Parar
+          </button>
+          <button class="btn btn-timer-primary" onclick="dashboard.timer.reset()" id="btn-reset">
+            <i class="bi bi-arrow-clockwise"></i> Reset
+          </button>
+        </div>
+        
+        <div class="mt-3">
+          <small class="opacity-75">Próxima execução em: <span id="next-execution">--</span></small>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col-lg-6">
+    <div class="card h-100">
+      <div class="card-body">
+        <h5 class="card-title mb-4">
+          <i class="bi bi-gear me-2"></i>Configurações do Timer
+        </h5>
+        
+        <div class="mb-3">
+          <label for="timer-interval" class="form-label">Intervalo (minutos)</label>
+          <div class="input-group">
+            <input type="number" class="form-control" id="timer-interval" 
+                   value="30" min="1" max="1440">
+            <button class="btn btn-primary" onclick="dashboard.timer.updateInterval()">
+              <i class="bi bi-check2"></i> Aplicar
+            </button>
+          </div>
+        </div>
+        
+        <div class="system-info">
+          <h6>Status do Sistema</h6>
+          <div class="row">
+            <div class="col-6">
+              <small class="text-muted">Scheduler:</small>
+              <span class="badge bg-primary" id="scheduler-status">
+                {{ scheduler_status.status if scheduler_status else 'Desconhecido' }}
+              </span>
+            </div>
+            <div class="col-6">
+              <small class="text-muted">Fila:</small>
+              <span class="badge bg-info" id="queue-status">
+                {{ queue_status.size if queue_status else 0 }} itens
+              </span>
+            </div>
+          </div>
+          
+          <div class="row mt-2">
+            <div class="col-6">
+              <small class="text-muted">Última execução:</small>
+              <div class="small" id="last-execution">--</div>
+            </div>
+            <div class="col-6">
+              <small class="text-muted">Total execuções:</small>
+              <div class="small" id="total-executions">--</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Quarentena -->
+  <div class="col-lg-3 col-md-6 mb-4">
+    <div class="card metric-card h-100 border-0 shadow-sm">
+      <div class="card-body">
+        <div class="d-flex justify-content-between">
+          <div>
+            <h6 class="card-subtitle mb-2 text-muted">Em Quarentena</h6>
+            <h3 class="card-title mb-0 text-warning">
+              {{ quarantine_stats.total_quarantined if quarantine_stats else 0
+              }}
+            </h3>
+          </div>
+          <div>
+            <i
+              class="bi bi-shield-exclamation text-warning"
+              style="font-size: 2rem"
+            ></i>
+          </div>
+        </div>
+        <div class="mt-3">
+          <small class="text-muted">
+            <i class="bi bi-calendar-date"></i>
+            {{ quarantine_stats.auto_quarantines_today if quarantine_stats else
+            0 }} hoje
+          </small>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Timer Status -->
+  <div class="col-lg-3 col-md-6 mb-4">
+    <div class="card metric-card h-100 border-0 shadow-sm">
+      <div class="card-body">
+        <div class="d-flex justify-content-between">
+          <div>
+            <h6 class="card-subtitle mb-2 text-muted">Timer Status</h6>
+            <h3 class="card-title mb-0">
+              {% if scheduler_status and scheduler_status.is_running %}
+              <span class="text-success">Ativo</span>
+              {% else %}
+              <span class="text-secondary">Parado</span>
+              {% endif %}
+            </h3>
+          </div>
+          <div>
+            <i class="bi bi-clock text-info" style="font-size: 2rem"></i>
+          </div>
+        </div>
+        <div class="mt-3">
+          <small class="text-muted">
+            {% if scheduler_status and scheduler_status.time_remaining %}
+            <i class="bi bi-hourglass-split"></i>
+            {{ scheduler_status.time_remaining }} {% else %}
+            <i class="bi bi-pause"></i>
+            Pausado {% endif %}
+          </small>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Fila Status -->
+  <div class="col-lg-3 col-md-6 mb-4">
+    <div class="card metric-card h-100 border-0 shadow-sm">
+      <div class="card-body">
+        <div class="d-flex justify-content-between">
+          <div>
+            <h6 class="card-subtitle mb-2 text-muted">Fila</h6>
+            <h3 class="card-title mb-0 text-info">
+              {{ queue_status.pending_count if queue_status else 0 }}
+            </h3>
+          </div>
+          <div>
+            <i class="bi bi-list-ul text-info" style="font-size: 2rem"></i>
+          </div>
+        </div>
+        <div class="mt-3">
+          <small class="text-muted">
+            <i class="bi bi-play-circle"></i>
+            {{ queue_status.processing_count if queue_status else 0 }}
+            processando
+          </small>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Timer Controls -->
+<div class="row mb-4">
+  <div class="col-lg-8">
+    <div class="card border-0 shadow-sm">
+      <div class="card-header bg-transparent">
+        <h5 class="card-title mb-0">
+          <i class="bi bi-stopwatch me-2"></i>Controle do Timer
+        </h5>
+      </div>
+      <div class="card-body">
+        <div class="row align-items-center">
+          <div class="col-md-6">
+            <div class="d-flex align-items-center mb-3">
+              <div class="flex-grow-1">
+                <h6 class="mb-1">Próxima Execução</h6>
+                <p class="text-muted mb-0" id="next-execution">
+                  {% if scheduler_status and scheduler_status.next_execution %}
+                  {{ scheduler_status.next_execution }} {% else %} Timer parado
+                  {% endif %}
+                </p>
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="timer-interval" class="form-label"
+                >Intervalo (minutos)</label
+              >
+              <input
+                type="number"
+                class="form-control"
+                id="timer-interval"
+                value="{{ scheduler_status.interval if scheduler_status else 30 }}"
+                min="1"
+                max="1440"
+              />
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="d-grid gap-2">
+              <button
+                type="button"
+                class="btn btn-success"
+                id="btn-start-timer"
+              >
+                <i class="bi bi-play-fill me-2"></i>Iniciar
+              </button>
+              <button
+                type="button"
+                class="btn btn-warning"
+                id="btn-pause-timer"
+              >
+                <i class="bi bi-pause-fill me-2"></i>Pausar
+              </button>
+              <button type="button" class="btn btn-danger" id="btn-stop-timer">
+                <i class="bi bi-stop-fill me-2"></i>Parar
+              </button>
+              <button
+                type="button"
+                class="btn btn-outline-secondary"
+                id="btn-reset-timer"
+              >
+                <i class="bi bi-arrow-clockwise me-2"></i>Reset
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Quick Stats -->
+  <div class="col-lg-4">
+    <div class="card border-0 shadow-sm">
+      <div class="card-header bg-transparent">
+        <h5 class="card-title mb-0">
+          <i class="bi bi-graph-up me-2"></i>Estatísticas Rápidas
+        </h5>
+      </div>
+      <div class="card-body">
+        <div class="mb-3">
+          <div class="d-flex justify-content-between">
+            <span>Uploads Hoje</span>
+            <strong class="text-success">0</strong>
+          </div>
+        </div>
+        <div class="mb-3">
+          <div class="d-flex justify-content-between">
+            <span>Erros Hoje</span>
+            <strong class="text-danger">0</strong>
+          </div>
+        </div>
+        <div class="mb-3">
+          <div class="d-flex justify-content-between">
+            <span>Taxa Sucesso</span>
+            <strong class="text-info">100%</strong>
+          </div>
+        </div>
+        <hr />
+        <div class="d-flex justify-content-between">
+          <span>Uptime</span>
+          <strong class="text-primary">24h</strong>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Alerts & Recent Activity -->
+<div class="row">
+  <!-- High Error Obras -->
+  {% if high_error_obras %}
+  <div class="col-lg-6 mb-4">
+    <div class="card border-0 shadow-sm">
+      <div class="card-header bg-transparent">
+        <h5 class="card-title mb-0">
+          <i class="bi bi-exclamation-triangle text-warning me-2"></i>Obras com
+          Muitos Erros
+        </h5>
+      </div>
+      <div class="card-body">
+        {% for obra in high_error_obras %}
+        <div class="d-flex justify-content-between align-items-center mb-2">
+          <div>
+            <strong>{{ obra.titulo }}</strong>
+            <br />
+            <small class="text-muted">{{ obra.scan_name }}</small>
+          </div>
+          <span class="badge bg-warning"
+            >{{ obra.erros_consecutivos }} erros</span
+          >
+        </div>
+        {% if not loop.last %}
+        <hr class="my-2" />
+        {% endif %} {% endfor %}
+      </div>
+    </div>
+  </div>
+  {% endif %}
+
+  <!-- Recent Logs -->
+  <div class="col-lg-6 mb-4">
+    <div class="card border-0 shadow-sm">
+      <div class="card-header bg-transparent">
+        <h5 class="card-title mb-0">
+          <i class="bi bi-journal-text me-2"></i>Atividade Recente
+        </h5>
+      </div>
+      <div class="card-body">
+        {% if recent_logs %} {% for log in recent_logs %}
+        <div class="d-flex align-items-start mb-3">
+          <div class="me-3">
+            {% if log.level == 'ERROR' %}
+            <i class="bi bi-x-circle text-danger"></i>
+            {% elif log.level == 'WARNING' %}
+            <i class="bi bi-exclamation-triangle text-warning"></i>
+            {% elif log.level == 'SUCCESS' %}
+            <i class="bi bi-check-circle text-success"></i>
+            {% else %}
+            <i class="bi bi-info-circle text-info"></i>
+            {% endif %}
+          </div>
+          <div class="flex-grow-1">
+            <div class="fw-medium">{{ log.message }}</div>
+            <small class="text-muted">
+              {{ log.timestamp|datetime_format }} • {{ log.module }}
+            </small>
+          </div>
+        </div>
+        {% endfor %} {% else %}
+        <p class="text-muted text-center mb-0">Nenhuma atividade recente</p>
+        {% endif %}
+
+        <div class="text-center mt-3">
+          <a
+            href="{{ url_for('logs.index') }}"
+            class="btn btn-outline-secondary btn-sm"
+          >
+            Ver Todos os Logs
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %} {% block extra_scripts %}
+<script>
+  // Timer controls
+  document
+    .getElementById("btn-start-timer")
+    .addEventListener("click", function () {
+      controlTimer("start");
+    });
+
+  document
+    .getElementById("btn-pause-timer")
+    .addEventListener("click", function () {
+      controlTimer("pause");
+    });
+
+  document
+    .getElementById("btn-stop-timer")
+    .addEventListener("click", function () {
+      controlTimer("stop");
+    });
+
+  document
+    .getElementById("btn-reset-timer")
+    .addEventListener("click", function () {
+      controlTimer("reset");
+    });
+
+  // Timer interval change
+  document
+    .getElementById("timer-interval")
+    .addEventListener("change", function () {
+      const interval = this.value;
+
+      fetch("/api/dashboard/timer/config", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ interval: parseInt(interval) }),
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          if (data.success) {
+            showAlert(
+              "Intervalo do timer atualizado para " + interval + " minutos",
+              "success"
+            );
+          } else {
+            showAlert("Erro ao atualizar intervalo: " + data.error, "error");
+          }
+        })
+        .catch((error) => {
+          showAlert("Erro na comunicação: " + error, "error");
+        });
+    });
+
+  function controlTimer(action) {
+    fetch("/api/dashboard/timer/control", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ action: action }),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.success) {
+          showAlert("Timer " + action + " executado com sucesso", "success");
+          // Reload page to update status
+          setTimeout(() => location.reload(), 1000);
+        } else {
+          showAlert("Erro ao controlar timer: " + data.error, "error");
+        }
+      })
+      .catch((error) => {
+        showAlert("Erro na comunicação: " + error, "error");
+      });
+  }
+
+  function showAlert(message, type) {
+    const alertDiv = document.createElement("div");
+    alertDiv.className = `alert alert-${
+      type === "error" ? "danger" : "success"
+    } alert-dismissible fade show`;
+    alertDiv.innerHTML = `
+        <i class="bi bi-${
+          type === "error" ? "exclamation-triangle" : "check-circle"
+        } me-2"></i>
+        ${message}
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    `;
+
+    const container = document.querySelector("main .container-fluid");
+    container.insertBefore(alertDiv, container.firstChild);
+
+    // Auto remove after 5 seconds
+    setTimeout(() => {
+      if (alertDiv.parentNode) {
+        alertDiv.remove();
+      }
+    }, 5000);
+  }
+
+  // Auto-refresh dashboard data every 30 seconds
+  setInterval(function () {
+    fetch("/api/dashboard/stats")
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.success) {
+          // Update metrics (implementation would go here)
+          console.log("Dashboard updated:", data.data);
+        }
+      })
+      .catch((error) => console.error("Error updating dashboard:", error));
+  }, 30000);
+</script>
+{% endblock %}

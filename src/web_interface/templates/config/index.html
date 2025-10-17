@@ -1,0 +1,752 @@
+{% extends "base.html" %} {% block title %}Configurações - {{ super() }}{%
+endblock %} {% block extra_head %}
+<style>
+  .config-section {
+    margin-bottom: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    background: white;
+    overflow: hidden;
+  }
+
+  .config-header {
+    background: linear-gradient(
+      135deg,
+      var(--orange-primary) 0%,
+      var(--orange-secondary) 100%
+    );
+    color: white;
+    padding: 1.5rem;
+    margin: 0;
+  }
+
+  .config-content {
+    padding: 2rem;
+  }
+
+  .config-item {
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    background: #f8f9fa;
+  }
+
+  .config-item.readonly {
+    background: #e9ecef;
+    color: #6c757d;
+  }
+
+  .config-item label {
+    font-weight: 600;
+    color: #495057;
+    margin-bottom: 0.5rem;
+  }
+
+  .config-value {
+    font-family: "Courier New", monospace;
+    padding: 0.5rem 0.75rem;
+    background: white;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    font-size: 0.9rem;
+  }
+
+  .config-description {
+    font-size: 0.875rem;
+    color: #6c757d;
+    margin-top: 0.25rem;
+  }
+
+  .btn-primary {
+    background: var(--orange-primary);
+    border-color: var(--orange-primary);
+  }
+
+  .btn-primary:hover {
+    background: var(--orange-secondary);
+    border-color: var(--orange-secondary);
+  }
+
+  .btn-outline-warning {
+    color: var(--orange-primary);
+    border-color: var(--orange-primary);
+  }
+
+  .btn-outline-warning:hover {
+    background: var(--orange-primary);
+    border-color: var(--orange-primary);
+  }
+
+  .alert {
+    border-radius: 8px;
+    border: none;
+  }
+
+  .nav-tabs .nav-link {
+    border-radius: 8px 8px 0 0;
+    color: #6c757d;
+    border: 1px solid transparent;
+  }
+
+  .nav-tabs .nav-link.active {
+    background: var(--orange-primary);
+    color: white;
+    border-color: var(--orange-primary);
+  }
+
+  .tab-pane {
+    background: white;
+    border: 1px solid #dee2e6;
+    border-top: none;
+    border-radius: 0 0 8px 8px;
+    padding: 2rem;
+  }
+</style>
+{% endblock %} {% block content %}
+<!-- Page Header -->
+<div class="row mb-4">
+  <div class="col">
+    <h1 class="h2 mb-2">
+      <i class="bi bi-gear me-2" style="color: var(--orange-primary)"></i>
+      Configurações do Sistema
+    </h1>
+    <p class="text-muted">
+      Gerencie configurações fixas e flexíveis do MediocreToons Auto Uploader
+    </p>
+  </div>
+</div>
+
+<!-- Messages -->
+{% with messages = get_flashed_messages(with_categories=true) %} {% if messages
+%} {% for category, message in messages %}
+<div
+  class="alert alert-{{ 'danger' if category == 'error' else category }} alert-dismissible fade show"
+  role="alert"
+>
+  {{ message }}
+  <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+</div>
+{% endfor %} {% endif %} {% endwith %}
+
+<!-- Configuration Tabs -->
+<div class="row">
+  <div class="col-12">
+    <ul class="nav nav-tabs" id="configTabs" role="tablist">
+      <li class="nav-item" role="presentation">
+        <button
+          class="nav-link active"
+          id="fixed-tab"
+          data-bs-toggle="tab"
+          data-bs-target="#fixed"
+          type="button"
+          role="tab"
+        >
+          <i class="bi bi-lock me-2"></i>Configurações Fixas
+        </button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button
+          class="nav-link"
+          id="flexible-tab"
+          data-bs-toggle="tab"
+          data-bs-target="#flexible"
+          type="button"
+          role="tab"
+        >
+          <i class="bi bi-sliders me-2"></i>Configurações Flexíveis
+        </button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button
+          class="nav-link"
+          id="automation-tab"
+          data-bs-toggle="tab"
+          data-bs-target="#automation"
+          type="button"
+          role="tab"
+        >
+          <i class="bi bi-robot me-2"></i>Timer e Automação
+        </button>
+      </li>
+    </ul>
+
+    <div class="tab-content" id="configTabsContent">
+      <!-- Configurações Fixas -->
+      <div class="tab-pane fade show active" id="fixed" role="tabpanel">
+        <div class="row">
+          <div class="col-12">
+            <div class="alert alert-info">
+              <i class="bi bi-info-circle me-2"></i>
+              <strong>Configurações Fixas:</strong> Estas configurações são
+              definidas pelo sistema e não podem ser alteradas via interface.
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="config-item readonly">
+              <label>Formato de Imagem</label>
+              <div class="config-value">{{ fixed_config.image_format }}</div>
+              <div class="config-description">
+                Formato padrão para salvar as imagens baixadas
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+            <div class="config-item readonly">
+              <label>Pasta de Destino</label>
+              <div class="config-value">{{ fixed_config.save_path }}</div>
+              <div class="config-description">
+                Diretório onde as imagens são salvas
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="config-item readonly">
+              <label>Fatiamento de Imagens</label>
+              <div class="config-value">
+                {{ '✅ Sempre Ativo' if fixed_config.slice_enabled else '❌
+                Desabilitado' }}
+              </div>
+              <div class="config-description">
+                Altura máxima: {{ fixed_config.slice_height }}px
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+            <div class="config-item readonly">
+              <label>Largura Automática</label>
+              <div class="config-value">
+                {{ '✅ Habilitado' if fixed_config.automatic_width else '❌
+                Desabilitado' }}
+              </div>
+              <div class="config-description">
+                Detecta largura automaticamente das imagens
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="config-item readonly">
+              <label>Substituir Arquivos</label>
+              <div class="config-value">
+                {{ '✅ Sim' if fixed_config.slice_replace_files else '❌ Não' }}
+              </div>
+              <div class="config-description">
+                Substitui arquivos existentes durante o fatiamento
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+            <div class="config-item readonly">
+              <label>Tipo de Detecção</label>
+              <div class="config-value">
+                {{ fixed_config.detection_type.title() }}
+              </div>
+              <div class="config-description">
+                Método usado para detecção de conteúdo
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Configurações Flexíveis -->
+      <div class="tab-pane fade" id="flexible" role="tabpanel">
+        <form
+          method="POST"
+          action="{{ url_for('config.save_flexible_config') }}"
+          id="flexibleConfigForm"
+        >
+          <div class="row">
+            <div class="col-12">
+              <div class="alert alert-warning">
+                <i class="bi bi-exclamation-triangle me-2"></i>
+                <strong>Atenção:</strong> Um backup será criado automaticamente
+                antes de salvar as alterações.
+              </div>
+            </div>
+          </div>
+
+          <!-- Proxy Settings -->
+          <div class="config-section">
+            <h5 class="config-header">
+              <i class="bi bi-shield-lock me-2"></i>Configurações de Proxy/VPN
+            </h5>
+            <div class="config-content">
+              <div class="row">
+                <div class="col-lg-6">
+                  <div class="form-check form-switch mb-3">
+                    <input class="form-check-input" type="checkbox"
+                    id="proxy_enabled" name="proxy_enabled" {{ 'checked' if
+                    flexible_config.proxy_settings.enabled }}>
+                    <label class="form-check-label" for="proxy_enabled">
+                      <strong>Habilitar Proxy</strong>
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                id="proxy-settings"
+                style="display: {{ 'block' if flexible_config.proxy_settings.enabled else 'none' }};"
+              >
+                <div class="row">
+                  <div class="col-lg-6">
+                    <div class="mb-3">
+                      <label for="http_proxy" class="form-label"
+                        >HTTP Proxy</label
+                      >
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="http_proxy"
+                        name="http_proxy"
+                        value="{{ flexible_config.proxy_settings.http_proxy }}"
+                        placeholder="http://proxy.example.com:8080"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-lg-6">
+                    <div class="mb-3">
+                      <label for="https_proxy" class="form-label"
+                        >HTTPS Proxy</label
+                      >
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="https_proxy"
+                        name="https_proxy"
+                        value="{{ flexible_config.proxy_settings.https_proxy }}"
+                        placeholder="https://proxy.example.com:8080"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-lg-6">
+                    <div class="mb-3">
+                      <label for="proxy_user" class="form-label"
+                        >Usuário (opcional)</label
+                      >
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="proxy_user"
+                        name="proxy_user"
+                        value="{{ flexible_config.proxy_settings.auth_user }}"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-lg-6">
+                    <div class="mb-3">
+                      <label for="proxy_pass" class="form-label"
+                        >Senha (opcional)</label
+                      >
+                      <input
+                        type="password"
+                        class="form-control"
+                        id="proxy_pass"
+                        name="proxy_pass"
+                        value="{{ flexible_config.proxy_settings.auth_pass }}"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- HTTP Settings -->
+          <div class="config-section">
+            <h5 class="config-header">
+              <i class="bi bi-globe me-2"></i>Configurações HTTP
+            </h5>
+            <div class="config-content">
+              <div class="row">
+                <div class="col-lg-4">
+                  <div class="mb-3">
+                    <label for="http_timeout" class="form-label"
+                      >Timeout (segundos)</label
+                    >
+                    <input
+                      type="number"
+                      class="form-control"
+                      id="http_timeout"
+                      name="http_timeout"
+                      value="{{ flexible_config.http_settings.timeout }}"
+                      min="1"
+                      max="300"
+                    />
+                  </div>
+                </div>
+                <div class="col-lg-4">
+                  <div class="mb-3">
+                    <label for="max_retries" class="form-label"
+                      >Máximo de Tentativas</label
+                    >
+                    <input
+                      type="number"
+                      class="form-control"
+                      id="max_retries"
+                      name="max_retries"
+                      value="{{ flexible_config.http_settings.max_retries }}"
+                      min="0"
+                      max="10"
+                    />
+                  </div>
+                </div>
+                <div class="col-lg-4">
+                  <div class="mb-3">
+                    <label for="retry_delay" class="form-label"
+                      >Delay entre Tentativas (seg)</label
+                    >
+                    <input
+                      type="number"
+                      class="form-control"
+                      id="retry_delay"
+                      name="retry_delay"
+                      value="{{ flexible_config.http_settings.retry_delay }}"
+                      min="1"
+                      max="60"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-12">
+                  <div class="mb-3">
+                    <label for="user_agent" class="form-label"
+                      >User Agent</label
+                    >
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="user_agent"
+                      name="user_agent"
+                      value="{{ flexible_config.http_settings.user_agent }}"
+                      placeholder="MediocreToons Auto Uploader v2"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-12">
+                  <div class="mb-3">
+                    <label for="custom_headers" class="form-label"
+                      >Headers Customizados</label
+                    >
+                    <textarea
+                      class="form-control"
+                      id="custom_headers"
+                      name="custom_headers"
+                      rows="4"
+                      placeholder="Header-Name: Header-Value&#10;Another-Header: Another-Value"
+                    >
+{% if flexible_config.http_settings.custom_headers %}{% for key, value in flexible_config.http_settings.custom_headers.items() %}{{ key }}: {{ value }}{% if not loop.last %}&#10;{% endif %}{% endfor %}{% endif %}</textarea
+                    >
+                    <div class="form-text">
+                      Um header por linha no formato "Nome: Valor"
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Cache Settings -->
+          <div class="config-section">
+            <h5 class="config-header">
+              <i class="bi bi-hdd me-2"></i>Configurações de Cache
+            </h5>
+            <div class="config-content">
+              <div class="row">
+                <div class="col-lg-6">
+                  <div class="form-check form-switch mb-3">
+                    <input class="form-check-input" type="checkbox"
+                    id="cache_enabled" name="cache_enabled" {{ 'checked' if
+                    flexible_config.cache_settings.enabled }}>
+                    <label class="form-check-label" for="cache_enabled">
+                      <strong>Habilitar Cache</strong>
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                id="cache-settings"
+                style="display: {{ 'block' if flexible_config.cache_settings.enabled else 'none' }};"
+              >
+                <div class="row">
+                  <div class="col-lg-6">
+                    <div class="mb-3">
+                      <label for="cache_duration" class="form-label"
+                        >Duração do Cache (segundos)</label
+                      >
+                      <input
+                        type="number"
+                        class="form-control"
+                        id="cache_duration"
+                        name="cache_duration"
+                        value="{{ flexible_config.cache_settings.cache_duration }}"
+                        min="60"
+                        max="86400"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-lg-6">
+                    <div class="mb-3">
+                      <label for="max_cache_size" class="form-label"
+                        >Tamanho Máximo (MB)</label
+                      >
+                      <input
+                        type="number"
+                        class="form-control"
+                        id="max_cache_size"
+                        name="max_cache_size"
+                        value="{{ flexible_config.cache_settings.max_cache_size }}"
+                        min="10"
+                        max="1000"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row mt-4">
+            <div class="col-12">
+              <button type="submit" class="btn btn-primary btn-lg me-3">
+                <i class="bi bi-check-circle me-2"></i>Salvar Configurações
+              </button>
+              <button
+                type="button"
+                class="btn btn-outline-warning"
+                onclick="restoreDefaults('flexible')"
+              >
+                <i class="bi bi-arrow-clockwise me-2"></i>Restaurar Padrões
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <!-- Timer e Automação -->
+      <div class="tab-pane fade" id="automation" role="tabpanel">
+        <form
+          method="POST"
+          action="{{ url_for('config.save_automation_config') }}"
+          id="automationConfigForm"
+        >
+          <div class="config-section">
+            <h5 class="config-header">
+              <i class="bi bi-clock me-2"></i>Configurações do Timer
+            </h5>
+            <div class="config-content">
+              <div class="row">
+                <div class="col-lg-6">
+                  <div class="mb-3">
+                    <label for="timer_interval" class="form-label"
+                      >Intervalo do Timer (minutos)</label
+                    >
+                    <input
+                      type="number"
+                      class="form-control"
+                      id="timer_interval"
+                      name="timer_interval"
+                      value="{{ automation_config.timer_interval }}"
+                      min="1"
+                      max="1440"
+                    />
+                    <div class="form-text">
+                      Tempo entre execuções automáticas (padrão: 30 minutos)
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="mb-3">
+                    <label for="quarantine_limit" class="form-label"
+                      >Limite de Erros para Quarentena</label
+                    >
+                    <input
+                      type="number"
+                      class="form-control"
+                      id="quarantine_limit"
+                      name="quarantine_limit"
+                      value="{{ automation_config.quarantine_error_limit }}"
+                      min="1"
+                      max="50"
+                    />
+                    <div class="form-text">
+                      Número de erros consecutivos antes de quarentena (padrão:
+                      10)
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-lg-6">
+                  <div class="form-check form-switch mb-3">
+                    <input class="form-check-input" type="checkbox"
+                    id="auto_start_timer" name="auto_start_timer" {{ 'checked'
+                    if automation_config.auto_start_timer }}>
+                    <label class="form-check-label" for="auto_start_timer">
+                      <strong>Iniciar Timer Automaticamente</strong>
+                    </label>
+                    <div class="form-text">
+                      Inicia o timer automaticamente quando o sistema é ligado
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="config-section">
+            <h5 class="config-header">
+              <i class="bi bi-chat-dots me-2"></i>Notificações Discord
+            </h5>
+            <div class="config-content">
+              <div class="row">
+                <div class="col-lg-6">
+                  <div class="form-check form-switch mb-3">
+                    <input class="form-check-input" type="checkbox"
+                    id="discord_enabled" name="discord_enabled" {{ 'checked' if
+                    automation_config.discord_enabled }}>
+                    <label class="form-check-label" for="discord_enabled">
+                      <strong>Habilitar Notificações Discord</strong>
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                id="discord-settings"
+                style="display: {{ 'block' if automation_config.discord_enabled else 'none' }};"
+              >
+                <div class="row">
+                  <div class="col-12">
+                    <div class="mb-3">
+                      <label for="discord_webhook" class="form-label"
+                        >Discord Webhook URL</label
+                      >
+                      <input
+                        type="url"
+                        class="form-control"
+                        id="discord_webhook"
+                        name="discord_webhook"
+                        value="{{ automation_config.discord_webhook_url }}"
+                        placeholder="https://discord.com/api/webhooks/..."
+                      />
+                      <div class="form-text">
+                        URL do webhook do Discord para envio de notificações
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-lg-6">
+                    <div class="mb-3">
+                      <label for="discord_mention_user" class="form-label"
+                        >ID do Usuário para Mencionar</label
+                      >
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="discord_mention_user"
+                        name="discord_mention_user"
+                        value="{{ automation_config.discord_mention_user }}"
+                        placeholder="221057164351897610"
+                      />
+                      <div class="form-text">
+                        ID do usuário Discord para mencionar em notificações
+                        importantes
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-6">
+                    <div class="d-flex align-items-end">
+                      <button
+                        type="button"
+                        class="btn btn-outline-secondary"
+                        onclick="testDiscordWebhook()"
+                      >
+                        <i class="bi bi-send me-2"></i>Testar Webhook
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row mt-4">
+            <div class="col-12">
+              <button type="submit" class="btn btn-primary btn-lg me-3">
+                <i class="bi bi-check-circle me-2"></i>Salvar Configurações
+              </button>
+              <button
+                type="button"
+                class="btn btn-outline-warning"
+                onclick="restoreDefaults('automation')"
+              >
+                <i class="bi bi-arrow-clockwise me-2"></i>Restaurar Padrões
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal de Confirmação -->
+<div class="modal fade" id="confirmRestoreModal" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Confirmar Restauração</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <p>Tem certeza que deseja restaurar as configurações padrão?</p>
+        <p class="text-warning">
+          <strong>Atenção:</strong> Todas as configurações atuais serão
+          perdidas!
+        </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          Cancelar
+        </button>
+        <button type="button" class="btn btn-warning" id="confirmRestoreBtn">
+          Restaurar
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %} {% block extra_scripts %}
+<script src="{{ url_for('static', filename='js/config.js') }}"></script>
+{% endblock %}

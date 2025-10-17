@@ -1,0 +1,38 @@
+{
+  "scan_info": {
+    "name": "mangayabu",
+    "base_url": "https://mangayabu.top",
+    "last_check": null,
+    "active": true,
+    "description": "Scan principal para testes"
+  },
+  "obras": [
+    {
+      "id": "example-uuid-1234",
+      "titulo": "Obra de Exemplo",
+      "url_relativa": "/manga/obra-exemplo",
+      "status": "ativo",
+      "ultimo_upload": null,
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 1,
+          "url_relativa": "/manga/obra-exemplo/capitulo-1",
+          "data_upload": null,
+          "status": "pendente"
+        }
+      ],
+      "tags": ["exemplo", "teste"],
+      "autor": "Autor Exemplo",
+      "descricao": "Uma obra de exemplo para demonstrar o schema",
+      "created_at": "2024-10-15T10:00:00Z",
+      "updated_at": "2024-10-15T10:00:00Z"
+    }
+  ],
+  "metadata": {
+    "version": "2.0",
+    "created_at": "2024-10-15T10:00:00Z",
+    "updated_at": "2024-10-15T10:00:00Z",
+    "total_obras": 1
+  }
+}

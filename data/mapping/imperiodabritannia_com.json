@@ -1,0 +1,315 @@
+{
+  "scan_info": {
+    "name": "imperiodabritannia_com",
+    "base_url": "https://imperiodabritannia.com",
+    "last_check": null,
+    "active": true,
+    "scape_time": 30,
+    "description": "Migrado de obras_mapeadas.json em 2025-10-15"
+  },
+  "obras": [
+    {
+      "id": 18,
+      "titulo": "Crônicas da Facção Demoníaca",
+      "url_relativa": "https://imperiodabritannia.com/manga/cronicas-da-faccao-demoniaca/",
+      "status": "ativo",
+      "ultimo_upload": null,
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 139.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 140.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.109710+00:00",
+      "updated_at": "2025-10-15T21:54:23.109712+00:00",
+      "id_obra_original": 18,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 48,
+      "titulo": "Mago Prismático Genial",
+      "url_relativa": "https://imperiodabritannia.com/manga/mago-prismatico-genial/",
+      "status": "ativo",
+      "ultimo_upload": null,
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 55.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 56.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.109774+00:00",
+      "updated_at": "2025-10-15T21:54:23.109777+00:00",
+      "id_obra_original": 48,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 368,
+      "titulo": "Este herói é um supremacista financeiro",
+      "url_relativa": "https://imperiodabritannia.com/manga/este-heroi-e-um-supremacista-financeiro/",
+      "status": "ativo",
+      "ultimo_upload": null,
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 110.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 111.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.109803+00:00",
+      "updated_at": "2025-10-15T21:54:23.109805+00:00",
+      "id_obra_original": 368,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 2339,
+      "titulo": "Mecânico do Apocalipse",
+      "url_relativa": "https://imperiodabritannia.com/manga/mecanico-do-apocalipse/",
+      "status": "ativo",
+      "ultimo_upload": null,
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 32.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 33.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.109849+00:00",
+      "updated_at": "2025-10-15T21:54:23.109851+00:00",
+      "id_obra_original": 2339,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 284,
+      "titulo": "O Mecânico Lendário ",
+      "url_relativa": "https://imperiodabritannia.com/manga/o-mecanico-lendario/",
+      "status": "ativo",
+      "ultimo_upload": null,
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 257.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 258.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.109868+00:00",
+      "updated_at": "2025-10-15T21:54:23.109870+00:00",
+      "id_obra_original": 284,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 955,
+      "titulo": "Os Dez Grandes Imperadores do Início São Todos Meus Aprendizes",
+      "url_relativa": "https://imperiodabritannia.com/manga/os-dez-grandes-imperadores/",
+      "status": "ativo",
+      "ultimo_upload": null,
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 103.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 104.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.109951+00:00",
+      "updated_at": "2025-10-15T21:54:23.109953+00:00",
+      "id_obra_original": 955,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 2458,
+      "titulo": "A Calamidade do Fim dos Tempos",
+      "url_relativa": "https://imperiodabritannia.com/manga/a-calamidade-do-fim-dos-tempos/",
+      "status": "ativo",
+      "ultimo_upload": null,
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 29.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 30.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.109979+00:00",
+      "updated_at": "2025-10-15T21:54:23.109981+00:00",
+      "id_obra_original": 2458,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 1690,
+      "titulo": "Eu Realmente não Quero ser o Primeiro",
+      "url_relativa": "https://imperiodabritannia.com/manga/eu-realmente-nao-quero-ser-o-primeiro/",
+      "status": "ativo",
+      "ultimo_upload": null,
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 50.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 51.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.109991+00:00",
+      "updated_at": "2025-10-15T21:54:23.109992+00:00",
+      "id_obra_original": 1690,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 2512,
+      "titulo": "Renascimento do Deus Pródigo",
+      "url_relativa": "https://imperiodabritannia.com/manga/renascimento-do-deus-prodigo/",
+      "status": "ativo",
+      "ultimo_upload": null,
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 51.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 52.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.110006+00:00",
+      "updated_at": "2025-10-15T21:54:23.110007+00:00",
+      "id_obra_original": 2512,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 2509,
+      "titulo": "O Imortal",
+      "url_relativa": "https://imperiodabritannia.com/manga/o-imortal/",
+      "status": "ativo",
+      "ultimo_upload": null,
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 34.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 35.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.110026+00:00",
+      "updated_at": "2025-10-15T21:54:23.110027+00:00",
+      "id_obra_original": 2509,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 1545,
+      "titulo": "O Caçador de Classe S que Cura Monstros",
+      "url_relativa": "https://imperiodabritannia.com/manga/o-cacador-de-classe-s-que-cura-monstros/",
+      "status": "ativo",
+      "ultimo_upload": null,
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 15.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 16.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.110038+00:00",
+      "updated_at": "2025-10-15T21:54:23.110039+00:00",
+      "id_obra_original": 1545,
+      "numero_pulos_config": 0
+    }
+  ],
+  "metadata": {
+    "version": "2.0",
+    "created_at": "2025-10-15T21:54:23.109693+00:00",
+    "updated_at": "2025-10-15T21:54:23.110051+00:00",
+    "total_obras": 11
+  }
+}

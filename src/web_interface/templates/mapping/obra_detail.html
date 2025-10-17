@@ -1,0 +1,514 @@
+{% extends "base.html" %} {% block title %}{{ obra.titulo }} - {{ scan_info.name
+or scan_name }}{% endblock %} {% block content %}
+<div class="container-fluid">
+  <!-- Breadcrumb -->
+  <nav aria-label="breadcrumb" class="mb-3">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item">
+        <a href="{{ url_for('mapping.index') }}">
+          <i class="fas fa-book-open"></i> Mapeamento
+        </a>
+      </li>
+      <li class="breadcrumb-item">
+        <a href="{{ url_for('mapping.scan_detail', scan_name=scan_name) }}">
+          {{ scan_info.name or scan_name }}
+        </a>
+      </li>
+      <li class="breadcrumb-item active">{{ obra.titulo }}</li>
+    </ol>
+  </nav>
+
+  <!-- Header da obra -->
+  <div class="row mb-4">
+    <div class="col-md-8">
+      <h2 class="mb-2">
+        <i class="fas fa-book text-primary"></i>
+        {{ obra.titulo }}
+      </h2>
+      <div class="d-flex flex-wrap gap-3 mb-3">
+        <!-- Status -->
+        {% if obra.status == 'ativo' %}
+        <span class="badge bg-success fs-6">
+          <i class="fas fa-check"></i> Ativo
+        </span>
+        {% elif obra.status == 'quarentena' %}
+        <span class="badge bg-warning fs-6">
+          <i class="fas fa-pause"></i> Quarentena
+        </span>
+        {% endif %}
+
+        <!-- Erros -->
+        {% if obra.erros_consecutivos > 0 %}
+        <span class="badge bg-danger fs-6">
+          <i class="fas fa-exclamation-triangle"></i> {{ obra.erros_consecutivos
+          }} erros
+        </span>
+        {% else %}
+        <span class="badge bg-success fs-6">
+          <i class="fas fa-check-circle"></i> Sem erros
+        </span>
+        {% endif %}
+
+        <!-- URL -->
+        {% if scan_info.base_url and obra.url_relativa %}
+        <a
+          href="{{ scan_info.base_url }}{{ obra.url_relativa }}"
+          target="_blank"
+          class="btn btn-outline-primary btn-sm"
+        >
+          <i class="fas fa-external-link-alt"></i> Ver no Site
+        </a>
+        {% endif %}
+      </div>
+    </div>
+    <div class="col-md-4 text-end">
+      <div class="btn-group" role="group">
+        <button type="button" class="btn btn-success" onclick="manualUpload()">
+          <i class="fas fa-upload"></i> Upload Manual
+        </button>
+        <button
+          type="button"
+          class="btn btn-warning"
+          onclick="toggleQuarantine()"
+        >
+          <i class="fas fa-pause"></i>
+          {% if obra.status == 'ativo' %}Quarentena{% else %}Reativar{% endif %}
+        </button>
+        <a
+          href="{{ url_for('mapping.edit_obra', scan_name=scan_name, obra_id=obra.id) }}"
+          class="btn btn-outline-secondary"
+        >
+          <i class="fas fa-edit"></i> Editar
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Informações da obra -->
+  <div class="row mb-4">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-header">
+          <h5 class="mb-0">
+            <i class="fas fa-info-circle"></i>
+            Informações Gerais
+          </h5>
+        </div>
+        <div class="card-body">
+          <table class="table table-borderless">
+            <tr>
+              <th width="150">Título:</th>
+              <td>{{ obra.titulo }}</td>
+            </tr>
+            <tr>
+              <th>URL Relativa:</th>
+              <td>
+                <code>{{ obra.url_relativa }}</code>
+              </td>
+            </tr>
+            <tr>
+              <th>Status:</th>
+              <td>
+                {% if obra.status == 'ativo' %}
+                <span class="text-success">
+                  <i class="fas fa-check-circle"></i> Ativo
+                </span>
+                {% elif obra.status == 'quarentena' %}
+                <span class="text-warning">
+                  <i class="fas fa-pause-circle"></i> Em Quarentena
+                </span>
+                {% endif %}
+              </td>
+            </tr>
+            <tr>
+              <th>Último Upload:</th>
+              <td>
+                {% if obra.ultimo_upload %} {{ obra.ultimo_upload |
+                format_datetime }} {% else %}
+                <span class="text-muted">Nunca</span>
+                {% endif %}
+              </td>
+            </tr>
+            <tr>
+              <th>Erros Consecutivos:</th>
+              <td>
+                {% if obra.erros_consecutivos > 0 %}
+                <span class="text-danger fw-bold"
+                  >{{ obra.erros_consecutivos }}</span
+                >
+                {% if obra.erros_consecutivos >= 10 %}
+                <small class="text-muted"
+                  >(limiar de quarentena atingido)</small
+                >
+                {% endif %} {% else %}
+                <span class="text-success">0</span>
+                {% endif %}
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-header">
+          <h5 class="mb-0">
+            <i class="fas fa-chart-bar"></i>
+            Estatísticas
+          </h5>
+        </div>
+        <div class="card-body">
+          <table class="table table-borderless">
+            <tr>
+              <th width="150">Total Capítulos:</th>
+              <td>{{ obra.total_capitulos or 0 }}</td>
+            </tr>
+            <tr>
+              <th>Disponíveis:</th>
+              <td>{{ obra.capitulos_disponivel or 0 }}</td>
+            </tr>
+            <tr>
+              <th>Progresso:</th>
+              <td>
+                {% if obra.total_capitulos and obra.total_capitulos > 0 %} {%
+                set progress = (obra.capitulos_disponivel or 0) /
+                obra.total_capitulos * 100 %}
+                <div class="progress" style="height: 20px">
+                  <div class="progress-bar" style="width: {{ progress }}%">
+                    {{ "%.1f"|format(progress) }}%
+                  </div>
+                </div>
+                {% else %}
+                <span class="text-muted">N/A</span>
+                {% endif %}
+              </td>
+            </tr>
+            <tr>
+              <th>Scan:</th>
+              <td>
+                <a
+                  href="{{ url_for('mapping.scan_detail', scan_name=scan_name) }}"
+                  class="text-decoration-none"
+                >
+                  <i class="fas fa-globe"></i> {{ scan_info.name or scan_name }}
+                </a>
+              </td>
+            </tr>
+            <tr>
+              <th>ID da Obra:</th>
+              <td><code>{{ obra.id }}</code></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Histórico de uploads -->
+  <div class="card">
+    <div class="card-header">
+      <div class="d-flex justify-content-between align-items-center">
+        <h5 class="mb-0">
+          <i class="fas fa-history"></i>
+          Histórico de Uploads
+        </h5>
+        <button
+          type="button"
+          class="btn btn-outline-primary btn-sm"
+          onclick="refreshHistory()"
+        >
+          <i class="fas fa-sync"></i> Atualizar
+        </button>
+      </div>
+    </div>
+    <div class="card-body">
+      {% if historico %}
+      <div class="table-responsive">
+        <table class="table table-hover">
+          <thead class="table-light">
+            <tr>
+              <th>Data/Hora</th>
+              <th>Capítulo</th>
+              <th>Status</th>
+              <th>Tempo</th>
+              <th>Detalhes</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for item in historico %}
+            <tr>
+              <td>
+                <small>{{ item.data | format_datetime_short }}</small>
+              </td>
+              <td>
+                <strong>{{ item.capitulo }}</strong>
+              </td>
+              <td>
+                {% if item.status == 'sucesso' %}
+                <span class="badge bg-success">
+                  <i class="fas fa-check"></i> Sucesso
+                </span>
+                {% elif item.status == 'erro' %}
+                <span class="badge bg-danger">
+                  <i class="fas fa-times"></i> Erro
+                </span>
+                {% elif item.status == 'processando' %}
+                <span class="badge bg-primary">
+                  <i class="fas fa-spinner fa-spin"></i> Processando
+                </span>
+                {% else %}
+                <span class="badge bg-secondary">{{ item.status }}</span>
+                {% endif %}
+              </td>
+              <td>
+                {% if item.tempo_processamento %}
+                <small class="text-muted">{{ item.tempo_processamento }}</small>
+                {% else %}
+                <small class="text-muted">-</small>
+                {% endif %}
+              </td>
+              <td>
+                {% if item.erro %}
+                <small class="text-danger">{{ item.erro }}</small>
+                {% elif item.detalhes %}
+                <small class="text-muted">{{ item.detalhes }}</small>
+                {% else %}
+                <small class="text-muted">-</small>
+                {% endif %}
+              </td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+      {% else %}
+      <div class="text-center py-4">
+        <i class="fas fa-history fa-3x text-muted mb-3"></i>
+        <h6 class="text-muted">Nenhum histórico disponível</h6>
+        <p class="text-muted small">
+          O histórico de uploads aparecerá aqui após o primeiro processamento.
+        </p>
+      </div>
+      {% endif %}
+    </div>
+  </div>
+
+  <!-- Ações rápidas -->
+  <div class="row mt-4">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-body">
+          <h6 class="card-title">
+            <i class="fas fa-bolt text-warning"></i>
+            Ações Rápidas
+          </h6>
+          <div class="d-grid gap-2">
+            <button
+              type="button"
+              class="btn btn-success"
+              onclick="manualUpload()"
+            >
+              <i class="fas fa-upload"></i> Adicionar à Fila de Upload
+            </button>
+            <button
+              type="button"
+              class="btn btn-warning"
+              onclick="toggleQuarantine()"
+            >
+              <i class="fas fa-pause"></i>
+              {% if obra.status == 'ativo' %}Colocar em Quarentena{% else
+              %}Reativar da Quarentena{% endif %}
+            </button>
+            <a
+              href="{{ url_for('mapping.edit_obra', scan_name=scan_name, obra_id=obra.id) }}"
+              class="btn btn-outline-secondary"
+            >
+              <i class="fas fa-edit"></i> Editar Informações
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-body">
+          <h6 class="card-title">
+            <i class="fas fa-info-circle text-info"></i>
+            Informações
+          </h6>
+          <ul class="list-unstyled small mb-0">
+            <li class="mb-2">
+              <strong>Upload Manual:</strong> Adiciona a obra à fila com
+              prioridade alta
+            </li>
+            <li class="mb-2">
+              <strong>Quarentena:</strong> Remove temporariamente do auto-update
+            </li>
+            <li class="mb-2">
+              <strong>Erros Consecutivos:</strong> Resetados ao fazer upload
+              manual ou alterar status
+            </li>
+            <li class="mb-0">
+              <strong>Auto-Quarentena:</strong> Ativada automaticamente após 10
+              erros consecutivos
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal de confirmação para upload manual -->
+<div class="modal fade" id="manualUploadModal" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Confirmar Upload Manual</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <p>
+          Deseja adicionar a obra <strong>{{ obra.titulo }}</strong> à fila de
+          upload manual?
+        </p>
+        <div class="alert alert-info">
+          <i class="fas fa-info-circle"></i>
+          A obra será processada com prioridade alta e o contador de erros será
+          resetado.
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          Cancelar
+        </button>
+        <button
+          type="button"
+          class="btn btn-success"
+          onclick="confirmManualUpload()"
+        >
+          <i class="fas fa-upload"></i> Confirmar Upload
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal de confirmação para quarentena -->
+<div class="modal fade" id="quarantineModal" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Alterar Status de Quarentena</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <p>
+          Deseja {% if obra.status == 'ativo' %}
+          <strong class="text-warning">colocar em quarentena</strong>
+          {% else %}
+          <strong class="text-success">reativar</strong>
+          {% endif %} a obra <strong>{{ obra.titulo }}</strong>?
+        </p>
+        <div class="alert alert-warning">
+          <i class="fas fa-exclamation-triangle"></i>
+          Esta ação irá resetar o contador de erros consecutivos da obra.
+        </div>
+        {% if obra.status == 'ativo' %}
+        <div class="alert alert-info">
+          <i class="fas fa-info-circle"></i>
+          A obra será removida temporariamente do ciclo de auto-update.
+        </div>
+        {% else %}
+        <div class="alert alert-success">
+          <i class="fas fa-check-circle"></i>
+          A obra voltará a ser incluída no ciclo de auto-update.
+        </div>
+        {% endif %}
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          Cancelar
+        </button>
+        <button
+          type="button"
+          class="btn btn-warning"
+          onclick="confirmToggleQuarantine()"
+        >
+          <i class="fas fa-pause"></i>
+          {% if obra.status == 'ativo' %}Colocar em Quarentena{% else
+          %}Reativar{% endif %}
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="{{ url_for('static', filename='js/app.js') }}"></script>
+<script>
+  // Upload manual
+  function manualUpload() {
+    const modal = new bootstrap.Modal(
+      document.getElementById("manualUploadModal")
+    );
+    modal.show();
+  }
+
+  function confirmManualUpload() {
+    const form = document.createElement("form");
+    form.method = "POST";
+    form.action =
+      '{{ url_for("mapping.manual_upload", scan_name=scan_name, obra_id=obra.id) }}';
+
+    document.body.appendChild(form);
+    form.submit();
+  }
+
+  // Quarentena
+  function toggleQuarantine() {
+    const modal = new bootstrap.Modal(
+      document.getElementById("quarantineModal")
+    );
+    modal.show();
+  }
+
+  function confirmToggleQuarantine() {
+    const form = document.createElement("form");
+    form.method = "POST";
+    form.action =
+      '{{ url_for("mapping.toggle_quarantine", scan_name=scan_name, obra_id=obra.id) }}';
+
+    document.body.appendChild(form);
+    form.submit();
+  }
+
+  // Atualizar histórico
+  function refreshHistory() {
+    // TODO: Implementar carregamento AJAX do histórico
+    location.reload();
+  }
+
+  // Auto-refresh para obras em processamento
+  document.addEventListener("DOMContentLoaded", function () {
+    // Verificar se há itens em processamento no histórico
+    const processingItems = document.querySelectorAll(
+      '.badge:contains("Processando")'
+    );
+
+    if (processingItems.length > 0) {
+      // Atualizar a página a cada 30 segundos se houver processamento ativo
+      setTimeout(() => {
+        location.reload();
+      }, 30000);
+    }
+  });
+</script>
+{% endblock %}

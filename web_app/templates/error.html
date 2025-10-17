@@ -1,0 +1,31 @@
+{% extends "base.html" %} {% block title %}Erro - MediocreToons Auto Uploader
+v2{% endblock %} {% block content %}
+<div class="row justify-content-center">
+  <div class="col-md-8 text-center">
+    <div class="card">
+      <div class="card-body py-5">
+        <i
+          class="fas fa-exclamation-triangle text-warning"
+          style="font-size: 4em"
+        ></i>
+        <h2 class="mt-3">Oops! Algo deu errado</h2>
+        {% if error %}
+        <p class="text-muted">{{ error }}</p>
+        {% else %}
+        <p class="text-muted">
+          Ocorreu um erro inesperado. Tente novamente em alguns instantes.
+        </p>
+        {% endif %}
+        <div class="mt-4">
+          <a href="{{ url_for('index') }}" class="btn btn-primary">
+            <i class="fas fa-home"></i> Voltar ao Dashboard
+          </a>
+          <button onclick="history.back()" class="btn btn-secondary">
+            <i class="fas fa-arrow-left"></i> Voltar
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

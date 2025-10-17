@@ -1,0 +1,288 @@
+{
+  "scan_info": {
+    "name": "fenixscan_xyz",
+    "base_url": "https://fenixscan.xyz",
+    "last_check": null,
+    "active": true,
+    "scape_time": 30,
+    "description": "Migrado de obras_mapeadas.json em 2025-10-15"
+  },
+  "obras": [
+    {
+      "id": 2247,
+      "titulo": "O Agente de Talento Novato Sabe de Tudo",
+      "url_relativa": "https://fenixscan.xyz/obra/o-agente-de-talentos-novato-sabe-de-tudo/",
+      "status": "ativo",
+      "ultimo_upload": null,
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 18.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 19.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.106141+00:00",
+      "updated_at": "2025-10-15T21:54:23.106143+00:00",
+      "id_obra_original": 2247,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 2367,
+      "titulo": "Me Tornei um pai amoroso",
+      "url_relativa": "https://fenixscan.xyz/obra/me-tornei-um-pai-amoroso/",
+      "status": "ativo",
+      "ultimo_upload": null,
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 88.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 89.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.106160+00:00",
+      "updated_at": "2025-10-15T21:54:23.106162+00:00",
+      "id_obra_original": 2367,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 2249,
+      "titulo": "Porteiro da Dungeon",
+      "url_relativa": "https://fenixscan.xyz/obra/porteiro-da-dungeon/",
+      "status": "ativo",
+      "ultimo_upload": null,
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 4.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 5.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.106199+00:00",
+      "updated_at": "2025-10-15T21:54:23.106201+00:00",
+      "id_obra_original": 2249,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 2366,
+      "titulo": "Seu Guarda Costas Particular",
+      "url_relativa": "https://fenixscan.xyz/obra/seu-guarda-costas-particular/",
+      "status": "ativo",
+      "ultimo_upload": null,
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 2.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 3.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.106208+00:00",
+      "updated_at": "2025-10-15T21:54:23.106210+00:00",
+      "id_obra_original": 2366,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 2370,
+      "titulo": "Por favor comporte-se minha esposa",
+      "url_relativa": "https://fenixscan.xyz/obra/por-favor-comporte-se-minha-esposa/",
+      "status": "ativo",
+      "ultimo_upload": null,
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 14.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 15.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.106216+00:00",
+      "updated_at": "2025-10-15T21:54:23.106218+00:00",
+      "id_obra_original": 2370,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 2372,
+      "titulo": "Grande Doutor Ling Ran",
+      "url_relativa": "https://fenixscan.xyz/obra/grande-doutor-ling-ran/",
+      "status": "ativo",
+      "ultimo_upload": null,
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 34.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 35.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.106228+00:00",
+      "updated_at": "2025-10-15T21:54:23.106231+00:00",
+      "id_obra_original": 2372,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 2371,
+      "titulo": "As Crônicas das Runas",
+      "url_relativa": "https://fenixscan.xyz/obra/as-cronicas-das-runas/",
+      "status": "ativo",
+      "ultimo_upload": null,
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 1.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 2.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.106247+00:00",
+      "updated_at": "2025-10-15T21:54:23.106249+00:00",
+      "id_obra_original": 2371,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 2368,
+      "titulo": "O Investidor que Ve o Futuro",
+      "url_relativa": "https://fenixscan.xyz/obra/o-investidor-que-ve-o-futuro/",
+      "status": "ativo",
+      "ultimo_upload": null,
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 3.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 4.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.106256+00:00",
+      "updated_at": "2025-10-15T21:54:23.106258+00:00",
+      "id_obra_original": 2368,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 2248,
+      "titulo": "Devo Fazer Armas Nucleares Também?",
+      "url_relativa": "https://fenixscan.xyz/obra/devo-fazer-armas-nucleares-tambem/",
+      "status": "ativo",
+      "ultimo_upload": "2025-10-09T15:23:45.879582",
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 5.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 6.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.106264+00:00",
+      "updated_at": "2025-10-15T21:54:23.106266+00:00",
+      "id_obra_original": 2248,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 2373,
+      "titulo": "O Gênio Que Lê O Mundo",
+      "url_relativa": "https://fenixscan.xyz/obra/o-genio-que-le-o-mundo/",
+      "status": "ativo",
+      "ultimo_upload": null,
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 11.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 12.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.106274+00:00",
+      "updated_at": "2025-10-15T21:54:23.106276+00:00",
+      "id_obra_original": 2373,
+      "numero_pulos_config": 0
+    }
+  ],
+  "metadata": {
+    "version": "2.0",
+    "created_at": "2025-10-15T21:54:23.106122+00:00",
+    "updated_at": "2025-10-15T21:54:23.106289+00:00",
+    "total_obras": 10
+  }
+}

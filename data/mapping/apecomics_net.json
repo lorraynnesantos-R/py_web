@@ -1,0 +1,585 @@
+{
+  "scan_info": {
+    "name": "apecomics_net",
+    "base_url": "https://apecomics.net",
+    "last_check": null,
+    "active": true,
+    "scape_time": 30,
+    "description": "Migrado de obras_mapeadas.json em 2025-10-15"
+  },
+  "obras": [
+    {
+      "id": 502,
+      "titulo": "Despertar em Tempo Integral",
+      "url_relativa": "https://apecomics.net/manga/despertar-em-tempo-integral/",
+      "status": "ativo",
+      "ultimo_upload": null,
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 35.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 36.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.121910+00:00",
+      "updated_at": "2025-10-15T21:54:23.121912+00:00",
+      "id_obra_original": 502,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 922,
+      "titulo": "Magnata Mulherengo",
+      "url_relativa": "https://apecomics.net/manga/magnata-mulherengo/",
+      "status": "ativo",
+      "ultimo_upload": null,
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 11.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 12.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.121939+00:00",
+      "updated_at": "2025-10-15T21:54:23.121942+00:00",
+      "id_obra_original": 922,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 1716,
+      "titulo": "Speedrun de Cultivo, Diversão sem Limites",
+      "url_relativa": "https://apecomics.net/manga/speedrun-de-cultivo-diversao-sem-limites/",
+      "status": "ativo",
+      "ultimo_upload": null,
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 19.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 20.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.121955+00:00",
+      "updated_at": "2025-10-15T21:54:23.121958+00:00",
+      "id_obra_original": 1716,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 1670,
+      "titulo": "O Caçador de Demônios Retorna como um Demônio",
+      "url_relativa": "https://apecomics.net/manga/o-cacador-de-demonios-retorna-como-um-demonio/",
+      "status": "ativo",
+      "ultimo_upload": null,
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 7.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 8.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.121974+00:00",
+      "updated_at": "2025-10-15T21:54:23.121977+00:00",
+      "id_obra_original": 1670,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 316,
+      "titulo": "Ascensão Ilimitada: Força Através da Adversidade",
+      "url_relativa": "https://apecomics.net/manga/ascensao-ilimitada-forca-atraves-da-adversidade/",
+      "status": "ativo",
+      "ultimo_upload": null,
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 79.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 80.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.121989+00:00",
+      "updated_at": "2025-10-15T21:54:23.121992+00:00",
+      "id_obra_original": 316,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 162,
+      "titulo": "Evolução Marcial: Despertar do Rei dos Monstros",
+      "url_relativa": "https://apecomics.net/manga/evolucao-marcial-despertar-do-rei-dos-monstros/",
+      "status": "ativo",
+      "ultimo_upload": null,
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 65.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 66.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.122031+00:00",
+      "updated_at": "2025-10-15T21:54:23.122034+00:00",
+      "id_obra_original": 162,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 1720,
+      "titulo": "Evolução Infinita: Começando do Zero",
+      "url_relativa": "https://apecomics.net/manga/evolucao-infinita-comecando-do-zero/",
+      "status": "ativo",
+      "ultimo_upload": null,
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 21.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 22.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.122070+00:00",
+      "updated_at": "2025-10-15T21:54:23.122073+00:00",
+      "id_obra_original": 1720,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 920,
+      "titulo": "Após Alcançar a Liberdade Financeira, Elas Ofereceram sua Lealdade",
+      "url_relativa": "https://apecomics.net/manga/apos-alcancar-a-liberdade-financeira-elas-ofereceram-sua-lealdade/",
+      "status": "ativo",
+      "ultimo_upload": null,
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 47.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 48.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.122089+00:00",
+      "updated_at": "2025-10-15T21:54:23.122091+00:00",
+      "id_obra_original": 920,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 962,
+      "titulo": "Levei um fora e Despertei como um Guerreiro Divino",
+      "url_relativa": "https://apecomics.net/manga/levei-um-fora-e-despertei-como-um-guerreiro-divino/",
+      "status": "ativo",
+      "ultimo_upload": null,
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 27.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 28.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.122117+00:00",
+      "updated_at": "2025-10-15T21:54:23.122119+00:00",
+      "id_obra_original": 962,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 313,
+      "titulo": "Assassino de Nível Divino, Eu Sou a Sombra",
+      "url_relativa": "https://apecomics.net/manga/assassino-de-nivel-divino-eu-sou-a-sombra/",
+      "status": "ativo",
+      "ultimo_upload": null,
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 59.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 60.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.122135+00:00",
+      "updated_at": "2025-10-15T21:54:23.122137+00:00",
+      "id_obra_original": 313,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 949,
+      "titulo": "Começando como o BOSS Dragão Negro, Sou Invencível",
+      "url_relativa": "https://apecomics.net/manga/comecando-como-o-boss-dragao-negro-sou-invencivel/",
+      "status": "ativo",
+      "ultimo_upload": null,
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 82.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 83.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.122166+00:00",
+      "updated_at": "2025-10-15T21:54:23.122169+00:00",
+      "id_obra_original": 949,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 969,
+      "titulo": "Faca Matadora de Porcos",
+      "url_relativa": "https://apecomics.net/manga/faca-matadora-de-porcos/",
+      "status": "ativo",
+      "ultimo_upload": null,
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 12.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 13.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.122210+00:00",
+      "updated_at": "2025-10-15T21:54:23.122213+00:00",
+      "id_obra_original": 969,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 1409,
+      "titulo": "Mantenha um Perfil Discreto, Líder da Seita",
+      "url_relativa": "https://apecomics.net/manga/mantenha-um-perfil-discreto-lider-da-seita/",
+      "status": "ativo",
+      "ultimo_upload": null,
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 188.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 189.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.122227+00:00",
+      "updated_at": "2025-10-15T21:54:23.122230+00:00",
+      "id_obra_original": 1409,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 236,
+      "titulo": "Providência de Alto Nível",
+      "url_relativa": "https://apecomics.net/manga/providencia-de-alto-nivel/",
+      "status": "ativo",
+      "ultimo_upload": null,
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 232.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 233.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.122319+00:00",
+      "updated_at": "2025-10-15T21:54:23.122324+00:00",
+      "id_obra_original": 236,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 2445,
+      "titulo": " Deus do Binário",
+      "url_relativa": "https://apecomics.net/manga/deus-do-binario/",
+      "status": "ativo",
+      "ultimo_upload": null,
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 2.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 3.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.122427+00:00",
+      "updated_at": "2025-10-15T21:54:23.122431+00:00",
+      "id_obra_original": 2445,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 710,
+      "titulo": "Renasci para me Vingar com a Reversão Espelhada",
+      "url_relativa": "https://apecomics.net/manga/renasci-para-me-vingar-com-a-reversao-espelhada/",
+      "status": "ativo",
+      "ultimo_upload": null,
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 19.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 20.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.122441+00:00",
+      "updated_at": "2025-10-15T21:54:23.122444+00:00",
+      "id_obra_original": 710,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 968,
+      "titulo": "Devendo bilhões, fui forçado a trabalhar para um Deus Maligno",
+      "url_relativa": "https://apecomics.net/manga/devendo-bilhoes-fui-forcado-a-trabalhar-para-um-deus-maligno/",
+      "status": "ativo",
+      "ultimo_upload": null,
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 6.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 7.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.122461+00:00",
+      "updated_at": "2025-10-15T21:54:23.122464+00:00",
+      "id_obra_original": 968,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 956,
+      "titulo": "Eu Não Quero Aprender Maldições",
+      "url_relativa": "https://apecomics.net/manga/eu-nao-quero-aprender-maldicoes/",
+      "status": "ativo",
+      "ultimo_upload": null,
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 101.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 102.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.122476+00:00",
+      "updated_at": "2025-10-15T21:54:23.122479+00:00",
+      "id_obra_original": 956,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 1717,
+      "titulo": "Andarilho do Coração Carmesim",
+      "url_relativa": "https://apecomics.net/manga/andarilho-do-coracao-carmesim/",
+      "status": "ativo",
+      "ultimo_upload": null,
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 26.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 27.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.122527+00:00",
+      "updated_at": "2025-10-15T21:54:23.122531+00:00",
+      "id_obra_original": 1717,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 580,
+      "titulo": "Meu Sistema é Muito Serio",
+      "url_relativa": "https://apecomics.net/manga/meu-sistema-e-muito-serio/",
+      "status": "ativo",
+      "ultimo_upload": null,
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 59.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 60.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.122550+00:00",
+      "updated_at": "2025-10-15T21:54:23.122553+00:00",
+      "id_obra_original": 580,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 422,
+      "titulo": "Todos Saúdam o Líder da Seita",
+      "url_relativa": "https://apecomics.net/manga/todos-saudam-o-lider-da-seita/",
+      "status": "ativo",
+      "ultimo_upload": null,
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 227.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 228.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.122583+00:00",
+      "updated_at": "2025-10-15T21:54:23.122585+00:00",
+      "id_obra_original": 422,
+      "numero_pulos_config": 0
+    }
+  ],
+  "metadata": {
+    "version": "2.0",
+    "created_at": "2025-10-15T21:54:23.121893+00:00",
+    "updated_at": "2025-10-15T21:54:23.122682+00:00",
+    "total_obras": 21
+  }
+}

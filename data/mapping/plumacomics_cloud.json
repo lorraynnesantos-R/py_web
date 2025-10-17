@@ -1,0 +1,126 @@
+{
+  "scan_info": {
+    "name": "plumacomics_cloud",
+    "base_url": "https://plumacomics.cloud",
+    "last_check": null,
+    "active": true,
+    "scape_time": 30,
+    "description": "Migrado de obras_mapeadas.json em 2025-10-15"
+  },
+  "obras": [
+    {
+      "id": 1680,
+      "titulo": "Renascido como um Soldado de Elite no Colégio",
+      "url_relativa": "https://plumacomics.cloud/manga/renascido-como-um-soldado-de-elite-no-colegio/",
+      "status": "ativo",
+      "ultimo_upload": null,
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 11.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 12.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.126822+00:00",
+      "updated_at": "2025-10-15T21:54:23.126824+00:00",
+      "id_obra_original": 1680,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 304,
+      "titulo": "De Goblin A Deus Goblin",
+      "url_relativa": "https://plumacomics.cloud/manga/de-goblin-a-deus-goblin/",
+      "status": "ativo",
+      "ultimo_upload": null,
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 76.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 77.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.126837+00:00",
+      "updated_at": "2025-10-15T21:54:23.126839+00:00",
+      "id_obra_original": 304,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 1662,
+      "titulo": "Meus discípulos são todos grandes vilões",
+      "url_relativa": "https://plumacomics.cloud/manga/meus-discipulos-sao-todos-grandes-viloes/",
+      "status": "ativo",
+      "ultimo_upload": null,
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 125.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 126.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.126860+00:00",
+      "updated_at": "2025-10-15T21:54:23.126861+00:00",
+      "id_obra_original": 1662,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 2183,
+      "titulo": "Neste Mundo Estranho, Tenho Uma Compreensão Especial",
+      "url_relativa": "https://plumacomics.cloud/manga/neste-mundo-estranho-tenho-uma-compreensao-especial/",
+      "status": "ativo",
+      "ultimo_upload": null,
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 7.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 8.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.126891+00:00",
+      "updated_at": "2025-10-15T21:54:23.126892+00:00",
+      "id_obra_original": 2183,
+      "numero_pulos_config": 0
+    }
+  ],
+  "metadata": {
+    "version": "2.0",
+    "created_at": "2025-10-15T21:54:23.126812+00:00",
+    "updated_at": "2025-10-15T21:54:23.126903+00:00",
+    "total_obras": 4
+  }
+}

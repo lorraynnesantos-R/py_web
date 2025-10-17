@@ -1,0 +1,41 @@
+{
+  "migration_summary": {
+    "start_time": "2025-10-15T17:42:17.972627",
+    "end_time": "2025-10-15T17:42:18.376015",
+    "duration_seconds": 0.403388,
+    "total_obras": 198,
+    "migrated_obras": 198,
+    "skipped_obras": 0,
+    "success_rate": 100.0
+  },
+  "scan_distribution": {
+    "astratoons": 2,
+    "yomu_com_br": 9,
+    "bato_to": 29,
+    "sussytoons_wtf": 6,
+    "fbsquadx_com": 21,
+    "fenixscan_xyz": 10,
+    "3xyaoi_com": 3,
+    "fenixproject_site": 19,
+    "imperiodabritannia_com": 11,
+    "empreguetes_xyz": 15,
+    "galinhasamurai_com": 10,
+    "yugenmangasbr_yocat_xyz": 8,
+    "loverstoon_com": 10,
+    "tatakaescan_com": 1,
+    "argoscomic_com": 4,
+    "arthurscan_xyz": 3,
+    "remangas_net": 2,
+    "nexusscan_site": 4,
+    "apecomics_net": 21,
+    "tiraninha_baby": 4,
+    "rfdragonscan_com": 2,
+    "plumacomics_cloud": 4
+  },
+  "backup_files": [
+    "C:\\Users\\walla\\Desktop\\auto_upload_v2\\py_web\\data\\mapping\\backups\\obras_mapeadas_backup_20251015_174217.json"
+  ],
+  "errors": [],
+  "warnings": [],
+  "status": "SUCCESS"
+}

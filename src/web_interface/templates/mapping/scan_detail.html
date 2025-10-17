@@ -1,0 +1,497 @@
+{% extends "base.html" %}
+
+{% block title %}{{ scan_info.name or scan_name }} - Obras{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+    <!-- Breadcrumb -->
+    <nav aria-label="breadcrumb" class="mb-3">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="{{ url_for('mapping.index') }}">
+                    <i class="fas fa-book-open"></i> Mapeamento
+                </a>
+            </li>
+            <li class="breadcrumb-item active">{{ scan_info.name or scan_name }}</li>
+        </ol>
+    </nav>
+
+    <!-- Header do scan -->
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <div>
+            <h2 class="mb-1">
+                <i class="fas fa-globe text-primary"></i>
+                {{ scan_info.name or scan_name }}
+            </h2>
+            {% if scan_info.base_url %}
+            <p class="text-muted mb-0">
+                <a href="{{ scan_info.base_url }}" target="_blank" class="text-decoration-none">
+                    <i class="fas fa-external-link-alt"></i> {{ scan_info.base_url }}
+                </a>
+            </p>
+            {% endif %}
+        </div>
+        <div>
+            <a href="{{ url_for('mapping.import_obra') }}?scan={{ scan_name }}" class="btn btn-primary">
+                <i class="fas fa-plus"></i> Importar Obra
+            </a>
+        </div>
+    </div>
+
+    <!-- Estatísticas do scan -->
+    {% if scan_stats %}
+    <div class="row mb-4">
+        <div class="col-md-3">
+            <div class="card bg-primary-subtle border-primary">
+                <div class="card-body text-center">
+                    <h3 class="text-primary mb-1">{{ scan_stats.total or 0 }}</h3>
+                    <p class="mb-0 small">Total de Obras</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card bg-success-subtle border-success">
+                <div class="card-body text-center">
+                    <h3 class="text-success mb-1">{{ scan_stats.ativas or 0 }}</h3>
+                    <p class="mb-0 small">Obras Ativas</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card bg-warning-subtle border-warning">
+                <div class="card-body text-center">
+                    <h3 class="text-warning mb-1">{{ scan_stats.quarentena or 0 }}</h3>
+                    <p class="mb-0 small">Em Quarentena</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card bg-info-subtle border-info">
+                <div class="card-body text-center">
+                    <h3 class="text-info mb-1">{{ scan_stats.com_erros or 0 }}</h3>
+                    <p class="mb-0 small">Com Erros</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+
+    <!-- Filtros e busca -->
+    <div class="card mb-4">
+        <div class="card-body">
+            <form method="GET" class="row g-3" id="filterForm">
+                <div class="col-md-3">
+                    <label for="status" class="form-label">Status</label>
+                    <select name="status" id="status" class="form-select">
+                        <option value="all" {% if status_filter == 'all' %}selected{% endif %}>Todos</option>
+                        <option value="ativo" {% if status_filter == 'ativo' %}selected{% endif %}>Ativo</option>
+                        <option value="quarentena" {% if status_filter == 'quarentena' %}selected{% endif %}>Quarentena</option>
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <label for="search" class="form-label">Buscar</label>
+                    <input type="text" name="search" id="search" class="form-control" 
+                           placeholder="Nome da obra..." value="{{ search_term }}">
+                </div>
+                <div class="col-md-2">
+                    <label for="per_page" class="form-label">Por página</label>
+                    <select name="per_page" id="per_page" class="form-select">
+                        <option value="10" {% if per_page == 10 %}selected{% endif %}>10</option>
+                        <option value="20" {% if per_page == 20 %}selected{% endif %}>20</option>
+                        <option value="50" {% if per_page == 50 %}selected{% endif %}>50</option>
+                        <option value="100" {% if per_page == 100 %}selected{% endif %}>100</option>
+                    </select>
+                </div>
+                <div class="col-md-3">
+                    <label class="form-label">&nbsp;</label>
+                    <div class="d-flex gap-2">
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-search"></i> Filtrar
+                        </button>
+                        <a href="{{ url_for('mapping.scan_detail', scan_name=scan_name) }}" class="btn btn-outline-secondary">
+                            <i class="fas fa-times"></i> Limpar
+                        </a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Lista de obras -->
+    <div class="card">
+        <div class="card-header">
+            <div class="d-flex justify-content-between align-items-center">
+                <h5 class="mb-0">
+                    <i class="fas fa-book"></i>
+                    Obras ({{ total_obras }} encontradas)
+                </h5>
+                <div class="btn-group btn-group-sm">
+                    <button type="button" class="btn btn-outline-primary" onclick="selectAll()">
+                        <i class="fas fa-check-square"></i> Selecionar Todas
+                    </button>
+                    <button type="button" class="btn btn-outline-secondary" onclick="clearSelection()">
+                        <i class="fas fa-square"></i> Limpar
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="card-body p-0">
+            {% if obras %}
+                <div class="table-responsive">
+                    <table class="table table-hover mb-0">
+                        <thead class="table-light">
+                            <tr>
+                                <th width="50">
+                                    <input type="checkbox" id="selectAllCheckbox" onchange="toggleSelectAll()">
+                                </th>
+                                <th>Título</th>
+                                <th width="100">Status</th>
+                                <th width="120">Último Upload</th>
+                                <th width="80">Erros</th>
+                                <th width="100">Capítulos</th>
+                                <th width="200">Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for obra in obras %}
+                            <tr id="obra-{{ obra.id }}" class="obra-row">
+                                <td>
+                                    <input type="checkbox" class="obra-checkbox" value="{{ obra.id }}">
+                                </td>
+                                <td>
+                                    <div class="d-flex align-items-center">
+                                        <div>
+                                            <div class="fw-bold">{{ obra.titulo }}</div>
+                                            <small class="text-muted">{{ obra.url_relativa }}</small>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    {% if obra.status == 'ativo' %}
+                                    <span class="badge bg-success">
+                                        <i class="fas fa-check"></i> Ativo
+                                    </span>
+                                    {% elif obra.status == 'quarentena' %}
+                                    <span class="badge bg-warning">
+                                        <i class="fas fa-pause"></i> Quarentena
+                                    </span>
+                                    {% else %}
+                                    <span class="badge bg-secondary">{{ obra.status }}</span>
+                                    {% endif %}
+                                </td>
+                                <td>
+                                    {% if obra.ultimo_upload %}
+                                    <small>{{ obra.ultimo_upload | format_datetime_short }}</small>
+                                    {% else %}
+                                    <small class="text-muted">Nunca</small>
+                                    {% endif %}
+                                </td>
+                                <td>
+                                    {% if obra.erros_consecutivos > 0 %}
+                                    <span class="badge bg-danger">{{ obra.erros_consecutivos }}</span>
+                                    {% else %}
+                                    <span class="badge bg-success">0</span>
+                                    {% endif %}
+                                </td>
+                                <td>
+                                    <small>
+                                        {{ obra.capitulos_disponivel or 0 }}/{{ obra.total_capitulos or 0 }}
+                                    </small>
+                                </td>
+                                <td>
+                                    <div class="btn-group btn-group-sm">
+                                        <a href="{{ url_for('mapping.obra_detail', scan_name=scan_name, obra_id=obra.id) }}" 
+                                           class="btn btn-outline-primary" title="Ver detalhes">
+                                            <i class="fas fa-eye"></i>
+                                        </a>
+                                        <button type="button" class="btn btn-outline-success" 
+                                                onclick="manualUpload('{{ obra.id }}', '{{ obra.titulo }}')" title="Upload manual">
+                                            <i class="fas fa-upload"></i>
+                                        </button>
+                                        <button type="button" class="btn btn-outline-warning" 
+                                                onclick="toggleQuarantine('{{ obra.id }}', '{{ obra.titulo }}', '{{ obra.status }}')" 
+                                                title="Alternar quarentena">
+                                            <i class="fas fa-pause"></i>
+                                        </button>
+                                        <a href="{{ url_for('mapping.edit_obra', scan_name=scan_name, obra_id=obra.id) }}" 
+                                           class="btn btn-outline-secondary" title="Editar">
+                                            <i class="fas fa-edit"></i>
+                                        </a>
+                                    </div>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Paginação -->
+                {% if total_obras > per_page %}
+                <div class="card-footer">
+                    <nav aria-label="Paginação">
+                        <ul class="pagination justify-content-center mb-0">
+                            {% set total_pages = (total_obras + per_page - 1) // per_page %}
+                            
+                            <!-- Anterior -->
+                            {% if page > 1 %}
+                            <li class="page-item">
+                                <a class="page-link" href="{{ url_for('mapping.scan_detail', scan_name=scan_name, page=page-1, status=status_filter, search=search_term, per_page=per_page) }}">
+                                    <i class="fas fa-chevron-left"></i>
+                                </a>
+                            </li>
+                            {% endif %}
+                            
+                            <!-- Páginas -->
+                            {% for p in range(1, total_pages + 1) %}
+                                {% if p == page %}
+                                <li class="page-item active">
+                                    <span class="page-link">{{ p }}</span>
+                                </li>
+                                {% elif p == 1 or p == total_pages or (p >= page - 2 and p <= page + 2) %}
+                                <li class="page-item">
+                                    <a class="page-link" href="{{ url_for('mapping.scan_detail', scan_name=scan_name, page=p, status=status_filter, search=search_term, per_page=per_page) }}">{{ p }}</a>
+                                </li>
+                                {% elif (p == 2 and page > 4) or (p == total_pages - 1 and page < total_pages - 3) %}
+                                <li class="page-item disabled">
+                                    <span class="page-link">...</span>
+                                </li>
+                                {% endif %}
+                            {% endfor %}
+                            
+                            <!-- Próximo -->
+                            {% if page < total_pages %}
+                            <li class="page-item">
+                                <a class="page-link" href="{{ url_for('mapping.scan_detail', scan_name=scan_name, page=page+1, status=status_filter, search=search_term, per_page=per_page) }}">
+                                    <i class="fas fa-chevron-right"></i>
+                                </a>
+                            </li>
+                            {% endif %}
+                        </ul>
+                    </nav>
+                    
+                    <div class="text-center small text-muted mt-2">
+                        Página {{ page }} de {{ total_pages }} ({{ total_obras }} obras total)
+                    </div>
+                </div>
+                {% endif %}
+            {% else %}
+                <div class="text-center py-5">
+                    <i class="fas fa-search fa-3x text-muted mb-3"></i>
+                    <h5 class="text-muted">Nenhuma obra encontrada</h5>
+                    {% if status_filter != 'all' or search_term %}
+                    <p class="text-muted">Tente ajustar os filtros ou busca.</p>
+                    <a href="{{ url_for('mapping.scan_detail', scan_name=scan_name) }}" class="btn btn-outline-primary">
+                        <i class="fas fa-times"></i> Limpar Filtros
+                    </a>
+                    {% else %}
+                    <p class="text-muted">Importe obras para este scan para começar.</p>
+                    <a href="{{ url_for('mapping.import_obra') }}?scan={{ scan_name }}" class="btn btn-primary">
+                        <i class="fas fa-plus"></i> Importar Primeira Obra
+                    </a>
+                    {% endif %}
+                </div>
+            {% endif %}
+        </div>
+    </div>
+
+    <!-- Ações em lote -->
+    <div class="card mt-3" id="bulkActions" style="display: none;">
+        <div class="card-body">
+            <div class="d-flex justify-content-between align-items-center">
+                <div>
+                    <strong><span id="selectedCount">0</span> obras selecionadas</strong>
+                </div>
+                <div class="btn-group">
+                    <button type="button" class="btn btn-outline-success" onclick="bulkManualUpload()">
+                        <i class="fas fa-upload"></i> Upload Manual
+                    </button>
+                    <button type="button" class="btn btn-outline-warning" onclick="bulkToggleQuarantine()">
+                        <i class="fas fa-pause"></i> Alternar Quarentena
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modals -->
+<!-- Modal de confirmação para upload manual -->
+<div class="modal fade" id="manualUploadModal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Confirmar Upload Manual</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <p>Deseja adicionar a obra <strong id="uploadObraTitle"></strong> à fila de upload manual?</p>
+                <div class="alert alert-info">
+                    <i class="fas fa-info-circle"></i>
+                    A obra será processada com prioridade alta na fila.
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-primary" onclick="confirmManualUpload()">
+                    <i class="fas fa-upload"></i> Confirmar Upload
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal de confirmação para quarentena -->
+<div class="modal fade" id="quarantineModal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Alterar Status de Quarentena</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <p id="quarantineMessage"></p>
+                <div class="alert alert-warning">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    Esta ação irá resetar o contador de erros da obra.
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-warning" onclick="confirmToggleQuarantine()">
+                    <i class="fas fa-pause"></i> Confirmar
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="{{ url_for('static', filename='js/app.js') }}"></script>
+<script>
+let currentObraId = null;
+let currentObraTitle = null;
+let currentObraStatus = null;
+
+// Seleção múltipla
+function toggleSelectAll() {
+    const selectAll = document.getElementById('selectAllCheckbox');
+    const checkboxes = document.querySelectorAll('.obra-checkbox');
+    
+    checkboxes.forEach(checkbox => {
+        checkbox.checked = selectAll.checked;
+    });
+    
+    updateBulkActions();
+}
+
+function selectAll() {
+    document.getElementById('selectAllCheckbox').checked = true;
+    toggleSelectAll();
+}
+
+function clearSelection() {
+    document.getElementById('selectAllCheckbox').checked = false;
+    toggleSelectAll();
+}
+
+function updateBulkActions() {
+    const checkboxes = document.querySelectorAll('.obra-checkbox:checked');
+    const bulkActions = document.getElementById('bulkActions');
+    const selectedCount = document.getElementById('selectedCount');
+    
+    if (checkboxes.length > 0) {
+        bulkActions.style.display = 'block';
+        selectedCount.textContent = checkboxes.length;
+    } else {
+        bulkActions.style.display = 'none';
+    }
+}
+
+// Event listeners para checkboxes
+document.addEventListener('DOMContentLoaded', function() {
+    const checkboxes = document.querySelectorAll('.obra-checkbox');
+    checkboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', updateBulkActions);
+    });
+});
+
+// Upload manual
+function manualUpload(obraId, obraTitle) {
+    currentObraId = obraId;
+    currentObraTitle = obraTitle;
+    document.getElementById('uploadObraTitle').textContent = obraTitle;
+    
+    const modal = new bootstrap.Modal(document.getElementById('manualUploadModal'));
+    modal.show();
+}
+
+function confirmManualUpload() {
+    if (!currentObraId) return;
+    
+    const form = document.createElement('form');
+    form.method = 'POST';
+    form.action = `{{ url_for('mapping.manual_upload', scan_name=scan_name, obra_id='OBRA_ID') }}`.replace('OBRA_ID', currentObraId);
+    
+    document.body.appendChild(form);
+    form.submit();
+}
+
+// Quarentena
+function toggleQuarantine(obraId, obraTitle, currentStatus) {
+    currentObraId = obraId;
+    currentObraTitle = obraTitle;
+    currentObraStatus = currentStatus;
+    
+    const action = currentStatus === 'ativo' ? 'colocar em quarentena' : 'reativar';
+    const message = `Deseja ${action} a obra <strong>${obraTitle}</strong>?`;
+    
+    document.getElementById('quarantineMessage').innerHTML = message;
+    
+    const modal = new bootstrap.Modal(document.getElementById('quarantineModal'));
+    modal.show();
+}
+
+function confirmToggleQuarantine() {
+    if (!currentObraId) return;
+    
+    const form = document.createElement('form');
+    form.method = 'POST';
+    form.action = `{{ url_for('mapping.toggle_quarantine', scan_name=scan_name, obra_id='OBRA_ID') }}`.replace('OBRA_ID', currentObraId);
+    
+    document.body.appendChild(form);
+    form.submit();
+}
+
+// Ações em lote
+function bulkManualUpload() {
+    const checkboxes = document.querySelectorAll('.obra-checkbox:checked');
+    if (checkboxes.length === 0) return;
+    
+    if (confirm(`Deseja adicionar ${checkboxes.length} obras à fila de upload manual?`)) {
+        checkboxes.forEach(checkbox => {
+            const form = document.createElement('form');
+            form.method = 'POST';
+            form.action = `{{ url_for('mapping.manual_upload', scan_name=scan_name, obra_id='OBRA_ID') }}`.replace('OBRA_ID', checkbox.value);
+            
+            document.body.appendChild(form);
+            form.submit();
+        });
+    }
+}
+
+function bulkToggleQuarantine() {
+    const checkboxes = document.querySelectorAll('.obra-checkbox:checked');
+    if (checkboxes.length === 0) return;
+    
+    if (confirm(`Deseja alternar o status de quarentena de ${checkboxes.length} obras?`)) {
+        checkboxes.forEach(checkbox => {
+            const form = document.createElement('form');
+            form.method = 'POST';
+            form.action = `{{ url_for('mapping.toggle_quarantine', scan_name=scan_name, obra_id='OBRA_ID') }}`.replace('OBRA_ID', checkbox.value);
+            
+            document.body.appendChild(form);
+            form.submit();
+        });
+    }
+}
+</script>
+{% endblock %}

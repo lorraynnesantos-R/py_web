@@ -1,0 +1,72 @@
+{
+  "scan_info": {
+    "name": "remangas_net",
+    "base_url": "https://remangas.net",
+    "last_check": null,
+    "active": true,
+    "scape_time": 30,
+    "description": "Migrado de obras_mapeadas.json em 2025-10-15"
+  },
+  "obras": [
+    {
+      "id": 1518,
+      "titulo": "Herói x Rainha dos Demônios",
+      "url_relativa": "https://remangas.net/manga/heroi-x-rainha-dos-demonios/",
+      "status": "ativo",
+      "ultimo_upload": null,
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 176.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 177.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.119950+00:00",
+      "updated_at": "2025-10-15T21:54:23.119952+00:00",
+      "id_obra_original": 1518,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 1700,
+      "titulo": "Penalidade de Morte",
+      "url_relativa": "https://remangas.net/manga/heroi-x-rainha-dos-demonios/",
+      "status": "ativo",
+      "ultimo_upload": null,
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 66.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 67.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.120000+00:00",
+      "updated_at": "2025-10-15T21:54:23.120001+00:00",
+      "id_obra_original": 1700,
+      "numero_pulos_config": 0
+    }
+  ],
+  "metadata": {
+    "version": "2.0",
+    "created_at": "2025-10-15T21:54:23.119937+00:00",
+    "updated_at": "2025-10-15T21:54:23.120023+00:00",
+    "total_obras": 2
+  }
+}

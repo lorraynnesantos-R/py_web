@@ -1,0 +1,180 @@
+{
+  "scan_info": {
+    "name": "sussytoons_wtf",
+    "base_url": "https://www.sussytoons.wtf",
+    "last_check": null,
+    "active": true,
+    "scape_time": 30,
+    "description": "Migrado de obras_mapeadas.json em 2025-10-15"
+  },
+  "obras": [
+    {
+      "id": 702,
+      "titulo": "Academia De Transcendente",
+      "url_relativa": "https://www.sussytoons.wtf/obra/12871/academia-da-transcendencia",
+      "status": "ativo",
+      "ultimo_upload": "2025-10-10T23:44:21.722336",
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 85.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 86.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.103423+00:00",
+      "updated_at": "2025-10-15T21:54:23.103425+00:00",
+      "id_obra_original": 702,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 288,
+      "titulo": "Sobrevivência do Gênio com Tempo de Vida Limitado",
+      "url_relativa": "https://www.sussytoons.wtf/obra/5277/sobrevivendo-como-um-genio-com-o-tempo-emprestado",
+      "status": "ativo",
+      "ultimo_upload": "2025-10-06T15:43:47.361824",
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 54.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 55.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.103452+00:00",
+      "updated_at": "2025-10-15T21:54:23.103454+00:00",
+      "id_obra_original": 288,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 2516,
+      "titulo": " Crônicas do Retorno do Deus Marcial",
+      "url_relativa": "https://www.sussytoons.wtf/obra/5926/cronicas-do-retorno-do-deus-marcial",
+      "status": "ativo",
+      "ultimo_upload": null,
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 130.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 130.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.103472+00:00",
+      "updated_at": "2025-10-15T21:54:23.103473+00:00",
+      "id_obra_original": 2516,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 1679,
+      "titulo": "Uma Sensação de Diversão com Seus Brinquedos",
+      "url_relativa": "https://www.sussytoons.wtf/obra/6497/uma-sensacao-de-diversao-com-seus-brinquedos",
+      "status": "pausado",
+      "ultimo_upload": null,
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 53.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 54.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.103513+00:00",
+      "updated_at": "2025-10-15T21:54:23.103514+00:00",
+      "id_obra_original": 1679,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 1601,
+      "titulo": "Eu Realmente Não Sou o Lacaio do Deus Demônio",
+      "url_relativa": "https://www.sussytoons.wtf/obra/288/eu-realmente-nao-sou-o-lacaio-do-deus-demonio",
+      "status": "ativo",
+      "ultimo_upload": null,
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 173.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 174.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.103530+00:00",
+      "updated_at": "2025-10-15T21:54:23.103532+00:00",
+      "id_obra_original": 1601,
+      "numero_pulos_config": 0
+    },
+    {
+      "id": 1781,
+      "titulo": " Os passes do meio-campista genial são especiais",
+      "url_relativa": "https://www.sussytoons.wtf/obra/13841/os-passes-do-meiocampista-genial-sao-especiais",
+      "status": "ativo",
+      "ultimo_upload": "2025-10-11T02:29:31.533646",
+      "erros_consecutivos": 0,
+      "capitulos": [
+        {
+          "numero": 20.0,
+          "data_upload": null,
+          "status": "baixado"
+        },
+        {
+          "numero": 21.0,
+          "data_upload": null,
+          "status": "baixado"
+        }
+      ],
+      "tags": [],
+      "autor": null,
+      "descricao": null,
+      "created_at": "2025-10-15T21:54:23.103574+00:00",
+      "updated_at": "2025-10-15T21:54:23.103576+00:00",
+      "id_obra_original": 1781,
+      "numero_pulos_config": 0
+    }
+  ],
+  "metadata": {
+    "version": "2.0",
+    "created_at": "2025-10-15T21:54:23.103401+00:00",
+    "updated_at": "2025-10-15T21:54:23.103589+00:00",
+    "total_obras": 6
+  }
+}
